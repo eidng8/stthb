@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Crew
+      <small>({{ fits.length }} in total)</small>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen padding class="mission-crew">
+  <ion-list>
+    <crew-item *ngFor="let fit of fits" [crew]="fit"></crew-item>
+  </ion-list>
+  <!--
+    <div padding-bottom>
+      <ion-segment [(ngModel)]="currentGroup">
+        <ion-segment-button *ngFor="let group of groups" value="{{ group }}">
+          {{ group }}
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+
+    <div [ngSwitch]="currentGroup">
+      <div *ngFor="let group of groups; let idx = index">
+        <div *ngSwitchCase="group">
+          <ion-list collapsible *ngFor="let filter of filters[idx].list">
+            <ion-list-header>
+              {{ filters[idx].name }}-{{ filter }}
+            </ion-list-header>
+            <crew-item *ngFor="let idxCrew of filters[idx].filter(filter)"
+                       [crew]="crew.get(idxCrew)"></crew-item>
+          </ion-list>
+        </div>
+      </div>
+    </div>
+  -->
+</ion-content>

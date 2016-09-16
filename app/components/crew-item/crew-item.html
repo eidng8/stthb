@@ -1,0 +1,20 @@
+<ion-item [crew]="crew">
+  <ion-thumbnail item-left
+                 class="star star-{{ crew.stars }} {{ unlock ? 'unlock' : '' }}">
+    <img src="http://startrektimelineswiki.com{{ crew.picture }}">
+  </ion-thumbnail>
+
+  <h2>{{ crew.name }}</h2>
+
+  <skill-item *ngIf="skill" class="skills single" [name]="skill"
+              [value]="crew[skill][crew[skill].length - 1][crew[skill][crew[skill].length - 1].length - 1]">
+  </skill-item>
+
+  <p *ngIf="!skill" class="skills">
+    <span *ngFor="let skill of skills">
+      <skill-item *ngIf="crew[skill].length" [name]="skill"
+                  [value]="crew[skill][crew[skill].length - 1][crew[skill][crew[skill].length - 1].length - 1]">
+      </skill-item>
+    </span>
+  </p>
+</ion-item>

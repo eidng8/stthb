@@ -4,8 +4,8 @@
 
 import {Injectable} from '@angular/core';
 import {DataService} from './data-service/data-service';
-import {IMission, EMissionTypes} from '../interface/mission';
-import {IRow, DocumentTypes} from '../interface/document';
+import {IMission, EMissionTypes} from '../interfaces/db/mission';
+import {DocumentTypes} from '../interfaces/db/document';
 import {ProviderBase} from './base';
 
 @Injectable()
@@ -25,13 +25,12 @@ export class MissionProvider extends ProviderBase
       .then(
         data =>
         {
-          let row:IRow;
-          for(let i:number = 0; i < data.rows.length; i++)
-          {
-            row = data.rows[i];
-            this.away.push(<IMission>row.doc[DocumentTypes.mission]);
-            this.idAway[row.id] = i;
-          }
+          data.rows.forEach(
+            (row, i) =>
+            {
+              this.away.push(<IMission>row.doc[DocumentTypes.mission]);
+              this.idAway[row.id] = i;
+            });
         })
       .catch(err => console.log('query away error', err));
 
@@ -39,13 +38,12 @@ export class MissionProvider extends ProviderBase
       .then(
         data =>
         {
-          let row:IRow;
-          for(let i:number = 0; i < data.rows.length; i++)
-          {
-            row = data.rows[i];
-            this.cadet.push(<IMission>row.doc[DocumentTypes.mission]);
-            this.idCadet[row.id] = i;
-          }
+          data.rows.forEach(
+            (row, i) =>
+            {
+              this.cadet.push(<IMission>row.doc[DocumentTypes.mission]);
+              this.idCadet[row.id] = i;
+            });
         })
       .catch(err => console.log('query cadet error', err));
   }

@@ -24,6 +24,8 @@
     "cordova/plugins/vibration": "registry:dt/cordova/plugins/vibration#0.0.0+20160316155526",
     "cordova/plugins/websql": "registry:dt/cordova/plugins/websql#0.0.0+20160316155526",
     "es6-shim": "registry:dt/es6-shim#0.31.2+20160602141504",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160621224255",
+    "lodash": "registry:dt/lodash#4.14.0+20160919145112",
     "require": "registry:dt/require#2.1.20+20160316155526"
   }
 }

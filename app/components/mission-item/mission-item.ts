@@ -3,7 +3,7 @@
  */
 
 import {Component, Input} from '@angular/core';
-import {IMission} from '../../interface/mission';
+import {IMission} from '../../interfaces/db/mission';
 import {SkillItem} from '../skill-item/skill-item';
 
 @Component(

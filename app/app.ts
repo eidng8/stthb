@@ -7,6 +7,7 @@ import {CrewProvider} from './providers/crew';
 import {MissionProvider} from './providers/missions';
 import {Home} from './pages/home/home';
 import {MissionList} from './pages/mission-list/mission-list';
+import {TitleCase} from './pipes/titlecase';
 
 @Component(
   {
@@ -35,9 +36,11 @@ class MyApp
     // used for an example of ngFor and navigation
     this.pages = [
       {
-        component: CrewList, title: 'Crew List',
+        component: CrewList,
+        title:     'Crew List',
       }, {
-        component: MissionList, title: 'Mission List',
+        component: MissionList,
+        title:     'Mission List',
       },
     ];
 
@@ -50,7 +53,7 @@ class MyApp
           () =>
           {
             // tslint:disable-next-line:no-string-literal
-            if('object' == typeof window['cordova'])
+            if('object' == typeof (<any>window).cordova)
             {
               // okay, so the platform is ready and our
               // plugins are available. here you can do
@@ -69,4 +72,8 @@ class MyApp
   }
 }
 
-ionicBootstrap(MyApp, [DataService, CrewProvider, MissionProvider]);
+ionicBootstrap(
+  MyApp,
+  [
+    DataService, CrewProvider, MissionProvider, TitleCase,
+  ]);

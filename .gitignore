@@ -3,10 +3,14 @@
 
 .idea/
 node_modules/
-www/build/
 platforms/*/
 plugins/*/
 typings/
+www/build/
+
+app/**/*.js
+
 *.swp
 .DS_Store
 Thumbs.db
+

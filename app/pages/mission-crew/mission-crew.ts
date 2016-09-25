@@ -1,11 +1,10 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
-import {SKILLS, ICrew} from '../../interface/crew';
 import {PageBase} from '../base';
 import {CrewProvider} from '../../providers/crew';
 import {CrewItem} from '../../components/crew-item/crew-item';
 import {Collapsible} from '../../components/list/collapsible';
-import {IMission} from '../../interface/mission';
+import {IMission} from '../../interfaces/db/mission';
 
 @Component(
   {
@@ -15,7 +14,7 @@ import {IMission} from '../../interface/mission';
 export class MissionCrew extends PageBase
 {
   private crew:CrewProvider;
-  private fits:ICrew[];
+  // private fits:ICrewMember[];
   private groups:string[] = ['Stars', 'Skills', 'Locks'];
   private filters:any;
 
@@ -25,7 +24,7 @@ export class MissionCrew extends PageBase
   // noinspection JSUnusedLocalSymbols
   private currentGroup:string = this.groups[0];
   // noinspection JSUnusedLocalSymbols
-  private skillAbbr:{[key:string]:string} = SKILLS.abbr;
+  // private skillAbbr:{[key:string]:string} = SKILLS.abbr;
   // tslint:enable:no-unused-variable
 
   public constructor(nav:NavController, crew:CrewProvider, params:NavParams)
@@ -33,7 +32,7 @@ export class MissionCrew extends PageBase
     super(nav);
     this.mission = params.data.mission;
     this.crew = crew;
-    this.fits = this.mission.crew;
+    // this.fits = this.mission.crew;
 
     this.filters = [
       {
@@ -43,7 +42,7 @@ export class MissionCrew extends PageBase
       },
       {
         filter: skill => this.crew.bySkill(skill),
-        list:   SKILLS.list.abbr,
+        // list:   SKILLS.list.abbr,
         name:   this.groups[1],
       },
       {

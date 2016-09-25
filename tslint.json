@@ -121,9 +121,7 @@
       "always"
     ],
     "variable-name": [
-      true,
-      "ban-keywords",
-      "check-format"
+      true, "ban-keywords", "check-format", "allow-leading-underscore"
     ],
     "whitespace": [
       true,

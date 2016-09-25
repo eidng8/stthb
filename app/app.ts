@@ -5,19 +5,19 @@ import {CrewList} from './pages/crew-list/crew-list';
 import {DataService} from './providers/data-service/data-service';
 import {CrewProvider} from './providers/crew';
 import {MissionProvider} from './providers/missions';
-import {Home} from './pages/home/home';
 import {MissionList} from './pages/mission-list/mission-list';
 import {TitleCase} from './pipes/titlecase';
+import {TabsPage} from './pages/tabs/tabs';
 
 @Component(
   {
     templateUrl: 'build/app.html',
   })
-class MyApp
+class HandbookApp
 {
   @ViewChild(Nav) public nav:Nav;
 
-  public rootPage:any = Home;
+  public rootPage:any = TabsPage;
   public pages:Array<{title:string, component:any}>;
 
   private platform:Platform;
@@ -73,7 +73,7 @@ class MyApp
 }
 
 ionicBootstrap(
-  MyApp,
+  HandbookApp,
   [
     DataService, CrewProvider, MissionProvider, TitleCase,
   ]);

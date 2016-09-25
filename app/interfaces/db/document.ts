@@ -2,7 +2,7 @@
  * Created by JC on 2016-07-27.
  */
 
-import {ICrew} from './Crew';
+import {IDBCrew} from './Crew';
 import {IMission} from './mission';
 
 
@@ -16,7 +16,7 @@ export interface IDocument
   _id:any;
   _rev?:string;
   type:number;
-  [key:number]:ICrew|IMission;
+  [key:number]:IDBCrew|IMission;
 }
 
 export interface IRow

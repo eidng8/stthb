@@ -4,20 +4,53 @@
 
 import {Injectable} from '@angular/core';
 import {DataService} from './data-service/data-service';
-import {ICrew, SKILLS} from '../interface/crew';
-import {DocumentTypes, IRow} from '../interface/document';
+import {IDBCrew} from '../interfaces/db/crew';
+import {DocumentTypes, IRow} from '../interfaces/db/document';
 import {ProviderBase} from './base';
+import {CrewMember} from '../models/crew';
+import {SKILLS} from '../interfaces/crew';
+
 
 @Injectable()
+/**
+ * Crew data provider
+ */
 export class CrewProvider extends ProviderBase
 {
-  protected crew:ICrew[] = <any>[];
-  protected idMap:{[key:string]:number} = <any>{};
-  protected idxStars:number[][] = <any>[[], [], [], [], [], []];
-  protected idxSkills:{[key:string]:number[]} = <any>[];
-  protected idxTraits:string[][] = [];
-  protected traitList:string[] = [];
+  /**
+   * List of all crew members
+   */
+  protected crew:CrewMember[] = [];
 
+  /**
+   * List of all found traits in game
+   */
+  protected _traits:string[] = [];
+
+  /**
+   * Name index
+   */
+  protected idxNames:{[key:string]:number} = {};
+
+  /**
+   * Rarity index
+   */
+  protected idxStars:number[][] = [[], [], [], [], [], []];
+
+  /**
+   * Skill index
+   */
+  protected idxSkills:{[key:string]:number[]} = {};
+
+  /**
+   * Trait index
+   */
+  protected idxTraits:string[][] = [];
+
+  /**
+   * Load all crew data from database.
+   * @param db
+   */
   public constructor(db:DataService)
   {
     super(db);
@@ -25,121 +58,159 @@ export class CrewProvider extends ProviderBase
       .then(
         data =>
         {
-          let row:IRow;
-          for(let i:number = 0; i < data.rows.length; i++)
-          {
-            row = data.rows[i];
-            this.crew.push(<ICrew>row.doc[DocumentTypes.crew]);
-            this.idMap[row.id] = i;
-          }
+          let mem:IDBCrew;
+          data.rows.forEach(
+            (row:IRow, idx:number) =>
+            {
+              mem = <IDBCrew>row.doc[DocumentTypes.crew];
+              this.crew.push(new CrewMember(mem));
+              this.idxNames[mem.name] = idx;
+            });
 
           this.buildIndexes();
         })
-      .catch(err => console.log('query error', err));
+      .catch(
+        err =>
+        {
+          console.log('query error', err);
+          if(err.stack)
+          {
+            console.log(err.stack);
+          }
+        });
   }
 
+  /**
+   * Number of crew members
+   */
   public get length():number
   {
     return this.crew.length;
   }
 
-  public count():number
+  /**
+   * List of all found traits in game
+   */
+  public get traits():string[]
   {
-    return this.crew.length;
+    return this._traits;
   }
 
-  public list():ICrew[]
+  /**
+   * Number of crew members, alias of `length`
+   */
+  public count():number
+  {
+    return this.length;
+  }
+
+  /**
+   * All crew members data
+   */
+  public list():CrewMember[]
   {
     return this.crew;
   }
 
-  public get(idx:number):ICrew
+  /**
+   * Crew members data at the given index
+   */
+  public get(idx:number):CrewMember
   {
     return this.crew[idx];
   }
 
-  public byId(id:string):ICrew
+  /**
+   * Alias of {@link byName()}
+   */
+  public byId(id:string):CrewMember
   {
-    return this.crew[this.idMap[id]];
+    return this.byName(id);
   }
 
+  /**
+   * Crew members data of the given name
+   */
+  public byName(name:string):CrewMember
+  {
+    return this.crew[this.idxNames[name]];
+  }
+
+  /**
+   * Get crew of specified rarity
+   */
   public byStar(star:number):number[]
   {
-    return this.idxStars[star];
+    return this.idxStars[Math.max(1, Math.min(5, star))];
   }
 
+  /**
+   * Get crew with specified skill
+   */
   public bySkill(skill:string):number[]
   {
     return this.idxSkills[skill];
   }
 
+  /**
+   * Get crew with specified trait
+   */
   public byTrait(trait:string):number[]
   {
     return this.idxTraits[trait];
   }
 
-  public listTraits():string[]
-  {
-    return this.traitList;
-  }
-
+  /**
+   * Build all index in proper sorting order
+   */
   protected buildIndexes():void
   {
-    let crew:ICrew;
-    for(let i:number = 0; i < this.crew.length; i++)
-    {
-      crew = this.crew[i];
-      this.indexByStars(crew, i);
-      this.indexBySkills(crew, i);
-      this.indexByTraits(crew, i);
-    }
-
-    delete this.idxStars[0];
-
-    for(const skill in this.idxSkills)
-    {
-      if(!this.idxSkills.hasOwnProperty(skill))
+    this.crew.forEach(
+      (mem, i) =>
       {
-        continue;
-      }
-
-      this.idxSkills[skill]
-        .sort(
-          (a, b) =>
-          {
-            let as:any = this.get(a)[skill];
-            let bs:any = this.get(b)[skill];
-            as = as[as.length - 1];
-            as = as[as.length - 1];
-            bs = bs[bs.length - 1];
-            bs = bs[bs.length - 1];
-            return bs - as;
-          });
-    }
+        mem = this.crew[i];
+        this.indexByStars(mem, i);
+        this.indexBySkills(mem, i);
+        this.indexByTraits(mem, i);
+      });
+    this.sortBySkill();
+    delete this.idxStars[0];
   }
 
-  protected indexByStars(crew:ICrew, idx:number):void
+  /**
+   * Add the given member to rarity index
+   */
+  protected indexByStars(crew:CrewMember, idx:number):void
   {
     // the original sequence is already in correct sort order (name ascending)
     this.idxStars[crew.stars].push(idx);
   }
 
-  protected indexBySkills(crew:ICrew, idx:number):void
+  /**
+   * Add the given member to skill index
+   */
+  protected indexBySkills(crew:CrewMember, idx:number):void
   {
-    for(const skill of SKILLS.list.abbr)
+    let skills:string[] = crew.possessing;
+    if(!skills)
     {
-      if(crew[skill] && (<number[]>crew[skill]).length > 0)
+      return;
+    }
+
+    for(const skill of crew.possessing)
+    {
+      if(!this.idxSkills[skill])
       {
-        if(!this.idxSkills[skill])
-        {
-          this.idxSkills[skill] = [];
-        }
-        this.idxSkills[skill].push(idx);
+        this.idxSkills[skill] = [];
       }
+      this.idxSkills[skill].push(idx);
     }
   }
 
-  protected indexByTraits(crew:ICrew, idx:number):void
+  /**
+   * Add the given member to trait index
+   */
+  protected indexByTraits(crew:CrewMember, idx:number):void
   {
     // the original sequence is already in correct sort order (name ascending)
     for(const trait of crew.traits)
@@ -147,9 +218,26 @@ export class CrewProvider extends ProviderBase
       if(!this.idxTraits[trait])
       {
         this.idxTraits[trait] = [];
-        this.traitList.push(trait);
+        this._traits.push(trait);
       }
       this.idxTraits[trait].push(idx);
+    }
+  }
+
+  /**
+   * Sort crew data by skill value, descending order.
+   */
+  protected sortBySkill():void
+  {
+    for(const skill of SKILLS)
+    {
+      this.idxSkills[skill]
+        .sort(
+          (a, b) =>
+          {
+            return this.crew[b].skillValue(skill)
+                   - this.crew[a].skillValue(skill);
+          });
     }
   }
 }

@@ -2,8 +2,8 @@
  * Created by JC on 2016-07-27.
  */
 
-import {IBaseData} from './base-data';
-import {ICrew} from './crew';
+import {IBaseData} from '../base-data';
+import {IDBCrew} from './crew';
 
 
 export enum EMissionTypes
@@ -25,7 +25,7 @@ export interface IMission extends IBaseData
   skills?:string[];
   locks?:string[];
   steps?:IStep[];
-  crew?:ICrew[];
+  crew?:IDBCrew[];
 }
 
 export interface IStep

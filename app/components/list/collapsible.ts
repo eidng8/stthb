@@ -30,22 +30,27 @@ export class Collapsible
     // instead of the list itself.
     // just to remember, event registration can't be done in constructor,
     // due to the fact that the HTML template is not processed yet.
-    this.elem.nativeElement.getElementsByTagName('ion-list-header')[0]
-      .addEventListener(
-        'click', (evt:Event) =>
-        {
-          evt.preventDefault();
-          evt.stopPropagation();
+    let header:HTMLElement =
+      this.elem.nativeElement.getElementsByTagName('ion-list-header')[0];
+    if(header)
+    {
+      header
+        .addEventListener(
+          'click', (evt:Event) =>
+          {
+            evt.preventDefault();
+            evt.stopPropagation();
 
-          if(this.elem.nativeElement.classList.contains(CLASS_NAME))
-          {
-            this.expend();
-          }
-          else
-          {
-            this.collapse();
-          }
-        });
+            if(this.elem.nativeElement.classList.contains(CLASS_NAME))
+            {
+              this.expend();
+            }
+            else
+            {
+              this.collapse();
+            }
+          });
+    }
   }
 
   private collapse():void

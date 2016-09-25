@@ -1,20 +1,15 @@
 import {Injectable} from '@angular/core';
-import {IView} from '../../interface/document';
+import {IView} from '../../interfaces/db/document';
 
-// tslint:disable-next-line:no-require-imports no-var-requires variable-name
+// tslint:disable:no-require-imports no-var-requires variable-name
 var PouchDB:any = require('pouchdb');
-// tslint:disable-next-line:no-require-imports no-var-requires variable-name
 PouchDB.plugin(require('pouchdb-find'));
+// tslint:enable:no-require-imports no-var-requires variable-name
 
 @Injectable()
 export class DataService
 {
   protected db:any;
-
-  public static get CREW():string
-  {
-    return 'crew';
-  }
 
   public constructor()
   {

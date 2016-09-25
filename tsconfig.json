@@ -3,7 +3,12 @@
     "target": "es5",
     "module": "commonjs",
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "declaration": true,
+    "newLine": "LF",
+    "charset": "utf-8",
+    "removeComments": true,
+    "sourceMap": true
   },
   "filesGlob": [
     "**/*.ts",

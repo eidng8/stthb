@@ -6,7 +6,7 @@ import {IDBCrew} from './Crew';
 import {IMission} from './mission';
 
 
-export enum DocumentTypes
+export enum EDocumentTypes
 {
   crew = 1, mission
 }

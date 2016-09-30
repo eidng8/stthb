@@ -200,6 +200,36 @@ export class CrewMember implements ICrewMember
   }
 
   /**
+   * Check if the crew possesses the any of the given skills
+   * @param skills Skill abbreviations
+   * @returns {boolean}
+   */
+  public possessAny(skills:string[]):boolean
+  {
+    if(!this._skills)
+    {
+      return false;
+    }
+
+    return _.intersection(this.possessing, skills).length > 0;
+  }
+
+  /**
+   * Check if the crew possesses the all of the given skills
+   * @param skills Skill abbreviations
+   * @returns {boolean}
+   */
+  public possessAll(skills:string[]):boolean
+  {
+    if(!this._skills)
+    {
+      return false;
+    }
+
+    return _.intersection(this.possessing, skills).length == skills.length;
+  }
+
+  /**
    * Returns the value of the skill at given star & level.
    * @param skill Skill abbreviation
    * @param star Number of star

@@ -5,7 +5,7 @@
 import {Injectable} from '@angular/core';
 import {DataService} from './data-service/data-service';
 import {IDBCrew} from '../interfaces/db/crew';
-import {DocumentTypes, IRow} from '../interfaces/db/document';
+import {EDocumentTypes, IRow} from '../interfaces/db/document';
 import {ProviderBase} from './base';
 import {CrewMember} from '../models/crew';
 import {SKILLS} from '../interfaces/crew';
@@ -62,7 +62,7 @@ export class CrewProvider extends ProviderBase
           data.rows.forEach(
             (row:IRow, idx:number) =>
             {
-              mem = <IDBCrew>row.doc[DocumentTypes.crew];
+              mem = <IDBCrew>row.doc[EDocumentTypes.crew];
               this.crew.push(new CrewMember(mem));
               this.idxNames[mem.name] = idx;
             });

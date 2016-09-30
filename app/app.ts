@@ -8,6 +8,8 @@ import {MissionProvider} from './providers/missions';
 import {MissionList} from './pages/mission-list/mission-list';
 import {TitleCase} from './pipes/titlecase';
 import {TabsPage} from './pages/tabs/tabs';
+import {provideStore} from '@ngrx/store';
+import {crew} from './ngrx/filters';
 
 @Component(
   {
@@ -72,8 +74,10 @@ class HandbookApp
   }
 }
 
+
 ionicBootstrap(
   HandbookApp,
   [
     DataService, CrewProvider, MissionProvider, TitleCase,
+    provideStore({crew})
   ]);

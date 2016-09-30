@@ -5,7 +5,7 @@
 import {Injectable} from '@angular/core';
 import {DataService} from './data-service/data-service';
 import {IMission, EMissionTypes} from '../interfaces/db/mission';
-import {DocumentTypes} from '../interfaces/db/document';
+import {EDocumentTypes} from '../interfaces/db/document';
 import {ProviderBase} from './base';
 
 @Injectable()
@@ -28,7 +28,7 @@ export class MissionProvider extends ProviderBase
           data.rows.forEach(
             (row, i) =>
             {
-              this.away.push(<IMission>row.doc[DocumentTypes.mission]);
+              this.away.push(<IMission>row.doc[EDocumentTypes.mission]);
               this.idAway[row.id] = i;
             });
         })
@@ -41,7 +41,7 @@ export class MissionProvider extends ProviderBase
           data.rows.forEach(
             (row, i) =>
             {
-              this.cadet.push(<IMission>row.doc[DocumentTypes.mission]);
+              this.cadet.push(<IMission>row.doc[EDocumentTypes.mission]);
               this.idCadet[row.id] = i;
             });
         })

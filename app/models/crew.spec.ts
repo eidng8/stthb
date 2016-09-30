@@ -316,4 +316,15 @@ describe(
       expect(crew.possess('sec')).toBeFalsy();
     });
 
+    it('can handle completely empty skill list', () =>
+    {
+      let crew:CrewMember = new CrewMember();
+      crew.skills = fixtureSkills[2];
+      expect(crew.possessAll(['cmd', 'dip', 'eng'])).toBe(true);
+      expect(crew.possessAny(['cmd', 'dip', 'eng', 'med', 'sci', 'sec']))
+        .toBe(true);
+      expect(crew.possessAll(['cmd', 'dip', 'eng', 'med', 'sci', 'sec']))
+        .toBe(false);
+    });
+
   });

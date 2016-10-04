@@ -1,22 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "allowSyntheticDefaultImports": true,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "declaration": true,
-    "newLine": "LF",
-    "charset": "utf-8",
-    "removeComments": true,
-    "sourceMap": true
+    "lib": [
+      "dom", "es2015"
+    ],
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es5"
   },
-  "filesGlob": [
-    "**/*.ts",
-    "!node_modules/**/*"
-  ],
   "exclude": [
-    "node_modules",
-    "typings/main"
+    "node_modules"
   ],
   "compileOnSave": false,
   "atom": {

@@ -5,10 +5,12 @@
 node_modules/
 platforms/*/
 plugins/*/
-typings/
-www/build/
+www/
 
-app/**/*.js
+src/**/*.js
+src/**/*.d.ts
+tests/**/*.js
+tests/**/*.d.ts
 
 *.swp
 .DS_Store

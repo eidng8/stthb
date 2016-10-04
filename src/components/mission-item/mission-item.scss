@@ -1,6 +1,6 @@
 mission-item {
   .locks {
-    @extend ion-icon;
+    @extend .ion;
 
     > span {
       &:before {
@@ -25,15 +25,15 @@ mission-item {
         }
 
       &:first-child:before {
-        background-image: url('/img/normal.png');
+        background-image: url('/assets/img/normal.png');
         }
 
       &:nth-child(2):before {
-        background-image: url('/img/elite.png');
+        background-image: url('/assets/img/elite.png');
         }
 
       &:last-child:before {
-        background-image: url('/img/epic.png');
+        background-image: url('/assets/img/epic.png');
         }
 
       + span {

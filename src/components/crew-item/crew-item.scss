@@ -1,9 +1,8 @@
 crew-item {
   ion-thumbnail.star {
     position: relative;
-    @extend ion-icon;
+    @extend .ion;
 
-    //noinspection CssNoGenericFontName
     &:after {
       content:     '\f4b3';
       font-size:   16px;

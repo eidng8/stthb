@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {IonicApp, IonicModule} from 'ionic-angular';
-import {MyApp} from './app.component';
+import {Handbook} from './app.component';
 import {HomePage} from '../pages/home/home';
 import {TabsPage} from '../pages/tabs/tabs';
 import {DataService} from '../providers/data-service';
@@ -29,7 +29,7 @@ import {MissionCrew} from '../pages/mission-crew/mission-crew';
       MissionCrew,
       HomePage,
       TabsPage,
-      MyApp,
+      Handbook,
     ],
     entryComponents: [
       CrewList,
@@ -37,9 +37,9 @@ import {MissionCrew} from '../pages/mission-crew/mission-crew';
       MissionCrew,
       HomePage,
       TabsPage,
-      MyApp,
+      Handbook,
     ],
-    imports:         [IonicModule.forRoot(MyApp)],
+    imports:         [IonicModule.forRoot(Handbook)],
     providers:       [
       DataService,
       CrewProvider,

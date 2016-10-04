@@ -2,6 +2,7 @@
 # http://git-scm.com/docs/gitignore
 
 .idea/
+.tmp/
 node_modules/
 platforms/*/
 plugins/*/
@@ -12,7 +13,9 @@ src/**/*.d.ts
 tests/**/*.js
 tests/**/*.d.ts
 
+*.log
 *.swp
+*.tmp.json
 .DS_Store
 Thumbs.db
 

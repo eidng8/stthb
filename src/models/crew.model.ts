@@ -5,13 +5,30 @@
 import forOwn from 'lodash/forOwn';
 import isEmpty from 'lodash/isEmpty';
 import intersection from 'lodash/intersection';
-import {ICrewMember, ISkills} from '../interfaces/crew';
+import {ISkills} from '../interfaces/crew';
 import {IDBCrew} from '../interfaces/db/crew';
+import {IBaseData} from '../interfaces/base-data';
 
 /**
  * Number of recorded levels
  */
 const NUM_LEVELS:number = 11;
+
+/**
+ * Crew member data. It was originally called ICrew, and changed to current
+ * name to avoid confusion. The word `crew` is plural while this piece of data
+ * represents only a single crew member.
+ */
+export interface ICrewMember extends IBaseData
+{
+  uri:string;
+  picture:string;
+  character:string;
+  stars:number;
+  skills:ISkills;
+  race:string;
+  traits:string[];
+}
 
 /**
  * Crew member data model

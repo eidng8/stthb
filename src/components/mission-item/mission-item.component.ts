@@ -8,9 +8,9 @@ import {IMission} from '../../interfaces/db/mission';
 @Component(
   {
     selector:    'mission-item',
-    templateUrl: 'mission-item.html',
+    templateUrl: 'mission-item.component.html',
   })
-export class MissionItem
+export class MissionItemComponent
 {
   // tslint:disable-next-line:no-unused-variable
   @Input() public mission:IMission;

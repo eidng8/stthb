@@ -3,14 +3,14 @@
  */
 
 import {Component, Input} from '@angular/core';
-import {CrewMember} from '../../models/crew';
+import {CrewMember} from '../../models';
 
 @Component(
   {
     selector:    'crew-item',
-    templateUrl: 'crew-item.html',
+    templateUrl: 'crew-item.component.html',
   })
-export class CrewItem
+export class CrewItemComponent
 {
   @Input() public crew:CrewMember;
   @Input() public skill:string;

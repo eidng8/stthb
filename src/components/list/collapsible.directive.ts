@@ -13,7 +13,7 @@ const CLASS_NAME:string = 'collapsed';
     // seems we have to use ngOnInit for this purpose.
     selector: '[collapsible]',
   })
-export class Collapsible implements OnInit
+export class CollapsibleDirective implements OnInit
 {
   private elem:ElementRef;
   private renderer:Renderer;

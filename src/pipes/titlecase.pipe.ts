@@ -15,7 +15,7 @@ import {Pipe, PipeTransform} from '@angular/core';
     name: 'titleCase',
     // pure: false,
   })
-export class TitleCase implements PipeTransform
+export class TitleCasePipe implements PipeTransform
 {
   public transform(input:string, length:number):string
   {

@@ -1,23 +1,34 @@
 <ion-header>
   <ion-navbar>
-    <button menuToggle>
+    <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Crew
-      <small>({{ crew.length }} in total)</small>
+      <small>({{ (lists | async)?.length }} in total)</small>
     </ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="funnel"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content fullscreen padding class="crew-list">
 
-  <ion-list no-lines collapsible *ngFor="let list of lists">
-    <ion-list-header *ngIf="list.header">
-      {{ list.header | uppercase }}
-    </ion-list-header>
-    <crew-item *ngFor="let crew of list.crew"
-               [crew]="crew" [skill]="list.skill"></crew-item>
+  <ion-list no-lines collapsible>
+    <crew-item *ngFor="let list of lists | async" [crew]="list"></crew-item>
   </ion-list>
+
+  <!--
+    <ion-list no-lines collapsible *ngFor="let list of lists | async">
+      <ion-list-header *ngIf="list.header">
+        {{ list.header | uppercase }}
+      </ion-list-header>
+      <crew-item *ngFor="let crew of list.crew"
+                 [crew]="crew" [skill]="list.skill"></crew-item>
+    </ion-list>
+  -->
 
 </ion-content>
 

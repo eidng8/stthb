@@ -6,9 +6,9 @@ import {IMission} from '../../interfaces/db/mission';
 
 @Component(
   {
-    templateUrl: 'mission-crew.html',
+    templateUrl: 'mission-crew.page.html',
   })
-export class MissionCrew extends PageBase
+export class MissionCrewPage extends PageBase
 {
   public groups:string[] = ['Stars', 'Skills', 'Locks'];
   public currentGroup:string = this.groups[0];

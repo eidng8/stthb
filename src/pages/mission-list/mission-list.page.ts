@@ -6,9 +6,9 @@ import {CrewProvider} from '../../providers/crew';
 
 @Component(
   {
-    templateUrl: 'mission-list.html',
+    templateUrl: 'mission-list.page.html',
   })
-export class MissionList
+export class MissionListPage
 {
   public groups:string[];
   public currentGroup:string;

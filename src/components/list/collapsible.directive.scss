@@ -1,0 +1,24 @@
+ion-list[collapsible] {
+  transition: height 300ms;
+
+  &.collapsed {
+    margin:   0;
+    height:   4rem;
+    overflow: hidden;
+
+    .list-header-md:after {
+      @extend .ion-md-arrow-dropdown:before;
+      }
+    }
+
+  .list-header-md {
+    &:after {
+      @extend .ionicons;
+      @extend .ion-md-arrow-dropup:before;
+      font-size: 2.4rem;
+      display:   block;
+      position:  absolute;
+      right:     $list-md-header-padding-left;
+      }
+    }
+  }

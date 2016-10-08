@@ -1,0 +1,11 @@
+ion-list[collapsible] {
+  transition-duration: $toggle-ios-transition-duration;
+
+  .list-header-ios {
+    &:after {
+      @extend .ion-ios-arrow-up:before;
+      right:               round($list-ios-header-padding-left / 2);
+      transition-duration: $toggle-ios-transition-duration;
+      }
+    }
+  }

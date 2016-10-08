@@ -1,24 +1,28 @@
+/*
+ * Don't forget to add `max-height` to the actual list,
+ * or there will be no animation.
+ */
 ion-list[collapsible] {
-  transition: height 300ms;
+  //max-height: 20rem;
+  overflow:   hidden;
+  transition: max-height ease-out, margin-bottom ease-out;
 
   &.collapsed {
-    margin:   0;
-    height:   4rem;
-    overflow: hidden;
+    margin-bottom:              0;
+    max-height:                 4rem !important;
+    transition-timing-function: ease-in, ease-in;
 
-    .list-header-md:after {
-      @extend .ion-md-arrow-dropdown:before;
+    ion-list-header:after {
+      transform: rotate(180deg);
       }
     }
 
-  .list-header-md {
-    &:after {
-      @extend .ionicons;
-      @extend .ion-md-arrow-dropup:before;
-      font-size: 2.4rem;
-      display:   block;
-      position:  absolute;
-      right:     $list-md-header-padding-left;
-      }
+  ion-list-header:after {
+    @extend .ionicons;
+    font-size:           2.4rem;
+    display:             block;
+    position:            absolute;
+    transition-property: transform;
     }
   }
+

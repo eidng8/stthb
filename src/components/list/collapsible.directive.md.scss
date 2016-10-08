@@ -1,0 +1,11 @@
+ion-list[collapsible] {
+  transition-duration: $toggle-md-transition-duration;
+
+  .list-header-md {
+    &:after {
+      @extend .ion-md-arrow-dropup:before;
+      right:               round($list-md-header-padding-left / 2);
+      transition-duration: $toggle-md-transition-duration;
+      }
+    }
+  }

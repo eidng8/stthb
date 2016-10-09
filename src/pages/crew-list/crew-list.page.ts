@@ -6,6 +6,7 @@ import {CrewProvider} from '../../providers/crew';
 import {CrewMember} from '../../models';
 import {Store} from '@ngrx/store';
 import {IAppState} from '../../ngrx';
+import {FilterPage} from '../filter/filter.page';
 
 export type TLists = {
   crew:CrewMember[]
@@ -80,6 +81,11 @@ export class CrewListPage extends PageBase
      this.sso = 'Sort by name';
      this.currentGroup = this.groups[0];
      */
+  }
+
+  public setFilter():void
+  {
+    this.navCtl.push(FilterPage);
   }
 
   /*

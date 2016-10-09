@@ -1,49 +1,71 @@
+// tslint:disable:trailing-comma
 import {NgModule} from '@angular/core';
+import {HttpModule} from '@angular/http';
+import {EffectsModule} from '@ngrx/effects';
+import {StoreModule} from '@ngrx/store';
 import {IonicApp, IonicModule} from 'ionic-angular';
-import {Handbook} from './app.component';
-import {HomePage} from '../pages/home/home';
-import {TabsPage} from '../pages/tabs/tabs';
+import {CrewService} from '../services';
+import {CrewActions, reducer, CrewEffects, FilterActions} from '../ngrx';
+import {HandbookApp} from './app.component';
+import {
+  HomePage,
+  TabsPage,
+  CrewListPage,
+  MissionCrewPage,
+  MissionListPage
+} from '../pages';
 import {DataService} from '../providers/data-service';
 import {CrewProvider} from '../providers/crew';
 import {MissionProvider} from '../providers/missions';
-import {TitleCase} from '../pipes/titlecase';
-import {Collapsible} from '../components/list/collapsible';
-import {SkillItem} from '../components/skill-item/skill-item';
-import {CrewItem} from '../components/crew-item/crew-item';
-import {MissionItem} from '../components/mission-item/mission-item';
-import {CrewList} from '../pages/crew-list/crew-list';
-import {MissionList} from '../pages/mission-list/mission-list';
-import {MissionCrew} from '../pages/mission-crew/mission-crew';
+import {TitleCasePipe} from '../pipes';
+import {
+  CollapsibleDirective,
+  SkillItemComponent,
+  CrewItemComponent,
+  MissionItemComponent
+} from '../components';
+import {FilterPage} from '../pages/filter/filter.page';
+// tslint:enable:trailing-comma
 
 @NgModule(
   {
     bootstrap:       [IonicApp],
     declarations:    [
-      TitleCase,
-      Collapsible,
-      SkillItem,
-      CrewItem,
-      MissionItem,
-      CrewList,
-      MissionList,
-      MissionCrew,
+      TitleCasePipe,
+      CollapsibleDirective,
+      SkillItemComponent,
+      CrewItemComponent,
+      MissionItemComponent,
+      FilterPage,
+      CrewListPage,
+      MissionCrewPage,
+      MissionListPage,
       HomePage,
       TabsPage,
-      Handbook,
+      HandbookApp,
     ],
     entryComponents: [
-      CrewList,
-      MissionList,
-      MissionCrew,
+      FilterPage,
+      CrewListPage,
+      MissionCrewPage,
+      MissionListPage,
       HomePage,
       TabsPage,
-      Handbook,
+      HandbookApp,
     ],
-    imports:         [IonicModule.forRoot(Handbook)],
+    imports:         [
+      HttpModule,
+      IonicModule.forRoot(HandbookApp),
+      StoreModule.provideStore(reducer),
+      EffectsModule.run(CrewEffects),
+    ],
     providers:       [
+      CrewActions,
+      FilterActions,
       DataService,
       CrewProvider,
       MissionProvider,
+      CrewService,
     ],
   })
 export class AppModule

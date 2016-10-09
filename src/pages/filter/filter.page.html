@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Filters</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="filters-page">
+  <div *ngIf="filters | async">
+    <ion-list no-lines collapsible>
+      <ion-list-header>Rarity</ion-list-header>
+      <ion-item>
+        <ion-label>Common</ion-label>
+        <ion-checkbox checked="false"></ion-checkbox>
+        <ion-icon name="star" item-right></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-label>Uncommon</ion-label>
+        <ion-checkbox checked="true"></ion-checkbox>
+        <ion-icon name="star" item-right></ion-icon>
+        <ion-icon name="star" item-right></ion-icon>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Skills</ion-label>
+        <ion-select value="filters.skills" multiple="true">
+          <ion-option value="cmd" checked="true">cmd</ion-option>
+          <ion-option value="dip" checked="true">dip</ion-option>
+          <ion-option value="eng" checked="true">eng</ion-option>
+          <ion-option value="med" checked="true">med</ion-option>
+          <ion-option value="sci" checked="true">sci</ion-option>
+          <ion-option value="sec" checked="true">sec</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

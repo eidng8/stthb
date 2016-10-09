@@ -1,17 +1,19 @@
-import {Component, ViewChild} from '@angular/core';
+import {Store} from '@ngrx/store';
+import {Component, ViewChild, OnInit} from '@angular/core';
 import {Platform, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {TabsPage} from '../pages/tabs/tabs';
+import {CrewActions, IAppState} from '../ngrx';
+import {TabsPage, MissionListPage, CrewListPage} from '../pages';
 import {DataService} from '../providers/data-service';
-import {MissionList} from '../../.tmp/pages/mission-list/mission-list';
-import {CrewList} from '../pages/crew-list/crew-list';
 
+
+declare var cordova:any;
 
 @Component(
   {
     templateUrl: 'app.component.html',
   })
-export class Handbook
+export class HandbookApp implements OnInit
 {
   @ViewChild(Nav) public nav:Nav;
 
@@ -21,7 +23,9 @@ export class Handbook
   private platform:Platform;
   private db:DataService;
 
-  public constructor(platform:Platform, db:DataService)
+  public constructor(
+    platform:Platform, db:DataService, private _store:Store<IAppState>,
+    private _crewActions:CrewActions)
   {
     this.platform = platform;
     this.db = db;
@@ -29,10 +33,10 @@ export class Handbook
     // used for an example of ngFor and navigation
     this.pages = [
       {
-        component: CrewList,
+        component: CrewListPage,
         title:     'Crew List',
       }, {
-        component: MissionList,
+        component: MissionListPage,
         title:     'Mission List',
       },
     ];
@@ -48,6 +52,11 @@ export class Handbook
           StatusBar.styleDefault();
         }
       });
+  }
+
+  public ngOnInit():void
+  {
+    this._store.dispatch(this._crewActions.loadCrew());
   }
 
   public openPage(page:any):void

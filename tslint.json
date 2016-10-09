@@ -107,7 +107,7 @@
     ],
     "jsdoc-format": true,
     "no-consecutive-blank-lines": false,
-    "no-constructor-vars": true,
+    "no-constructor-vars": false,
     "one-line": [
       false
     ],

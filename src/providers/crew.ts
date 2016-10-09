@@ -2,12 +2,16 @@
  * Created by JC on 2016-09-09.
  */
 
+import 'rxjs/add/observable/of';
+import 'rxjs/add/observable/fromPromise';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 import {Injectable} from '@angular/core';
+import {Actions} from '@ngrx/effects';
 import {DataService} from './data-service';
-import {IDBCrew} from '../interfaces/db/crew';
-import {EDocumentTypes, IRow} from '../interfaces/db/document';
 import {ProviderBase} from './base';
-import {CrewMember} from '../models/crew';
+import {CrewMember} from '../models';
 import {SKILLS} from '../interfaces/crew';
 
 
@@ -17,6 +21,27 @@ import {SKILLS} from '../interfaces/crew';
  */
 export class CrewProvider extends ProviderBase
 {
+
+  // noinspection JSUnusedGlobalSymbols
+  /*
+   @Effect() public load$:Observable<Action>
+   = this.actions$
+   .ofType(AppActions.LOAD_CREW)
+   .switchMap(
+   () =>
+   {
+   return Observable
+   .fromPromise(this.db.crew({include_docs: true}))
+   .map(crew => AppActions.loadCrewDone(crew))
+   .catch(
+   () =>
+   {
+   return Observable.of(
+   {type: AppActions.LOAD_CREW_FAILED});
+   });
+   });
+   */
+
   /**
    * List of all crew members
    */
@@ -50,34 +75,38 @@ export class CrewProvider extends ProviderBase
   /**
    * Load all crew data from database.
    * @param db
+   * @param actions$
    */
-  public constructor(db:DataService)
+  public constructor(db:DataService, private actions$:Actions)
   {
     super(db);
-    db.crew({include_docs: true})
-      .then(
-        data =>
-        {
-          let mem:IDBCrew;
-          data.rows.forEach(
-            (row:IRow, idx:number) =>
-            {
-              mem = <IDBCrew>row.doc[EDocumentTypes.crew];
-              this.crew.push(new CrewMember(mem));
-              this.idxNames[mem.name] = idx;
-            });
 
-          this.buildIndexes();
-        })
-      .catch(
-        err =>
-        {
-          console.log('query error', err);
-          if(err.stack)
-          {
-            console.log(err.stack);
-          }
-        });
+    /*
+     db.crew({include_docs: true})
+     .then(
+     data =>
+     {
+     let mem:IDBCrew;
+     data.rows.forEach(
+     (row:IRow, idx:number) =>
+     {
+     mem = <IDBCrew>row.doc[EDocumentTypes.crew];
+     this.crew.push(new CrewMember(mem));
+     this.idxNames[mem.name] = idx;
+     });
+
+     this.buildIndexes();
+     })
+     .catch(
+     err =>
+     {
+     console.log('query error', err);
+     if(err.stack)
+     {
+     console.log(err.stack);
+     }
+     });
+     */
   }
 
   /**

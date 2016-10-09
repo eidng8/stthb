@@ -35,6 +35,7 @@
     "karma-phantomjs-launcher": "^1.0.2",
     "karma-rollup-plugin": "^0.2.4",
     "karma-sourcemap-loader": "^0.3.7",
+    "ngrx-store-logger": "^0.1.7",
     "remap-istanbul": "^0.6.4",
     "typescript": "^2.0.3"
   },

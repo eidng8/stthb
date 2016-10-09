@@ -2,8 +2,6 @@
  * Created by JC on 2016-07-09.
  */
 
-import {IBaseData} from './base-data';
-
 /**
  * List of skill abbreviations
  */
@@ -27,20 +25,4 @@ export interface ISkills
   med?:number[][];
   sci?:number[][];
   sec?:number[][];
-}
-
-/**
- * Crew member data. It was originally called ICrew, and changed to current
- * name to avoid confusion. The word `crew` is plural while this piece of data
- * represents only a single crew member.
- */
-export interface ICrewMember extends IBaseData
-{
-  uri:string;
-  picture:string;
-  character:string;
-  stars:number;
-  skills:ISkills;
-  race:string;
-  traits:string[];
 }

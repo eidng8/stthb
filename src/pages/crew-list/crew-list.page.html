@@ -4,11 +4,11 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Crew
-      <small>({{ (lists | async)?.length }} in total)</small>
+      <small>({{ (filters | async)?.length }} in total)</small>
     </ion-title>
     <ion-buttons end>
-      <button ion-button icon-only>
-        <ion-icon name="funnel"></ion-icon>
+      <button ion-button icon-only (click)="setFilter()">
+        <ion-icon name="funnel" md="ios-funnel"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>

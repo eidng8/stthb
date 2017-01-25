@@ -42,6 +42,8 @@ UserInterfaceState.xcuserstate
 # Coverege folders
 config/coverage
 coverage/*
+!coverage/protractor
+
 dist/
 tmp/
 temp/

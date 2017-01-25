@@ -8,7 +8,9 @@ import {PageBase} from '../base';
   })
 export class HomePage extends PageBase
 {
-  public constructor(nav:NavController)
+  message:string = 'Welcome';
+
+  constructor(nav:NavController)
   {
     super(nav);
   }

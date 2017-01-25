@@ -50,6 +50,12 @@
   dependencies:
     tsickle "^0.1.7"
 
+"@angular/tsc-wrapped@^0.5.1":
+  version "0.5.1"
+  resolved "@angular-tsc-wrapped-0.5.1.tgz#7a69bec999eef41903dddaaccdc862cfcface52c"
+  dependencies:
+    tsickle "^0.2"
+
 "@ionic/app-scripts@1.0.0":
   version "1.0.0"
   resolved "@ionic-app-scripts-1.0.0.tgz#58d7efa11cf3615b65de48d4e44e5e1016d55cf1"
@@ -236,13 +242,9 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
   version "1.0.2"
   resolved alphanum-sort-1.0.2.tgz#97a1119649b211ad33691d9f9f486a8ec9fbe0a3
 
-amdefine@1.0.0:
+amdefine@1.0.0, amdefine@>=0.0.4:
   version "1.0.0"
   resolved amdefine-1.0.0.tgz#fd17474700cb5cc9c2b709f0be9d23ce3c198c33
-
-amdefine@>=0.0.4:
-  version "1.0.1"
-  resolved amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5
 
 angular2-template-loader@^0.6.0:
   version "0.6.0"
@@ -419,13 +421,13 @@ autoprefixer@6.4.1, autoprefixer@^6.3.1:
     postcss "^5.1.2"
     postcss-value-parser "^3.2.3"
 
-awesome-typescript-loader@^2.2.1:
-  version "2.2.4"
-  resolved awesome-typescript-loader-2.2.4.tgz#4185d60c035c25515f9c2a747fa5f69b2a001e9e
+awesome-typescript-loader@^3.0.0-beta.18:
+  version "3.0.0-beta.18"
+  resolved awesome-typescript-loader-3.0.0-beta.18.tgz#7a72b1cca9a2dca59794ab2a4133f779a3a221e7
   dependencies:
     colors "^1.1.2"
-    enhanced-resolve "^2.2.2"
-    loader-utils "^0.2.6"
+    enhanced-resolve "^2.3.0"
+    loader-utils "^0.2.16"
     lodash "^4.13.1"
     object-assign "^4.1.0"
     source-map-support "^0.4.0"
@@ -1543,7 +1545,7 @@ engine.io@1.8.2:
     engine.io-parser "1.3.2"
     ws "1.1.1"
 
-enhanced-resolve@^2.2.2:
+enhanced-resolve@^2.3.0:
   version "2.3.0"
   resolved enhanced-resolve-2.3.0.tgz#a115c32504b6302e85a76269d7a57ccdd962e359
   dependencies:
@@ -2887,7 +2889,7 @@ loader-runner@^2.2.0:
   version "2.2.0"
   resolved loader-runner-2.2.0.tgz#824c1b699c4e7a2b6501b85902d5b862bf45b3fa
 
-loader-utils@0.x.x, loader-utils@^0.2.15, loader-utils@^0.2.16, loader-utils@^0.2.5, loader-utils@^0.2.6, loader-utils@^0.2.7, loader-utils@~0.2.2:
+loader-utils@0.x.x, loader-utils@^0.2.15, loader-utils@^0.2.16, loader-utils@^0.2.5, loader-utils@^0.2.7, loader-utils@~0.2.2:
   version "0.2.16"
   resolved loader-utils-0.2.16.tgz#f08632066ed8282835dff88dfb52704765adee6d
   dependencies:
@@ -3873,22 +3875,13 @@ postcss-zindex@^2.0.1:
     postcss "^5.0.4"
     uniqs "^2.0.0"
 
-postcss@5.2.0:
+postcss@5.2.0, postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.1.2:
   version "5.2.0"
   resolved postcss-5.2.0.tgz#cdbee46b45abec245ed7ee8e905fc336c1dce2c9
   dependencies:
     js-base64 "^2.1.9"
     source-map "^0.5.6"
     supports-color "^3.1.2"
-
-postcss@^5.0.10, postcss@^5.0.11, postcss@^5.0.12, postcss@^5.0.13, postcss@^5.0.14, postcss@^5.0.16, postcss@^5.0.2, postcss@^5.0.4, postcss@^5.0.5, postcss@^5.0.6, postcss@^5.0.8, postcss@^5.1.2:
-  version "5.2.11"
-  resolved postcss-5.2.11.tgz#ff29bcd6d2efb98bfe08a022055ec599bbe7b761
-  dependencies:
-    chalk "^1.1.3"
-    js-base64 "^2.1.9"
-    source-map "^0.5.6"
-    supports-color "^3.2.3"
 
 prelude-ls@~1.1.2:
   version "1.1.2"
@@ -3998,7 +3991,7 @@ qjobs@^1.1.4:
   version "1.1.5"
   resolved qjobs-1.1.5.tgz#659de9f2cf8dcc27a1481276f205377272382e73
 
-qs@6.2.0:
+qs@6.2.0, qs@^6.2.0:
   version "6.2.0"
   resolved qs-6.2.0.tgz#3b7848c03c2dece69a9522b0fae8c4126d745f3b
 
@@ -4006,7 +3999,7 @@ qs@6.2.1:
   version "6.2.1"
   resolved qs-6.2.1.tgz#ce03c5ff0935bc1d9d69a9f14cbd18e568d67625
 
-qs@^6.2.0, qs@~6.3.0:
+qs@~6.3.0:
   version "6.3.0"
   resolved qs-6.3.0.tgz#f403b264f23bc01228c74131b407f18d5ea5d442
 
@@ -4626,7 +4619,7 @@ source-map-support@^0.3.1:
   dependencies:
     source-map "0.1.32"
 
-source-map-support@^0.4.0, source-map-support@~0.4.0:
+source-map-support@^0.4.0, source-map-support@^0.4.2, source-map-support@~0.4.0:
   version "0.4.10"
   resolved source-map-support-0.4.10.tgz#d7b19038040a14c0837a18e630a196453952b378
   dependencies:
@@ -4811,7 +4804,7 @@ supports-color@^2.0.0:
   version "2.0.0"
   resolved supports-color-2.0.0.tgz#535d045ce6b6363fa40117084629995e9df324c7
 
-supports-color@^3.1.0, supports-color@^3.1.2, supports-color@^3.2.3:
+supports-color@^3.1.0, supports-color@^3.1.2:
   version "3.2.3"
   resolved supports-color-3.2.3.tgz#65ac0504b3954171d8a64946b2ae3cbb8a5f54f6
   dependencies:
@@ -5006,12 +4999,28 @@ tsickle@^0.1.7:
     source-map "^0.4.2"
     source-map-support "^0.3.1"
 
+tsickle@^0.2:
+  version "0.2.4"
+  resolved tsickle-0.2.4.tgz#98f4837bf45eb142a90fec751f8e30c6a5bc7c06
+  dependencies:
+    minimist "^1.2.0"
+    mkdirp "^0.5.1"
+    source-map "^0.5.6"
+    source-map-support "^0.4.2"
+
 tslint-eslint-rules@1.5.0:
   version "1.5.0"
   resolved tslint-eslint-rules-1.5.0.tgz#8b244fb03bae0f219e278357ddcaafee81c19615
   dependencies:
     doctrine "^0.7.2"
     tslint "^3.15.1"
+
+tslint-eslint-rules@^3.2.3:
+  version "3.2.3"
+  resolved tslint-eslint-rules-3.2.3.tgz#e4ad7dd9071c8effdac9a2ea86b927c11a39dcf1
+  dependencies:
+    doctrine "^0.7.2"
+    tslint "^4.0.0"
 
 tslint-loader@^3.3.0:
   version "3.3.0"
@@ -5034,7 +5043,7 @@ tslint@3.15.1, tslint@^3.15.1:
     resolve "^1.1.7"
     underscore.string "^3.3.4"
 
-tslint@4.0.2:
+tslint@4.0.2, tslint@^4.0.0:
   version "4.0.2"
   resolved tslint-4.0.2.tgz#d43f24c0c1f826de7f3a097bb7808a8b4325feac
   dependencies:

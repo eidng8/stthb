@@ -34,7 +34,7 @@
     "docs": "typedoc --options typedoc.json --exclude '**/*+(e2e|spec|index).ts' ./src/",
     "release": "standard-version --no-verify",
     "lint": "tslint \"src/**/*.ts\" --exclude=src/**/*.d.ts",
-    "scss-lint": "scss-lint",
+    "scss-lint": "stylelint \"src/**/*.scss\"",
     "outdated": "npm outdated --depth 0",
     "postinstall": "webdriver-manager update"
   },
@@ -161,6 +161,7 @@
     "serve-static": "^1.11.1",
     "source-map-loader": "^0.1.6",
     "standard-version": "^4.0.0",
+    "stylelint": "^7.7.1",
     "to-string-loader": "^1.1.4",
     "ts-helpers": "^1.1.1",
     "ts-node": "^2.0.0",

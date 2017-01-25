@@ -1,0 +1,18 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "selector-type-no-unknown": [
+      true, {
+        "ignoreTypes": [
+          "ion-badge", "ion-card-header", "ion-card-title", "ion-content",
+          "ion-icon", "ion-item", "ion-list", "ion-list-header", "ion-navbar",
+          "ion-slide", "ion-slides", "ion-title", "ion-toolbar",
+          "md-input-container", "banner", "carousel", "cart", "main-menu",
+          "order-history", "order-history", "product-card", "product-detail",
+          "product-list", "product-quantity", "related-product", "search",
+          "top-bar"
+        ]
+      }
+    ]
+  }
+}

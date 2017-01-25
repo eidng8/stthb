@@ -1,12 +1,5 @@
-import {Observable} from 'rxjs';
 import {Component} from '@angular/core';
-import {NavController} from 'ionic-angular';
 import {PageBase} from '../base';
-import {CrewProvider} from '../../providers/crew';
-import {CrewMember} from '../../models';
-import {Store} from '@ngrx/store';
-import {IAppState} from '../../ngrx';
-import {FilterPage} from '../filter/filter.page';
 
 /*export type TLists = {
   crew:CrewMember[]

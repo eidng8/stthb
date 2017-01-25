@@ -4,9 +4,10 @@ import {HttpModule} from '@angular/http';
 import {IonicApp, IonicModule} from 'ionic-angular';
 import {HandbookApp} from './app.component';
 import {
-  HomePage,
-  TabsPage,
   CrewListPage,
+  HomePage,
+  MissionListPage,
+  TabsPage,
 } from '../pages';
 
 @NgModule(
@@ -14,12 +15,14 @@ import {
     bootstrap:       [IonicApp],
     declarations:    [
       CrewListPage,
+      MissionListPage,
       HomePage,
       TabsPage,
       HandbookApp,
     ],
     entryComponents: [
       CrewListPage,
+      MissionListPage,
       HomePage,
       TabsPage,
       HandbookApp,

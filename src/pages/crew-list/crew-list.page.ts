@@ -8,11 +8,11 @@ import {Store} from '@ngrx/store';
 import {IAppState} from '../../ngrx';
 import {FilterPage} from '../filter/filter.page';
 
-export type TLists = {
+/*export type TLists = {
   crew:CrewMember[]
   header?:string,
   skill?:string,
-}[];
+}[];*/
 
 @Component(
   {
@@ -20,7 +20,7 @@ export type TLists = {
   })
 export class CrewListPage extends PageBase
 {
-  public crew:CrewProvider;
+  /*public crew:CrewProvider;
   public groups:string[] = ['Alphabet', 'Skills', 'Stars', 'Traits'];
 
   public currentGroup:string = this.groups[0];
@@ -29,34 +29,34 @@ export class CrewListPage extends PageBase
 
   public lists:Observable<any>; // a TLists;
 
-  /**
+  /!**
    * Currently active skill filter, for skills tab
-   */
+   *!/
   public skillFilter:string = 'cmd';
 
-  /**
+  /!**
    * Currently active rarity filter, for stars tab
-   */
+   *!/
   public starFilter:number = 5;
 
-  /**
+  /!**
    * Currently active trait filter, for traits tab
-   */
+   *!/
   public traitFilter:string = 'Starfleet';
 
-  /**
+  /!**
    * All available skills, for skills tab
-   */
+   *!/
   public skills:string[];
 
-  /**
+  /!**
    * All skill names, for skills tab
-   */
+   *!/
   public skillNames:string[];
 
-  /**
+  /!**
    * Sort order
-   */
+   *!/
   public sso:string;
 
   public constructor(
@@ -65,28 +65,28 @@ export class CrewListPage extends PageBase
     super(nav);
     this.lists = this._store.select('crew');
 
-    /*
+    /!*
      this.crew = crew;
      this.traitList = crew.traits;
      this.tabAlphabet();
-     */
+     *!/
 
-    /*
+    /!*
      * Template only variables will generate the `unused variable` warning,
      * do initialization in constructor to prevent the warning
-     */
-    /*
+     *!/
+    /!*
      this.skills = SKILLS;
      this.skillNames = SKILL_NAMES;
      this.sso = 'Sort by name';
      this.currentGroup = this.groups[0];
-     */
+     *!/
   }
 
   public setFilter():void
   {
     this.navCtl.push(FilterPage);
-  }
+  }*/
 
   /*
    public switchTab(tab:string):void

@@ -1,13 +1,10 @@
-import {Store} from '@ngrx/store';
 import {Component, ViewChild, OnInit} from '@angular/core';
 import {Platform, Nav} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
-import {CrewActions, IAppState} from '../ngrx';
-import {TabsPage, MissionListPage, CrewListPage} from '../pages';
-import {DataService} from '../providers/data-service';
+import {TabsPage, CrewListPage} from '../pages';
 
 
-declare var cordova:any;
+declare const cordova:any;
 
 @Component(
   {
@@ -21,24 +18,22 @@ export class HandbookApp implements OnInit
   public pages:Array<{title:string, component:any}>;
 
   private platform:Platform;
-  private db:DataService;
 
   public constructor(
-    platform:Platform, db:DataService, private _store:Store<IAppState>,
-    private _crewActions:CrewActions)
+    platform:Platform, /*private _db:DataService, private _store:Store<IAppState>,
+    private _crewActions:CrewActions*/)
   {
     this.platform = platform;
-    this.db = db;
 
     // used for an example of ngFor and navigation
     this.pages = [
       {
         component: CrewListPage,
         title:     'Crew List',
-      }, {
+      },/* {
         component: MissionListPage,
         title:     'Mission List',
-      },
+      },*/
     ];
 
     platform.ready().then(
@@ -56,7 +51,7 @@ export class HandbookApp implements OnInit
 
   public ngOnInit():void
   {
-    this._store.dispatch(this._crewActions.loadCrew());
+    // this._store.dispatch(this._crewActions.loadCrew());
   }
 
   public openPage(page:any):void

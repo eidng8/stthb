@@ -35,7 +35,7 @@
     "lint": "tslint \"src/**/*.ts\" --exclude=src/**/*.d.ts",
     "scss-lint": "scss-lint",
     "outdated": "npm outdated --depth 0",
-    "post-install": "webdriver-manager update",
+    "post-install": "webdriver-manager update"
   },
   "betterScripts": {
     "dev": {

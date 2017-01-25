@@ -3,19 +3,46 @@
 
 .idea/
 .tmp/
+.versions/
+.vscode/
 node_modules/
-platforms/*/
-plugins/*/
+platforms/
+plugins/
 www/
+
+*.sublime-project
+*.sublime-workspace
 
 src/**/*.js
 src/**/*.d.ts
 tests/**/*.js
 tests/**/*.d.ts
 
+# Logs and trash
+*~
+npm-debug.log*
+*.sw[mnpcod]
 *.log
 *.swp
+*.tmp
 *.tmp.json
+log.txt
+$RECYCLE.BIN/
+tsconfig.tmp.json
 .DS_Store
 Thumbs.db
+UserInterfaceState.xcuserstate
 
+# Build folders
+.sass-cache/
+*.tmp.*
+
+# Coverege folders
+config/coverage
+coverage/
+dist/
+tmp/
+temp/
+
+# Doc
+doc/

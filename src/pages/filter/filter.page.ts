@@ -12,7 +12,7 @@ import {IAppState, FilterActions, IFilters} from '../../ngrx';
 @Component(
   {
     changeDetection: ChangeDetectionStrategy.OnPush,
-    templateUrl:     'filter.page.html',
+    templateUrl:     'filter.html',
   })
 export class FilterPage extends PageBase
 {

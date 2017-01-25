@@ -6,7 +6,7 @@ import {CrewProvider} from '../../providers/crew';
 
 @Component(
   {
-    templateUrl: 'mission-list.page.html',
+    templateUrl: 'mission-list.html',
   })
 export class MissionListPage
 {

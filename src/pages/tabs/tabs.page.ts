@@ -9,7 +9,7 @@ import {MissionListPage} from '../mission-list/mission-list.page';
 
 @Component(
   {
-    templateUrl: 'tabs.page.html',
+    templateUrl: 'tabs.html',
   })
 export class TabsPage
 {

@@ -16,7 +16,7 @@ export type TLists = {
 
 @Component(
   {
-    templateUrl: 'crew-list.page.html',
+    templateUrl: 'crew-list.html',
   })
 export class CrewListPage extends PageBase
 {

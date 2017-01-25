@@ -7,7 +7,7 @@ import {Component, Input} from '@angular/core';
 @Component(
   {
     selector:    'skill-item',
-    templateUrl: 'skill-item.component.html',
+    templateUrl: 'skill-item.html',
   })
 export class SkillItemComponent
 {

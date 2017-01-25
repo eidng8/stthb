@@ -8,7 +8,7 @@ import {CrewMember} from '../../models';
 @Component(
   {
     selector:    'crew-item',
-    templateUrl: 'crew-item.component.html',
+    templateUrl: 'crew-item.html',
   })
 export class CrewItemComponent
 {

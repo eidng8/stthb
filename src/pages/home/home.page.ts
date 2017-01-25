@@ -4,7 +4,7 @@ import {PageBase} from '../base';
 
 @Component(
   {
-    templateUrl: 'home.page.html',
+    templateUrl: 'home.html',
   })
 export class HomePage extends PageBase
 {

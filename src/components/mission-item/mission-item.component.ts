@@ -8,7 +8,7 @@ import {IMission} from '../../interfaces/db/mission';
 @Component(
   {
     selector:    'mission-item',
-    templateUrl: 'mission-item.component.html',
+    templateUrl: 'mission-item.html',
   })
 export class MissionItemComponent
 {

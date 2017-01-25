@@ -6,7 +6,7 @@ import {IMission} from '../../interfaces/db/mission';
 
 @Component(
   {
-    templateUrl: 'mission-crew.page.html',
+    templateUrl: 'mission-crew.html',
   })
 export class MissionCrewPage extends PageBase
 {

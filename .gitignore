@@ -17,6 +17,8 @@ src/**/*.js
 src/**/*.d.ts
 tests/**/*.js
 tests/**/*.d.ts
+!src/declarations.d.ts
+!src/service-worker.js
 
 # Logs and trash
 *~
@@ -39,7 +41,7 @@ UserInterfaceState.xcuserstate
 
 # Coverege folders
 config/coverage
-coverage/
+coverage/*
 dist/
 tmp/
 temp/

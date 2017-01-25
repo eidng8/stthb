@@ -11,7 +11,7 @@ declare var cordova:any;
 
 @Component(
   {
-    templateUrl: 'app.component.html',
+    templateUrl: 'app.html',
   })
 export class HandbookApp implements OnInit
 {

@@ -9,8 +9,11 @@
   <meta name="msapplication-tap-highlight" content="no">
 
   <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
-  <link rel="manifest" href="assets/manifest.json">
+  <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#4e8ef7">
+
+  <!-- cordova.js required for cordova apps -->
+  <script src="cordova.js"></script>
 
   <!-- un-comment this code to enable service worker
   <script>
@@ -23,25 +26,11 @@
 
   <link href="build/main.css" rel="stylesheet">
 
-  <!-- PouchDB
-    I don't really know how to properly work with PouchDB yet.
-    Though @types/pouchdb exists, plugins don't (e.g. pouchdb-find).
-    After importing PouchDB from @types, there are still compile time errors,
-    not sure if it's rollup specific. The errors are (abbreviated):
-    1. js-extend doesn't export 'extend';
-    2. 'events' is not defined, and hence, EventEmitter.
-   -->
-  <script src="assets/pouchdb-6.0.6.min.js"></script>
-  <script src="assets/pouchdb-find-0.10.3.min.js"></script>
-
 </head>
 <body>
 
 <!-- Ionic's root component and where the app will load -->
 <ion-app></ion-app>
-
-<!-- cordova.js required for cordova apps -->
-<script src="cordova.js"></script>
 
 <!-- The polyfills js is generated during the build process -->
 <script src="build/polyfills.js"></script>

@@ -22,6 +22,7 @@
     "build-dev": "bnr build-dev",
     "test": "bnr test",
     "test:watch": "bnr test-watch",
+    "protractor": "protractor",
     "e2e": "node sh/e2e.js",
     "e2e:interactive": "node sh/e2e.js --elementExplorer",
     "ionic:serve": "ionic-app-scripts serve",

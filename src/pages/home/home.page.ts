@@ -1,3 +1,8 @@
+/*
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
 import {Component} from '@angular/core';
 import {NavController} from 'ionic-angular';
 import {PageBase} from '../base';
@@ -6,12 +11,10 @@ import {PageBase} from '../base';
   {
     templateUrl: 'home.html',
   })
-export class HomePage extends PageBase
-{
-  message:string = 'Welcome';
+export class HomePage extends PageBase {
+  message: string = 'Welcome';
 
-  constructor(nav:NavController)
-  {
+  constructor(nav: NavController) {
     super(nav);
   }
 }

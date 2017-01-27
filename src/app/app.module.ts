@@ -3,12 +3,7 @@ import {NgModule} from '@angular/core';
 import {HttpModule} from '@angular/http';
 import {IonicApp, IonicModule} from 'ionic-angular';
 import {HandbookApp} from './app.component';
-import {
-  CrewListPage,
-  HomePage,
-  MissionListPage,
-  TabsPage,
-} from '../pages';
+import {CrewListPage, HomePage, MissionListPage, TabsPage} from '../pages';
 
 @NgModule(
   {
@@ -33,9 +28,7 @@ import {
       // StoreModule.provideStore(reducer),
       // EffectsModule.run(CrewEffects),
     ],
-    providers:       [
-    ],
+    providers:       [],
   })
-export class AppModule
-{
+export class AppModule {
 }

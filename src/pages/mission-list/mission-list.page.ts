@@ -1,33 +1,37 @@
+/*
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
 import {Component} from '@angular/core';
 
 @Component(
   {
     templateUrl: 'mission-list.html',
   })
-export class MissionListPage
-{
-/*
-  public groups:string[];
-  public currentGroup:string;
-  public crew:CrewProvider;
-  public missions:MissionProvider;
+export class MissionListPage {
+  /*
+   public groups:string[];
+   public currentGroup:string;
+   public crew:CrewProvider;
+   public missions:MissionProvider;
 
-  private nav:NavController;
+   private nav:NavController;
 
-  public constructor(
-    nav:NavController, missions:MissionProvider, crew:CrewProvider)
-  {
-    this.nav = nav;
-    this.crew = crew;
-    this.missions = missions;
+   public constructor(
+   nav:NavController, missions:MissionProvider, crew:CrewProvider)
+   {
+   this.nav = nav;
+   this.crew = crew;
+   this.missions = missions;
 
-    this.groups = [
-      `Away (${this.missions.count()})`,
-      `Cadet (${this.missions.count(EMissionTypes.cadet)})`,
-    ];
-    this.currentGroup = this.groups[0];
-  }
-*/
+   this.groups = [
+   `Away (${this.missions.count()})`,
+   `Cadet (${this.missions.count(EMissionTypes.cadet)})`,
+   ];
+   this.currentGroup = this.groups[0];
+   }
+   */
 
   /*
    // tslint:disable-next-line:no-unused-variable

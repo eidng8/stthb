@@ -1,7 +1,13 @@
-import {Component, ViewChild, OnInit} from '@angular/core';
-import {Platform, Nav} from 'ionic-angular';
-import {StatusBar} from 'ionic-native';
-import {TabsPage, CrewListPage} from '../pages';
+/*
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
+
+import { Component, ViewChild, OnInit } from '@angular/core';
+import { Platform, Nav } from 'ionic-angular';
+import { StatusBar } from 'ionic-native';
+import { TabsPageComponent, CrewListPage } from '../pages';
 
 declare const cordova: any;
 
@@ -9,10 +15,10 @@ declare const cordova: any;
   {
     templateUrl: 'app.html',
   })
-export class HandbookApp implements OnInit {
+export class HandbookAppComponent implements OnInit {
   @ViewChild(Nav) public nav: Nav;
 
-  public rootPage: any = TabsPage;
+  public rootPage: any = TabsPageComponent;
   public pages: Array<{title: string, component: any}>;
 
   private platform: Platform;

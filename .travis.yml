@@ -13,6 +13,7 @@ addons:
 
 language: node_js
 node_js: 6
+cache: node_modules
 #cache: yarn
 
 before_install:

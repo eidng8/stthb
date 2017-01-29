@@ -42,5 +42,4 @@ describe('Home Page:', () => {
   it('Should has welcome message', () => {
     expect(comp.message).toEqual('Welcome');
   });
-  ``
 });

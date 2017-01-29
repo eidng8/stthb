@@ -13,7 +13,7 @@ addons:
 
 language: node_js
 node_js: 6
-cache: yarn
+#cache: yarn
 
 before_install:
   - nvm install node
@@ -31,6 +31,8 @@ before_script:
 
 script:
   - npm test      # unit tests
+  - ionic platform add android
+  - ionic build --prod
   - npm run e2e   # run e2e tests against ionic
 
 after_success:

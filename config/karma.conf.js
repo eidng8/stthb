@@ -1,3 +1,9 @@
+/*
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
+
 module.exports = (config) => {
 
     var testWebpackConfig = require('./webpack.test.js')({});
@@ -59,6 +65,7 @@ module.exports = (config) => {
 
         configuration.remapCoverageReporter = {
             'text-summary': null,
+          'lcovonly': './coverage/lcov',
             html: './coverage/istanbul'
         };
     }

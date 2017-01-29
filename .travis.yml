@@ -11,13 +11,16 @@ addons:
       - lib32stdc++6
       - lib32z1
 
+cache: yarn
+
 before_install:
   - nvm install node
   - nvm use node
-  - npm install -g --no-progress cordova eslint ionic karma-cli node-sass phantomjs-prebuilt protractor stylelint tslint typescript
+  - npm install -g --no-progress yarn
+  - yarn global add --no-progress codeclimate-test-reporter cordova eslint ionic karma-cli node-sass phantomjs-prebuilt protractor stylelint tslint typescript
   - ionic state clear
 
-install: npm install --no-progress
+install: yarn --no-progress
 
 before_script:
   - export DISPLAY=:99.0
@@ -25,8 +28,7 @@ before_script:
 
 script:
   - npm test      # unit tests
-  - npm run e2e   # run e2e tests against ionic
+#  - npm run e2e   # run e2e tests against ionic
 
-#after_success:
-  # Send coverage info off to cloud ppl
-  #- ./node_modules/.bin/codecov
+after_success:
+  - codeclimate-test-reporter < coverage/lcov

@@ -3,13 +3,13 @@
  *  @license https://creativecommons.org/licenses/by-sa/4.0/
  *  @link    https://github.com/eidng8/stthb
  */
-import {Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component(
   {
     templateUrl: 'mission-list.html',
   })
-export class MissionListPage {
+export class MissionListPageComponent {
   /*
    public groups:string[];
    public currentGroup:string;

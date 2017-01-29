@@ -5,40 +5,29 @@
 // Don't forget to install xml2js using npm
 // `$ npm install xml2js`
 
-var fs = require('fs');
-var xml2js = require('xml2js');
-var packageJson = require('../../package.json');
+const fs = require('fs');
+const xml2js = require('xml2js-es6-promise');
+const packageJson = require('../../package.json');
 
 // Read config.xml
-fs.readFile('config.xml', 'utf8', function(err, data) {
-    if(err) {
-        return console.log(err);
-    }
-
-    // Get XML
-    var xml = data;
-
+fs.readFile('config.xml', 'utf8')
+  .then(data => {
     // Parse XML to JS Obj
-    xml2js.parseString(xml, function (err, result) {
-        if(err) {
-            return console.log(err);
-        }
-        // Get JS Obj
-        var obj = result;
-        obj['widget']['$']['version'] = packageJson.version;
-        // console.log(obj);
-        // Build XML from JS Obj
-        var builder = new xml2js.Builder();
-        var xml = builder.buildObject(obj);
+    xml2js.parseString(data)
+          .then(result => {
+            // noinspection JSUnresolvedVariable
+            result.widget.$.version = packageJson.version;
+            // console.log(obj);
 
-        // Write config.xml
-        fs.writeFile('config.xml', xml, function(err) {
-            if(err) {
-                return console.log(err);
-            }
+            // Build XML from JS Obj
+            const builder = new xml2js.Builder();
+            const xml = builder.buildObject(result);
 
-            //console.log('Build number successfully incremented');
-        });
-
-    });
-});
+            // Write config.xml
+            fs.writeFile('config.xml', xml)
+              .then(() => console.log('Build number successfully incremented'))
+              .catch(err => console.error(err));
+          })
+          .catch(err => console.error(err));
+  })
+  .catch(err => console.error(err));

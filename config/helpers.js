@@ -1,11 +1,13 @@
-var path = require('path');
+/*
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
 
 // Helper functions
-var ROOT = path.resolve(__dirname, '..');
 
-function root(args) {
-    args = Array.prototype.slice.call(arguments, 0);
-    return path.join.apply(path, [ROOT].concat(args));
-}
+const path = require('path');
+const ROOT = path.resolve(__dirname, '..');
 
-exports.root = root;
+exports.root = (...args) =>
+  path.join(...[ROOT].concat(Array.prototype.slice.call(args, 0)));

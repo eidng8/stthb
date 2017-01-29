@@ -1,0 +1,11 @@
+# Created by .ignore support plugin (hsz.mobi)
+.*/
+coverage/
+node_modules/
+platforms/
+plugins/
+res/
+resources/
+www/
+
+*.min.js

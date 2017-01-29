@@ -3,16 +3,15 @@
  *  @license https://creativecommons.org/licenses/by-sa/4.0/
  *  @link    https://github.com/eidng8/stthb
  */
-
 // tslint:disable:trailing-comma
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { HandbookAppComponent } from './app.component';
 import {
-  CrewListPage,
+  CrewListPageComponent,
   HomePageComponent,
-  MissionListPage,
+  MissionListPageComponent,
   TabsPageComponent
 } from '../pages';
 
@@ -20,15 +19,15 @@ import {
   {
     bootstrap:       [IonicApp],
     declarations:    [
-      CrewListPage,
-      MissionListPage,
+      CrewListPageComponent,
+      MissionListPageComponent,
       HomePageComponent,
       TabsPageComponent,
       HandbookAppComponent,
     ],
     entryComponents: [
-      CrewListPage,
-      MissionListPage,
+      CrewListPageComponent,
+      MissionListPageComponent,
       HomePageComponent,
       TabsPageComponent,
       HandbookAppComponent,

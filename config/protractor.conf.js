@@ -1,72 +1,92 @@
+/*
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
+
+/* eslint-env jasmine, protractor */
+
 const helpers = require('./helpers');
 const SSReporter = require('protractor-jasmine2-screenshot-reporter');
 
-const screenshotReporter = new SSReporter ({
-    dest: 'coverage/protractor',
-    cleanDestination: true,
-    pathBuilder: function(currentSpec, suites, browserCapabilities) {
-        return browserCapabilities.get('browserName') + '/' + currentSpec.fullName;
-    },
-    filename: 'e2e-report.html',
-    reportTitle: 'E2E Tests Report'
+// noinspection JSUnusedLocalSymbols
+const screenShotReporter = new SSReporter({
+  cleanDestination: true,
+  dest: 'coverage/protractor',
+  filename: 'e2e-report.html',
+  pathBuilder(currentSpec, suites, browserCapabilities) {
+    return `${browserCapabilities.get('browserName')}/${currentSpec.fullName}`;
+  },
+  reportTitle: 'E2E Tests Report'
 });
 
 exports.config = {
-    capabilities: {
-        browserName: 'chrome',
-        chromeOptions: {
-            args: ['--disable-web-security', '--window-size=1024,768', 'no-sandbox']
-        }
-    },
-    framework: 'jasmine2',
-    specs: [
-        helpers.root('src/**/**.e2e.ts'),
-        helpers.root('src/**/*.e2e.ts')
-    ],
-    directConnect: true,
-    jasmineNodeOpts: {
-        showColors: true, // If true, print colors to the terminal.
-        showTiming: true,
-        defaultTimeoutInterval: 30000, // Default time to wait in ms before a config fails.
-        isVerbose: false,
-        includeStackTrace: false
-    },
-    baseUrl: 'http://localhost:8090',
-    allScriptsTimeout: 30000,
-    onPrepare: function () {
-        var SpecReporter = require('jasmine-spec-reporter').SpecReporter;
-        // add jasmine spec reporter
-        jasmine.getEnv().addReporter(new SpecReporter({displayStacktrace: true}));
-        // Add screenshot reporter
-        jasmine.getEnv().addReporter(screenshotReporter);
-        browser.ignoreSynchronization = false;
-        browser.driver.manage().window().setSize(414, 736);
-    },
-    beforeLaunch: function() {
-        require('ts-node').register({
-            project: '.',
-            compilerOptions: {
-                module: 'commonjs'
-            },
-            disableWarnings: true,
-            fast: true
-        });
+  afterLaunch(exitCode) {
+    return new Promise(resolve =>
+      screenShotReporter.afterLaunch(resolve.bind(this, exitCode)));
+  },
+  allScriptsTimeout: 30000,
+  baseUrl: 'http://localhost:8090',
+  beforeLaunch() {
+    require('ts-node').register(
+      {
+        compilerOptions: {
+          module: 'commonjs'
+        },
+        disableWarnings: true,
+        fast: true,
+        project: '.'
+      });
 
-        return new Promise(function(resolve){
-            screenshotReporter.beforeLaunch(resolve);
-        });
-    },
-    afterLaunch: function(exitCode) {
-        return new Promise(function(resolve){
-            screenshotReporter.afterLaunch(resolve.bind(this, exitCode));
-        });
-    },
-    /**
-     * Angular 2 configuration
-     *
-     * useAllAngular2AppRoots: tells Protractor to wait for any angular2 apps on the page instead of just the one matching
-     * `rootEl`
-     *
-     */
-    useAllAngular2AppRoots: true
+    return new Promise(resolve => {
+      screenShotReporter.beforeLaunch(resolve);
+    });
+  },
+  capabilities: {
+    browserName: 'chrome',
+    chromeOptions: {
+      args: ['--disable-web-security', '--window-size=1024,768', 'no-sandbox']
+    }
+  },
+  directConnect: true,
+  framework: 'jasmine2',
+  jasmineNodeOpts: {
+    defaultTimeoutInterval: 30000, // Default time to wait in ms before a
+                                   // config fails.
+    includeStackTrace: false,
+    isVerbose: false,
+    showColors: true, // If true, print colors to the terminal.
+    showTiming: true
+  },
+  onPrepare () {
+    // noinspection NpmUsedModulesInstalled, JSUnresolvedVariable
+    const SpecReporter = require('jasmine-spec-reporter').SpecReporter;
+    // add jasmine spec reporter
+    // noinspection JSUnresolvedVariable, JSUnresolvedFunction
+    jasmine.getEnv().addReporter(new SpecReporter({
+      displayStacktrace: true
+    }));
+    // Add screen shot reporter
+    // noinspection JSUnresolvedVariable, JSUnresolvedFunction
+    jasmine.getEnv().addReporter(screenShotReporter);
+    // noinspection JSUnresolvedVariable
+    browser.ignoreSynchronization = false;
+    // noinspection JSUnresolvedVariable, JSUnresolvedFunction, JSValidateTypes
+    browser.driver.manage().window()
+           .setSize(414, 736);
+  },
+  specs: [
+    helpers.root('src/**/**.e2e.ts'),
+    helpers.root('src/**/*.e2e.ts')
+  ],
+
+  /**
+   * Angular 2 configuration
+   *
+   * useAllAngular2AppRoots: tells Protractor to wait for any angular2 apps on
+   * the page instead of just the one matching
+   * `rootEl`
+   *
+   */
+  useAllAngular2AppRoots: true
 };

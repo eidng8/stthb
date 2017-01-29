@@ -1,4 +1,10 @@
 /*
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
+
+/*
  * When testing with webpack and ES6, we have to do some extra
  * things to get testing to work right. Because we are gonna write tests
  * in ES6 too, we have to compile those as well. That's handled in
@@ -10,6 +16,8 @@
 Error.stackTraceLimit = Infinity;
 
 require('core-js/client/shim');
+
+// noinspection NpmUsedModulesInstalled
 require('reflect-metadata');
 
 // Typescript emit helpers polyfill
@@ -26,12 +34,13 @@ require('zone.js/dist/fake-async-test');
 // RxJS
 require('rxjs/Rx');
 
-var testing = require('@angular/core/testing');
-var browser = require('@angular/platform-browser-dynamic/testing');
+const testing = require('@angular/core/testing');
+const browser = require('@angular/platform-browser-dynamic/testing');
 
+// noinspection JSUnresolvedFunction, JSUnresolvedVariable
 testing.TestBed.initTestEnvironment(
-    browser.BrowserDynamicTestingModule,
-    browser.platformBrowserDynamicTesting()
+  browser.BrowserDynamicTestingModule,
+  browser.platformBrowserDynamicTesting()
 );
 
 /*
@@ -43,7 +52,7 @@ testing.TestBed.initTestEnvironment(
  * any file that ends with spec.ts and get its path. By passing in true
  * we say do this recursively
  */
-var testContext = require.context('../src', true, /\.spec\.ts/);
+const testContext = require.context('../src', true, /\.spec\.ts/);
 
 /*
  * get all the files, for each file, call the context function
@@ -51,8 +60,9 @@ var testContext = require.context('../src', true, /\.spec\.ts/);
  * loop and require those spec files here
  */
 function requireAll(requireContext) {
-    return requireContext.keys().map(requireContext);
+  return requireContext.keys().map(requireContext);
 }
 
 // requires and returns all modules that match
-var modules = requireAll(testContext);
+// noinspection JSUnusedLocalSymbols
+const modules = requireAll(testContext); // eslint-disable-line no-unused-vars

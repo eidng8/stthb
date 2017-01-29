@@ -6,11 +6,10 @@
 
 
 'use strict';
+
 importScripts('./build/sw-toolbox.js');
 
-self.toolbox.options.cache = {
-  name: 'ionic-cache'
-};
+self.toolbox.options.cache = {name: 'ionic-cache'};
 
 // pre-cache our key assets
 self.toolbox.precache(

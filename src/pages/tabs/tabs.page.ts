@@ -3,11 +3,10 @@
  *  @license https://creativecommons.org/licenses/by-sa/4.0/
  *  @link    https://github.com/eidng8/stthb
  */
-
 import { Component } from '@angular/core';
 import { HomePageComponent } from '../home/home.page';
-import { CrewListPage } from '../crew-list/crew-list.page';
-import { MissionListPage } from '../mission-list/mission-list.page';
+import { CrewListPageComponent } from '../crew-list/crew-list.page';
+import { MissionListPageComponent } from '../mission-list/mission-list.page';
 
 @Component(
   {
@@ -23,7 +22,7 @@ export class TabsPageComponent {
     // this tells the tabs component which Pages
     // should be each tab's root Page
     this.home = HomePageComponent;
-    this.crew = CrewListPage;
-    this.missions = MissionListPage;
+    this.crew = CrewListPageComponent;
+    this.missions = MissionListPageComponent;
   }
 }

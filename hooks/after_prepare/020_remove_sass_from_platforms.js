@@ -1,19 +1,20 @@
 #!/usr/bin/env node
 
 /**
- * After prepare, files are copied to the platforms/ios and platforms/android folders.
- * Lets clean up some of those files that arent needed with this hook.
+ * After prepare, files are copied to the platforms/ios and platforms/android
+ * folders. Lets clean up some of those files that parent needed with this hook.
  */
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
 function deleteFolderRecursive(removePath) {
   if (fs.existsSync(removePath)) {
-    fs.readdirSync(removePath).forEach(function(file) {
-      var curPath = path.join(removePath, file);
+    fs.readdirSync(removePath).forEach(file => {
+      const curPath = path.join(removePath, file);
       if (fs.lstatSync(curPath).isDirectory()) { // recurse
         deleteFolderRecursive(curPath);
-      } else { // delete file
+      } else {
+        // delete file
         fs.unlinkSync(curPath);
       }
     });
@@ -21,8 +22,10 @@ function deleteFolderRecursive(removePath) {
   }
 }
 
-var iosPlatformsDir = path.resolve(__dirname, '../../platforms/ios/www/lib/ionic/scss');
-var androidPlatformsDir = path.resolve(__dirname, '../../platforms/android/assets/www/lib/ionic/scss');
+const iosPlatformsDir = path.resolve(
+  __dirname, '../../platforms/ios/www/lib/ionic/scss');
+const androidPlatformsDir = path.resolve(
+  __dirname, '../../platforms/android/assets/www/lib/ionic/scss');
 
 deleteFolderRecursive(iosPlatformsDir);
 deleteFolderRecursive(androidPlatformsDir);

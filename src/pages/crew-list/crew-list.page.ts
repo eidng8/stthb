@@ -3,8 +3,8 @@
  *  @license https://creativecommons.org/licenses/by-sa/4.0/
  *  @link    https://github.com/eidng8/stthb
  */
-import {Component} from '@angular/core';
-import {PageBase} from '../base';
+import { Component } from '@angular/core';
+import { PageBase } from '../base';
 
 /*export type TLists = {
  crew:CrewMember[]
@@ -16,7 +16,7 @@ import {PageBase} from '../base';
   {
     templateUrl: 'crew-list.html',
   })
-export class CrewListPage extends PageBase {
+export class CrewListPageComponent extends PageBase {
   /*public crew:CrewProvider;
    public groups:string[] = ['Alphabet', 'Skills', 'Stars', 'Traits'];
 

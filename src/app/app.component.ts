@@ -3,11 +3,10 @@
  *  @license https://creativecommons.org/licenses/by-sa/4.0/
  *  @link    https://github.com/eidng8/stthb
  */
-
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
-import { TabsPageComponent, CrewListPage } from '../pages';
+import { TabsPageComponent, CrewListPageComponent } from '../pages';
 
 declare const cordova: any;
 
@@ -23,16 +22,15 @@ export class HandbookAppComponent implements OnInit {
 
   private platform: Platform;
 
-  public constructor(
-    platform: Platform,
-    /*private _db:DataService, private _store:Store<IAppState>,
-     private _crewActions:CrewActions*/) {
+  public constructor(platform: Platform,
+                     /*private _db:DataService, private _store:Store<IAppState>,
+                      private _crewActions:CrewActions*/) {
     this.platform = platform;
 
     // used for an example of ngFor and navigation
     this.pages = [
       {
-        component: CrewListPage,
+        component: CrewListPageComponent,
         title:     'Crew List',
       }, /* {
        component: MissionListPage,

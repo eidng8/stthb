@@ -4,20 +4,28 @@
  * On a fresh clone, the local platforms/ and plugins/ directories will be
  * missing, so ensure they get created before the first platform is added.
  */
-var fs = require('fs');
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 
-var platformsDir = path.resolve(__dirname, '../../platforms');
-var pluginsDir = path.resolve(__dirname, '../../plugins');
-
-try {
-  fs.mkdirSync(platformsDir, function(err) {
-    if (err) { console.error(err); }
-  });
-} catch (ex) {} // eslint-disable-line no-empty
+const platformsDir = path.resolve(__dirname, '../../platforms');
+const pluginsDir = path.resolve(__dirname, '../../plugins');
 
 try {
-  fs.mkdirSync(pluginsDir, function(err) {
-    if (err) { console.error(err); }
+  fs.mkdirSync(platformsDir, err => {
+    if(err) {
+      console.error(err);
+    }
   });
-} catch (ex) {} // eslint-disable-line no-empty
+} catch(ex) {
+  console.error(ex);
+}
+
+try {
+  fs.mkdirSync(pluginsDir, err => {
+    if(err) {
+      console.error(err);
+    }
+  });
+} catch(ex) {
+  console.error(ex);
+}

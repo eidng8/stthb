@@ -4,11 +4,6 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-/*
- *  @author  eidng8
- *  @license https://creativecommons.org/licenses/by-sa/4.0/
- *  @link    https://github.com/eidng8/stthb
- */
 import { Component } from '@angular/core';
 import { HomePageComponent } from '../home/home.page';
 import { CrewListPage } from '../crew-list/crew-list.page';

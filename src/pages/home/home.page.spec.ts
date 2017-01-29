@@ -4,11 +4,6 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-/*
- *  @author  eidng8
- *  @license https://creativecommons.org/licenses/by-sa/4.0/
- *  @link    https://github.com/eidng8/stthb
- */
 import { HomePageComponent } from './home.page';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
@@ -30,7 +25,8 @@ describe('Home Page:', () => {
     fixture = TestBed.createComponent(HomePageComponent);
     // #trick
     // if you want to trigger ionViewWillEnter automatically de-comment the
-    // following line fixture.componentInstance.ionViewWillEnter();
+    // following line
+    // fixture.componentInstance.ionViewWillEnter();
     fixture.detectChanges();
     comp = fixture.componentInstance;
     de = fixture.debugElement;
@@ -46,4 +42,5 @@ describe('Home Page:', () => {
   it('Should has welcome message', () => {
     expect(comp.message).toEqual('Welcome');
   });
+  ``
 });

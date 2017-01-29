@@ -31,7 +31,7 @@ before_script:
 
 script:
   - npm test      # unit tests
-#  - npm run e2e   # run e2e tests against ionic
+  - npm run e2e   # run e2e tests against ionic
 
 after_success:
   - codeclimate-test-reporter < coverage/lcov

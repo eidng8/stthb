@@ -27,6 +27,9 @@
         },
         "cordova-plugin-network-information": {
             "PACKAGE_NAME": "com.ionicframework.myapp942281"
+        },
+        "cordova-plugin-nativestorage": {
+            "PACKAGE_NAME": "com.eidng8.stthb.app"
         }
     },
     "dependent_plugins": {}

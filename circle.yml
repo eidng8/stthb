@@ -1,3 +1,26 @@
 machine:
   node:
     version: 6.1.0
+
+dependencies:
+  pre:
+    - '[ ! -d platforms ] && mkdir platforms'
+    - '[ ! -d plugins ] && mkdir plugins'
+    - npm install --global --no-progress --silent codeclimate-test-reporter cordova eslint ionic karma-cli node-sass phantomjs-prebuilt protractor stylelint tslint typescript
+  post:
+#    - npm install --no-progress --silent
+    - ionic platform add android
+    - ionic plugin add cordova-plugin-nativestorage
+
+compile:
+  override:
+    - npm run lint
+    - ionic build android --prod
+
+test:
+  pre:
+    - export DISPLAY=:99.0
+    - sh -e /etc/init.d/xvfb start
+  override:
+    - npm test
+    - npm run e2e

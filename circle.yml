@@ -21,4 +21,4 @@ test:
     - sh -e /etc/init.d/xvfb start
   override:
     - npm test
-    - npm run e2e
+#    - npm run e2e

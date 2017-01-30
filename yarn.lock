@@ -921,7 +921,7 @@ colormin@^1.0.5:
     css-color-names "0.0.4"
     has "^1.0.1"
 
-colors@^1.1.0, colors@^1.1.2, colors@~1.1.2:
+colors@1.1.2, colors@^1.1.0, colors@^1.1.2, colors@~1.1.2:
   version "1.1.2"
   resolved colors-1.1.2.tgz#168a4701756b6a7f51a12ce0c97bfa28c084ed63
 
@@ -2750,6 +2750,12 @@ jasmine-core@^2.5.2:
 jasmine-core@~2.4.0:
   version "2.4.1"
   resolved jasmine-core-2.4.1.tgz#6f83ab3a0f16951722ce07d206c773d57cc838be
+
+jasmine-spec-reporter@^3.2.0:
+  version "3.2.0"
+  resolved jasmine-spec-reporter-3.2.0.tgz#fdbe85a80ccdd3b276746bc77fde83c1ce773eff
+  dependencies:
+    colors "1.1.2"
 
 jasmine@2.4.1:
   version "2.4.1"

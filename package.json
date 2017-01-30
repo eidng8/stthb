@@ -20,6 +20,7 @@
     "dev": "bnr dev",
     "build": "bnr build",
     "build-dev": "bnr build-dev",
+    "coverage": "bnr coverage",
     "test": "bnr test",
     "test:watch": "bnr test-watch",
     "protractor": "protractor",
@@ -59,10 +60,17 @@
         "NODE_ENV": "development"
       }
     },
-    "test": {
+    "coverage": {
       "command": "karma start",
       "env": {
         "NODE_ENV": "test"
+      }
+    },
+    "test": {
+      "command": "karma start",
+      "env": {
+        "NODE_ENV": "test",
+        "NO_COVERAGE": true
       }
     },
     "test-watch": {
@@ -144,6 +152,7 @@
     "husky": "^0.12.0",
     "istanbul-instrumenter-loader": "0.2.0",
     "jasmine-core": "^2.5.2",
+    "jasmine-spec-reporter": "^3.2.0",
     "json-loader": "^0.5.4",
     "karma": "^1.2.0",
     "karma-chrome-launcher": "^2.0.0",

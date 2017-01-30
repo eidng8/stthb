@@ -3,6 +3,7 @@
  *  @license https://creativecommons.org/licenses/by-sa/4.0/
  *  @link    https://github.com/eidng8/stthb
  */
+
 import { Component } from '@angular/core';
 import { PageBase } from '../base';
 
@@ -17,6 +18,11 @@ import { PageBase } from '../base';
     templateUrl: 'crew-list.html',
   })
 export class CrewListPageComponent extends PageBase {
+
+  public setFilter(): void {
+    // this.navCtl.push(FilterPage);
+  }
+
   /*public crew:CrewProvider;
    public groups:string[] = ['Alphabet', 'Skills', 'Stars', 'Traits'];
 
@@ -78,11 +84,6 @@ export class CrewListPageComponent extends PageBase {
    this.sso = 'Sort by name';
    this.currentGroup = this.groups[0];
    *!/
-   }
-
-   public setFilter():void
-   {
-   this.navCtl.push(FilterPage);
    }*/
 
   /*

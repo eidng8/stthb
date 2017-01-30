@@ -1,3 +1,9 @@
+/*
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
+
 /**
  * Check out https://googlechrome.github.io/sw-toolbox/docs/master/index.html
  * for more info on how to use sw-toolbox to custom configure your service
@@ -7,9 +13,13 @@
 
 'use strict';
 
+/* eslint-env serviceworker */
+
 importScripts('./build/sw-toolbox.js');
 
-self.toolbox.options.cache = {name: 'ionic-cache'};
+self.toolbox.options.cache = {
+  name: 'ionic-cache'
+};
 
 // pre-cache our key assets
 self.toolbox.precache(

@@ -3,6 +3,7 @@
  *  @license https://creativecommons.org/licenses/by-sa/4.0/
  *  @link    https://github.com/eidng8/stthb
  */
+
 import { browser, by, element, ElementFinder } from 'protractor';
 
 class TabsObj {
@@ -39,6 +40,7 @@ describe('App', () => {
 
   it('can switch to Crew tab', () => {
     tabs.crew.click().then(() => {
+      browser.driver.sleep(1000); // wait for the animation
       expect(element(by.cssContainingText('ion-title', 'Crew')).isDisplayed())
         .toBeTruthy();
     });
@@ -46,6 +48,7 @@ describe('App', () => {
 
   it('can switch to Missions tab', () => {
     tabs.missions.click().then(() => {
+      browser.driver.sleep(1000); // wait for the animation
       expect(
         element(by.cssContainingText('ion-title', 'Missions')).isDisplayed())
         .toBeTruthy();
@@ -54,6 +57,7 @@ describe('App', () => {
 
   it('can switch to Home tab', () => {
     tabs.home.click().then(() => {
+      browser.driver.sleep(1000); // wait for the animation
       expect(
         element(by.cssContainingText('ion-title', 'Handbook')).isDisplayed())
         .toBeTruthy();

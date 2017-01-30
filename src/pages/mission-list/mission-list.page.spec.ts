@@ -6,23 +6,22 @@
 
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { HomePageComponent } from './home.page';
+import { MissionListPageComponent } from './mission-list.page';
 
-describe('Home Page:', () => {
+describe('Mission List Page:', () => {
 
-  let comp: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+  let comp: MissionListPageComponent;
+  let fixture: ComponentFixture<MissionListPageComponent>;
   let de: DebugElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule(
       {
-        declarations: [HomePageComponent],
-        providers:    [{provide: NavController, useValue: NavController}],
+        declarations: [MissionListPageComponent],
+        // providers:    [{provide: NavController, useValue: NavController}],
         schemas:      [CUSTOM_ELEMENTS_SCHEMA],
       });
-    fixture = TestBed.createComponent(HomePageComponent);
+    fixture = TestBed.createComponent(MissionListPageComponent);
     // #trick
     // if you want to trigger ionViewWillEnter automatically de-comment the
     // following line
@@ -38,7 +37,7 @@ describe('Home Page:', () => {
     });
   });
 
-  it('Should has welcome message', () => {
-    expect(comp.message).toEqual('Welcome');
-  });
+  // it('Should has welcome message', () => {
+  //   expect(comp.message).toEqual('Welcome');
+  // });
 });

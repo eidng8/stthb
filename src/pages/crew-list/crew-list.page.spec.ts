@@ -4,25 +4,25 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
+
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
-import { NavController } from 'ionic-angular';
-import { HomePageComponent } from './home.page';
+import { CrewListPageComponent } from './crew-list.page';
 
-describe('Home Page:', () => {
+describe('Crew List Page:', () => {
 
-  let comp: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+  let comp: CrewListPageComponent;
+  let fixture: ComponentFixture<CrewListPageComponent>;
   let de: DebugElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule(
       {
-        declarations: [HomePageComponent],
-        providers:    [{provide: NavController, useValue: NavController}],
+        declarations: [CrewListPageComponent],
+        // providers:    [{provide: NavController, useValue: NavController}],
         schemas:      [CUSTOM_ELEMENTS_SCHEMA],
       });
-    fixture = TestBed.createComponent(HomePageComponent);
+    fixture = TestBed.createComponent(CrewListPageComponent);
     // #trick
     // if you want to trigger ionViewWillEnter automatically de-comment the
     // following line
@@ -38,7 +38,7 @@ describe('Home Page:', () => {
     });
   });
 
-  it('Should has welcome message', () => {
-    expect(comp.message).toEqual('Welcome');
-  });
+  // it('Should has welcome message', () => {
+  //   expect(comp.message).toEqual('Welcome');
+  // });
 });

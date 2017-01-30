@@ -93,7 +93,7 @@ module.exports = config => {
 
     configuration.remapCoverageReporter = {
       html: './coverage/istanbul',
-      lcovonly: './coverage/lcov',
+      lcovonly: './coverage/lcov.info',
       'text-summary': null
     };
   }

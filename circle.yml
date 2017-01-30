@@ -4,8 +4,6 @@ machine:
 
 dependencies:
   pre:
-    - '[ ! -d platforms ] && mkdir platforms'
-    - '[ ! -d plugins ] && mkdir plugins'
     - npm install --global --no-progress --silent codeclimate-test-reporter cordova eslint ionic karma-cli node-sass phantomjs-prebuilt protractor stylelint tslint typescript
   post:
 #    - npm install --no-progress --silent

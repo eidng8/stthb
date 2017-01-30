@@ -41,4 +41,4 @@ script:
 #  - npm run e2e   # run e2e tests against ionic
 
 after_success:
-  - codeclimate-test-reporter < coverage/lcov
+  - codeclimate-test-reporter < coverage/lcov.info

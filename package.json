@@ -38,7 +38,8 @@
     "lint": "tslint 'src/**/*.ts' --exclude=src/**/*.d.ts && stylelint 'src/**/*.scss' && eslint --cache --fix './**/*.js'",
     "scss-lint": "stylelint \"src/**/*.scss\"",
     "outdated": "npm outdated --depth 0",
-    "postinstall": "webdriver-manager update"
+    "postinstall": "webdriver-manager update",
+    "prepush": "npm run lint && npm test"
   },
   "betterScripts": {
     "dev": {

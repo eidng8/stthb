@@ -19,25 +19,28 @@ cache: node_modules
 before_install:
   - nvm install node
   - nvm use node
+
+after_install:
   - npm install --global --no-progress --silent codeclimate-test-reporter cordova eslint ionic karma-cli node-sass phantomjs-prebuilt protractor stylelint tslint typescript
 #  - yarn global add --no-progress codeclimate-test-reporter cordova eslint ionic karma-cli node-sass phantomjs-prebuilt protractor stylelint tslint typescript
 #  - '[ ! -d platforms ] && mkdir platforms'
 #  - '[ ! -d plugins ] && mkdir plugins'
-  - ionic state clear
+#  - ionic state clear
 
 install:
   - npm install --no-progress --silent
 #  - yarn --no-progress
   - ionic platform add android
+  - ionic plugin add cordova-plugin-nativestorage
 
-before_script:
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
+#before_script:
+#  - export DISPLAY=:99.0
+#  - sh -e /etc/init.d/xvfb start
 
 script:
-  - npm test      # unit tests
   - ionic build android --prod
-  - npm run e2e   # run e2e tests against ionic
+  - npm test      # unit tests
+#  - npm run e2e   # run e2e tests against ionic
 
 after_success:
   - codeclimate-test-reporter < coverage/lcov

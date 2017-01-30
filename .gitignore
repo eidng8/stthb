@@ -5,10 +5,13 @@
 .tmp/
 .versions/
 .vscode/
+dist/
+doc/
 node_modules/
 platforms/
 plugins/
-www/
+temp/
+tmp/
 
 *.sublime-project
 *.sublime-workspace
@@ -19,6 +22,17 @@ tests/**/*.js
 tests/**/*.d.ts
 !src/declarations.d.ts
 !src/service-worker.js
+
+
+# Build folders
+.eslintcache
+
+.sass-cache/
+*.tmp.*
+
+www/*
+!www/data.json
+
 
 # Logs and trash
 *~
@@ -35,18 +49,8 @@ tsconfig.tmp.json
 Thumbs.db
 UserInterfaceState.xcuserstate
 
-# Build folders
-.sass-cache/
-*.tmp.*
 
 # Coverege folders
 config/coverage
 coverage/*
 !coverage/protractor
-
-dist/
-tmp/
-temp/
-
-# Doc
-doc/

@@ -23,6 +23,7 @@
     "coverage": "bnr coverage",
     "test": "bnr test",
     "test:watch": "bnr test-watch",
+    "test:debug": "bnr test-debug",
     "protractor": "protractor",
     "e2e": "node sh/e2e.js",
     "e2e:interactive": "node sh/e2e.js --elementExplorer",
@@ -76,6 +77,13 @@
     },
     "test-watch": {
       "command": "karma start --auto-watch --no-single-run",
+      "env": {
+        "NODE_ENV": "test",
+        "NO_COVERAGE": true
+      }
+    },
+    "test-debug": {
+      "command": "karma start --auto-watch --no-single-run --browsers ChromeCanary",
       "env": {
         "NODE_ENV": "test",
         "NO_COVERAGE": true
@@ -135,6 +143,7 @@
     "ionic-native": "2.4.1",
     "ionicons": "3.0.0",
     "lodash-es": "^4.17.4",
+    "moment": "^2.17.1",
     "rxjs": "5.0.0-beta.12",
     "sw-toolbox": "3.4.0",
     "zone.js": "0.6.26"
@@ -144,6 +153,7 @@
     "@ionic/app-scripts": "1.0.0",
     "@types/jasmine": "2.5.40",
     "@types/lodash-es": "^4.14.2",
+    "@types/moment": "^2.13.0",
     "angular2-template-loader": "^0.6.0",
     "awesome-typescript-loader": "^3.0.0-beta.18",
     "better-npm-run": "0.0.14",

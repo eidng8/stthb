@@ -43,21 +43,28 @@ export class DataService {
    * List of all episodes
    */
   get episodes(): string[] {
-    return this.data.missions[0] as string[];
+    return this.data.episodes;
   }
 
   /**
    * List of all missions
    */
   get missions(): IMission[] {
-    return this.data.missions[1] as IMission[];
+    return this.data.missions;
   }
 
   /**
    * Server data version (timestamp in seconds)
    */
-  get version(): moment.Moment {
-    return moment.unix(this.data.version);
+  get generatedAt(): moment.Moment {
+    return moment.unix(this.data.generatedAt);
+  }
+
+  /**
+   * Server data version (timestamp in seconds)
+   */
+  get version(): number {
+    return this.data.version;
   }
 
   /**
@@ -71,12 +78,10 @@ export class DataService {
    * Fetch server data from local (pre-packaged) source
    */
   private getLocalData(): Observable<IServerData> {
-    return this.http
-               .get(this.localUrl)
-               .map<IServerData>(res => {
-                 this.data = res.json();
-                 return this.data;
-               });
+    return this.http.get(this.localUrl).map<IServerData>(res => {
+      this.data = res.json();
+      return this.data;
+    });
   }
 
   // private fetchRemoteData() {

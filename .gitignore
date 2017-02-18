@@ -52,5 +52,4 @@ UserInterfaceState.xcuserstate
 
 # Coverege folders
 config/coverage
-coverage/*
-!coverage/protractor
+coverage/

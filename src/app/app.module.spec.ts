@@ -4,4 +4,4 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-export const enum EMissionType {away = 1, battle}
+import './app.module';

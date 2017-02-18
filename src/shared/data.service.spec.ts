@@ -4,7 +4,6 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import * as moment from 'moment';
 import {
   Http,
   BaseRequestOptions,
@@ -12,7 +11,7 @@ import {
   Response,
   BaseResponseOptions
 } from '@angular/http';
-import { TestBed, inject, fakeAsync, tick } from '@angular/core/testing';
+import { TestBed, inject, fakeAsync } from '@angular/core/testing';
 import { MockBackend } from '@angular/http/testing';
 import { DataService } from './data.service';
 
@@ -47,24 +46,21 @@ describe('Data Service:', () => {
   });
 
   it('Should fetch & store local data',
-     inject([DataService, MockBackend],
-            fakeAsync((data: DataService, backend: MockBackend) => {
-              backend.connections.subscribe(conn => {
-                expect(conn.request.url).toBe('data.json');
-                conn.mockRespond(new Response(responseOptions));
-              });
+     inject(
+       [DataService, MockBackend],
+       fakeAsync((data: DataService, backend: MockBackend) => {
+         backend.connections.subscribe(conn => {
+           expect(conn.request.url).toBe('data.json');
+           conn.mockRespond(new Response(responseOptions));
+         });
 
-              data.fetch().subscribe(res => {
-                expect(res).not.toBeNull();
-                expect(res.crew).toBe(data.crew);
-                expect(res.missions[0]).toBe(data.episodes);
-                expect(res.missions[1]).toBe(data.missions);
-              });
-              tick();
-
-              expect(data.crew).toEqual(jasmine.any(Array));
-              expect(data.episodes).toEqual(jasmine.any(Array));
-              expect(data.missions).toEqual(jasmine.any(Array));
-              expect(moment.isMoment(data.version)).toBeTruthy();
-            })));
+         data.fetch().subscribe(res => {
+           expect(res).not.toBeNull();
+           expect(res.version).toBe(data.version);
+           expect(res.generatedAt).toBe(data.generatedAt.unix());
+           expect(res.episodes).toEqual(data.episodes);
+           expect(res.crew).toEqual(data.crew);
+           expect(res.missions).toEqual(data.missions);
+         });
+       })));
 });

@@ -16,7 +16,8 @@ import {
 } from './data/server-data.interface';
 
 @Injectable()
-export class DataService {
+export class DataService implements IServerData {
+
   /**
    * URL to local (pre-packaged) data file
    */
@@ -32,8 +33,17 @@ export class DataService {
   constructor(private http: Http) {
   }
 
+  // region Read-only Properties
+
   /**
-   * List of all crew member
+   * List of all characters
+   */
+  get characters(): string[] {
+    return this.data.characters;
+  }
+
+  /**
+   * List of all crew member.
    */
   get crew(): ICrewMember[] {
     return this.data.crew;
@@ -47,6 +57,13 @@ export class DataService {
   }
 
   /**
+   * The timestamp when this data is generated
+   */
+  get generatedAt(): number {
+    return this.data.generatedAt;
+  }
+
+  /**
    * List of all missions
    */
   get missions(): IMission[] {
@@ -54,18 +71,45 @@ export class DataService {
   }
 
   /**
-   * Server data version (timestamp in seconds)
+   * List of all races
    */
-  get generatedAt(): moment.Moment {
-    return moment.unix(this.data.generatedAt);
+  get races(): string[] {
+    return this.data.races;
   }
 
   /**
-   * Server data version (timestamp in seconds)
+   * List of all skills
+   */
+  get skills(): string[] {
+    return this.data.skills;
+  }
+
+  /**
+   * The timestamp when this data is generated
+   */
+  get time(): moment.Moment {
+    return moment.unix(this.generatedAt);
+  }
+
+  /**
+   * List of all traits
+   *
+   * Please note that, this list contains only traits that are actually
+   * possessed by crew members. e.g. no one possesses the 'Rich' traits, so you
+   * won't find it in this list.
+   */
+  get traits(): string[] {
+    return this.data.traits;
+  }
+
+  /**
+   * Server data version
    */
   get version(): number {
     return this.data.version;
   }
+
+  // endregion
 
   /**
    * Fetch data from first available source
@@ -84,7 +128,7 @@ export class DataService {
     });
   }
 
-  // private fetchRemoteData() {
+  // todo private fetchRemoteData() {
   //   return this.http.get(this.localUrl);
   // }
 }

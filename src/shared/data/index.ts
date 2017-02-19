@@ -8,7 +8,7 @@ import { EMissionType } from 'data.types';
 import {
   ICrewMember,
   IMission,
-  IMissionCrew,
+  IMissionStepCrew,
   IMissionStep,
   IServerData,
   ISkills
@@ -18,7 +18,7 @@ export {
   EMissionType,
   ICrewMember,
   IMission,
-  IMissionCrew,
+  IMissionStepCrew,
   IMissionStep,
   IServerData,
   ISkills,

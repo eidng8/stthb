@@ -8,8 +8,6 @@
 dist/
 doc/
 node_modules/
-platforms/
-plugins/
 temp/
 tmp/
 
@@ -29,6 +27,12 @@ tests/**/*.d.ts
 
 .sass-cache/
 *.tmp.*
+
+platforms/*
+!platforms/.gitkeep
+
+plugins/*
+!plugins/.gitkeep
 
 www/*
 !www/data.json

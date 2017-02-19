@@ -57,7 +57,8 @@ describe('Data Service:', () => {
          data.fetch().subscribe(res => {
            expect(res).not.toBeNull();
            expect(res.version).toBe(data.version);
-           expect(res.generatedAt).toBe(data.generatedAt.unix());
+           expect(res.generatedAt).toBe(data.generatedAt);
+           expect(res.generatedAt).toBe(data.time.unix());
            expect(res.episodes).toEqual(data.episodes);
            expect(res.crew).toEqual(data.crew);
            expect(res.missions).toEqual(data.missions);

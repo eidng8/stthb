@@ -116,10 +116,10 @@
     ],
 
     "directive-selector": [
-      true, "attribute", ["dir-prefix1", "dir-prefix2"], "camelCase"
+      true, "attribute", ["hb"], "camelCase"
     ],
     "component-selector": [
-      true, "element", ["cmp-prefix1", "cmp-prefix2"], "kebab-case"
+      true, "element", ["hb"], "kebab-case"
     ],
 
     "use-input-property-decorator": true,

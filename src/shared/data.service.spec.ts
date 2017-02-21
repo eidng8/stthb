@@ -18,7 +18,6 @@ import { DataService } from './data.service';
 const fixtureData: any = require('../../www/data.json');  // tslint:disable-line
 
 describe('Data Service:', () => {
-
   let responseOptions: ResponseOptions = new BaseResponseOptions();
   responseOptions = responseOptions.merge({body: JSON.stringify(fixtureData)});
 
@@ -39,29 +38,29 @@ describe('Data Service:', () => {
       });
   });
 
-  describe('.constructor', () => {
-    it('Should be defined', inject([DataService], (data: DataService) => {
-      expect(data).toBeDefined();
-    }));
-  });
+  it('can be injected', inject([DataService], (data: DataService) => {
+    expect(data).toBeDefined();
+  }));
 
-  it('Should fetch & store local data',
-     inject(
-       [DataService, MockBackend],
-       fakeAsync((data: DataService, backend: MockBackend) => {
-         backend.connections.subscribe(conn => {
-           expect(conn.request.url).toBe('data.json');
-           conn.mockRespond(new Response(responseOptions));
-         });
+  it('should fetch & store local data', inject([DataService, MockBackend],
+    fakeAsync((data: DataService, backend: MockBackend) => {
+      backend.connections.subscribe(conn => {
+        expect(conn.request.url).toBe('data.json');
+        conn.mockRespond(new Response(responseOptions));
+      });
 
-         data.fetch().subscribe(res => {
-           expect(res).not.toBeNull();
-           expect(res.version).toBe(data.version);
-           expect(res.generatedAt).toBe(data.generatedAt);
-           expect(res.generatedAt).toBe(data.time.unix());
-           expect(res.episodes).toEqual(data.episodes);
-           expect(res.crew).toEqual(data.crew);
-           expect(res.missions).toEqual(data.missions);
-         });
-       })));
+      data.fetch().subscribe(res => {
+        expect(res).not.toBeNull();
+        expect(res.version).toBe(data.version);
+        expect(res.generatedAt).toBe(data.generatedAt);
+        expect(res.generatedAt).toBe(data.time.unix());
+        expect(res.characters).toEqual(data.characters);
+        expect(res.crew).toEqual(data.crew);
+        expect(res.episodes).toEqual(data.episodes);
+        expect(res.missions).toEqual(data.missions);
+        expect(res.races).toEqual(data.races);
+        expect(res.skills).toEqual(data.skills);
+        expect(res.traits).toEqual(data.traits);
+      });
+    })));
 });

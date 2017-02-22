@@ -15,9 +15,8 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { IonicModule } from 'ionic-angular';
 import { CollapsibleDirective } from './collapsible.directive';
 
-@Component(
-  {
-    template: `
+@Component({
+  template: `
           <ion-list collapsible>
             <ion-list-header>test header</ion-list-header>
             <ion-item>test item 1</ion-item>
@@ -39,22 +38,18 @@ import { CollapsibleDirective } from './collapsible.directive';
             <ion-item>another item</ion-item>
           </ion-list>
     `
-  })
-class TestComponent
-{
+})
+class TestComponent {
   @ViewChildren(CollapsibleDirective) lists: QueryList<CollapsibleDirective>;
 }
 
-describe('Directives:', () =>
-{
-  describe('Collapsible', () =>
-  {
+describe('Directives:', () => {
+  describe('Collapsible', () => {
     let fixture: ComponentFixture<TestComponent>;
     let lists: DebugElement[];
     let bareList: DebugElement;
 
-    beforeEach(done =>
-    {
+    beforeEach(done => {
       fixture = TestBed.configureTestingModule(
         {
           declarations: [
@@ -76,13 +71,11 @@ describe('Directives:', () =>
       fixture.whenStable().then(() => done());
     });
 
-    it('should have 3 collapsible lists', () =>
-    {
+    it('should have 3 collapsible lists', () => {
       expect(lists.length).toBe(3);
     });
 
-    it('should default to collapsed', () =>
-    {
+    it('should default to collapsed', () => {
       expect(lists[0].nativeElement.classList)
         .toContain(CollapsibleDirective.cssClass);
       expect(lists[1].nativeElement.classList)
@@ -91,18 +84,16 @@ describe('Directives:', () =>
         .toContain(CollapsibleDirective.cssClass);
       expect(bareList.nativeElement.classList)
         .not.toContain(CollapsibleDirective.cssClass);
-    });//end should default to collapsed
+    }); // end should default to collapsed
 
-    it('should not collapse normal lists', () =>
-    {
+    it('should not collapse normal lists', () => {
       expect(bareList.nativeElement.classList)
         .not.toContain(CollapsibleDirective.cssClass);
       // tslint:disable-next-line no-string-literal
       expect(bareList.properties['customProperty']).toBeUndefined();
-    });//end should not collapse normal lists
+    }); // end should not collapse normal lists
 
-    it('should expend list', () =>
-    {
+    it('should expend list', () => {
       fixture.componentInstance.lists.first.expend();
       fixture.detectChanges();
       expect(lists[0].nativeElement.classList)
@@ -115,10 +106,9 @@ describe('Directives:', () =>
         .toContain(CollapsibleDirective.cssClass);
       expect(bareList.nativeElement.classList)
         .not.toContain(CollapsibleDirective.cssClass);
-    });//end should expend list
+    }); // end should expend list
 
-    it('should collapse list', () =>
-    {
+    it('should collapse list', () => {
       fixture.componentInstance.lists.first.expend();
       fixture.detectChanges();
       fixture.componentInstance.lists.first.collapse();
@@ -133,10 +123,9 @@ describe('Directives:', () =>
         .toContain(CollapsibleDirective.cssClass);
       expect(bareList.nativeElement.classList)
         .not.toContain(CollapsibleDirective.cssClass);
-    });//end should collapse list
+    }); // end should collapse list
 
-    it('should toggle list expension', () =>
-    {
+    it('should toggle list expension', () => {
       fixture.componentInstance.lists.first.toggle();
       fixture.detectChanges();
       expect(lists[0].nativeElement.classList)
@@ -146,15 +135,13 @@ describe('Directives:', () =>
       fixture.detectChanges();
       expect(lists[0].nativeElement.classList)
         .toContain(CollapsibleDirective.cssClass);
-    });//end should toggle list expension
+    }); // end should toggle list expension
 
-    it('should collapse when header is clicked', () =>
-    {
+    it('should collapse when header is clicked', () => {
       const header: DebugElement = lists[0].query(By.css('ion-list-header'));
       header.triggerEventHandler('click', null);
       fixture.detectChanges();
-      fixture.whenStable().then(() =>
-      {
+      fixture.whenStable().then(() => {
         expect(lists[0].nativeElement.classList)
           .not.toContain(CollapsibleDirective.cssClass);
 
@@ -166,32 +153,28 @@ describe('Directives:', () =>
         expect(bareList.nativeElement.classList)
           .not.toContain(CollapsibleDirective.cssClass);
       });
-    });//end should collapse when header is clicked
+    }); // end should collapse when header is clicked
 
-    it('should expend when header is clicked twice', () =>
-    {
+    it('should expend when header is clicked twice', () => {
       const header: DebugElement = lists[0].query(By.css('ion-list-header'));
       header.triggerEventHandler('click', null);
       fixture.detectChanges();
       header.triggerEventHandler('click', null);
       fixture.detectChanges();
-      fixture.whenStable().then(() =>
-      {
+      fixture.whenStable().then(() => {
         expect(lists[0].nativeElement.classList)
           .toContain(CollapsibleDirective.cssClass);
       });
-    });//end should expend when header is clicked twice
+    }); // end should expend when header is clicked twice
 
-    it('should not collapse if there is no header', () =>
-    {
+    it('should not collapse if there is no header', () => {
       lists[2].triggerEventHandler('click', null);
       fixture.detectChanges();
-      fixture.whenStable().then(() =>
-      {
+      fixture.whenStable().then(() => {
         expect(lists[2].nativeElement.classList)
           .toContain(CollapsibleDirective.cssClass);
       });
-    });//end should not collapse if there is no header
+    }); // end should not collapse if there is no header
 
   });
 

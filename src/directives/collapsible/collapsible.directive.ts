@@ -17,7 +17,7 @@ import {
 
 @Directive(
   {
-    selector: '[collapsible]',
+    selector: '[hbCollapsible]',
   })
 export class CollapsibleDirective implements AfterViewInit, AfterViewChecked
 {

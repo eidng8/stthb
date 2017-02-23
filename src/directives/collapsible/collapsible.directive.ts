@@ -32,8 +32,8 @@ export class CollapsibleDirective implements AfterViewInit, AfterViewChecked
 
   ngAfterViewChecked(): void
   {
-    // can't use host binding here, otherwise angular will throw
-    // EXCEPTION: Expression has changed after it was checked.
+    // can't use host binding here, otherwise angular will
+    // throw EXCEPTION: Expression has changed after it was checked.
     this._elem.nativeElement.style.maxHeight = this.calcHeight() + 'px';
   }
 

@@ -17,19 +17,19 @@ import { CollapsibleDirective } from './collapsible.directive';
 
 @Component({
   template: `
-          <ion-list collapsible>
+          <ion-list hbCollapsible>
             <ion-list-header>test header</ion-list-header>
             <ion-item>test item 1</ion-item>
             <ion-item>test item 2</ion-item>
           </ion-list>
 
-          <ion-list collapsible>
+          <ion-list hbCollapsible>
             <ion-list-header>test header 2</ion-list-header>
             <ion-item>test item 3</ion-item>
             <ion-item>test item 4</ion-item>
           </ion-list>
 
-          <ion-list collapsible>
+          <ion-list hbCollapsible>
             <ion-item>list no header</ion-item>
           </ion-list>
 

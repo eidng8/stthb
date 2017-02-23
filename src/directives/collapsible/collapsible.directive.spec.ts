@@ -66,7 +66,7 @@ describe('Directives:', () => {
       lists = fixture.debugElement.queryAll(By.directive(CollapsibleDirective));
       // the ion-list without the HighlightDirective
       bareList =
-        fixture.debugElement.query(By.css('ion-list:not([collapsible])'));
+        fixture.debugElement.query(By.css('ion-list:not([hbCollapsible])'));
 
       fixture.whenStable().then(() => done());
     });

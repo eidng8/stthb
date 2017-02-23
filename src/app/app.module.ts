@@ -3,7 +3,7 @@
  *  @license https://creativecommons.org/licenses/by-sa/4.0/
  *  @link    https://github.com/eidng8/stthb
  */
-// tslint:disable:trailing-comma
+
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule } from 'ionic-angular';
@@ -14,11 +14,13 @@ import {
   MissionListPageComponent,
   TabsPageComponent
 } from '../pages';
+import { CollapsibleDirective } from '../directives/collapsible/collapsible.directive';
 
 @NgModule(
   {
     bootstrap:       [IonicApp],
     declarations:    [
+      CollapsibleDirective,
       CrewListPageComponent,
       MissionListPageComponent,
       HomePageComponent,

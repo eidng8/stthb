@@ -16,29 +16,28 @@ import {
 } from '../pages';
 import { CollapsibleDirective } from '../directives';
 
-@NgModule(
-  {
-    bootstrap:       [IonicApp],
-    declarations:    [
-      CollapsibleDirective,
-      CrewListPageComponent,
-      MissionListPageComponent,
-      HomePageComponent,
-      TabsPageComponent,
-      HandbookAppComponent,
-    ],
-    entryComponents: [
-      CrewListPageComponent,
-      MissionListPageComponent,
-      HomePageComponent,
-      TabsPageComponent,
-      HandbookAppComponent,
-    ],
-    imports:         [
-      HttpModule,
-      IonicModule.forRoot(HandbookAppComponent),
-    ],
-    providers:       [],
-  })
+@NgModule({
+  bootstrap:       [IonicApp],
+  declarations:    [
+    CollapsibleDirective,
+    CrewListPageComponent,
+    MissionListPageComponent,
+    HomePageComponent,
+    TabsPageComponent,
+    HandbookAppComponent,
+  ],
+  entryComponents: [
+    CrewListPageComponent,
+    MissionListPageComponent,
+    HomePageComponent,
+    TabsPageComponent,
+    HandbookAppComponent,
+  ],
+  imports:         [
+    HttpModule,
+    IonicModule.forRoot(HandbookAppComponent),
+  ],
+  providers:       [],
+})
 export class AppModule {
 }

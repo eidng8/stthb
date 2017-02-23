@@ -13,10 +13,9 @@ import { PageBase } from '../base';
  skill?:string,
  }[];*/
 
-@Component(
-  {
-    templateUrl: 'crew-list.html',
-  })
+@Component({
+  templateUrl: 'crew-list.html',
+})
 export class CrewListPageComponent extends PageBase {
 
   public setFilter(): void {

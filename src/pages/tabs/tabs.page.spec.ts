@@ -13,46 +13,46 @@ import {
   MissionListPageComponent
 } from '..';
 
-describe('Tabs Page:', () => {
+describe('Pages:', () => {
+  describe('Tabs', () => {
 
-  let comp: TabsPageComponent;
-  let fixture: ComponentFixture<TabsPageComponent>;
-  let de: DebugElement;
+    let comp: TabsPageComponent;
+    let fixture: ComponentFixture<TabsPageComponent>;
+    let de: DebugElement;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule(
-      {
-        declarations: [TabsPageComponent],
-        schemas:      [CUSTOM_ELEMENTS_SCHEMA],
-      });
-    fixture = TestBed.createComponent(TabsPageComponent);
-    // #trick
-    // if you want to trigger ionViewWillEnter automatically de-comment the
-    // following line
-    // fixture.componentInstance.ionViewWillEnter();
-    fixture.detectChanges();
-    comp = fixture.componentInstance;
-    de = fixture.debugElement;
-  });
+    beforeEach(() => {
+      TestBed.configureTestingModule(
+        {
+          declarations: [TabsPageComponent],
+          schemas:      [CUSTOM_ELEMENTS_SCHEMA],
+        });
+      fixture = TestBed.createComponent(TabsPageComponent);
+      // #trick
+      // if you want to trigger ionViewWillEnter automatically de-comment the
+      // following line
+      // fixture.componentInstance.ionViewWillEnter();
+      fixture.detectChanges();
+      comp = fixture.componentInstance;
+      de = fixture.debugElement;
+    });
 
-  describe('.constructor()', () => {
-    it('Should be defined', () => {
+    it('can be created', () => {
       expect(comp).toBeDefined();
     });
-  });
 
-  it('Should have Home tab', () => {
-    console.log(comp.home);
-    expect(comp.home).toEqual(HomePageComponent);
-  });
+    it('should have Home tab', () => {
+      console.log(comp.home);
+      expect(comp.home).toEqual(HomePageComponent);
+    });
 
-  it('Should have Crew tab', () => {
-    console.log(comp.crew);
-    expect(comp.crew).toEqual(CrewListPageComponent);
-  });
+    it('should have Crew tab', () => {
+      console.log(comp.crew);
+      expect(comp.crew).toEqual(CrewListPageComponent);
+    });
 
-  it('Should have Missions tab', () => {
-    console.log(comp.missions);
-    expect(comp.missions).toEqual(MissionListPageComponent);
+    it('should have Missions tab', () => {
+      console.log(comp.missions);
+      expect(comp.missions).toEqual(MissionListPageComponent);
+    });
   });
 });

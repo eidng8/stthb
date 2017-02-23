@@ -14,7 +14,7 @@ import {
   MissionListPageComponent,
   TabsPageComponent
 } from '../pages';
-import { CollapsibleDirective } from '../directives/collapsible/collapsible.directive';
+import { CollapsibleDirective } from '../directives';
 
 @NgModule(
   {

@@ -4,7 +4,7 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { EMissionType } from './data.types';
+import { EMissionType } from './data.type';
 
 /**
  * Crew member data

@@ -1,0 +1,63 @@
+/*!
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
+
+/*
+ * Don't forget to add `max-height` to the actual list,
+ * or there will be no animation.
+ */
+ion-list[hbCollapsible] {
+  //max-height: 20rem;
+  overflow: hidden;
+  transition: max-height ease-out, margin-bottom ease-out;
+
+  &.collapsed {
+    margin-bottom: 0;
+    max-height: 4rem !important;
+    transition-timing-function: ease-in, ease-in;
+
+    ion-list-header:after {
+      transform: rotate(180deg);
+    }
+  }
+
+  ion-list-header:after {
+    @extend .ionicons;
+    font-size: 2.4rem;
+    display: block;
+    position: absolute;
+    transition-property: transform;
+  }
+}
+
+.ios {
+  ion-list[hbCollapsible] {
+    transition-duration: $toggle-ios-transition-duration;
+
+    .list-header-ios {
+      &:after {
+        @extend .ion-ios-arrow-up:before;
+        right: round($list-ios-header-padding-left / 2);
+        transition-duration: $toggle-ios-transition-duration;
+      }
+    }
+  }
+
+}
+
+.md {
+  ion-list[hbCollapsible] {
+    transition-duration: $toggle-md-transition-duration;
+
+    .list-header-md {
+      &:after {
+        @extend .ion-md-arrow-dropup:before;
+        right: round($list-md-header-padding-left / 2);
+        transition-duration: $toggle-md-transition-duration;
+      }
+    }
+  }
+
+}

@@ -1,5 +1,5 @@
 {
-  "rulesDirectory": ["node_modules/tslint-eslint-rules/dist/rules", "node_modules/codelyzer"],
+  "rulesDirectory": ["node_modules/tslint-eslint-rules/dist/rules"],
   "rules": {
     "member-access": false,
     "member-ordering": [
@@ -113,30 +113,6 @@
       "check-operator",
       "check-module",
       "check-separator"
-    ],
-
-    "directive-selector": [
-      true, "attribute", ["hb"], "camelCase"
-    ],
-    "component-selector": [
-      true, "element", ["hb"], "kebab-case"
-    ],
-
-    "use-input-property-decorator": true,
-    "use-output-property-decorator": true,
-    "use-host-property-decorator": true,
-    "no-attribute-parameter-decorator": true,
-    "no-input-rename": true,
-    "no-output-rename": true,
-    "no-forward-ref": true,
-    "use-life-cycle-interface": true,
-    "use-pipe-transform-interface": true,
-
-    "component-class-suffix": [true, "Component"],
-    "directive-class-suffix": [true, "Directive"],
-    "import-destructuring-spacing": true,
-    "templates-use-public": true,
-    "no-access-missing-member": true,
-    "invoke-injectable": true
+    ]
   }
 }

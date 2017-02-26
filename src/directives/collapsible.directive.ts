@@ -16,7 +16,7 @@ import {
 } from '@angular/core';
 
 @Directive({
-  selector: '[hbCollapsible]',
+  selector: '[hb-ollapsible]',
 })
 export class CollapsibleDirective implements AfterViewInit, AfterViewChecked {
   static readonly cssClass: string = 'collapsed';

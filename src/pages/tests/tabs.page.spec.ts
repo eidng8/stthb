@@ -6,12 +6,10 @@
 
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
-import { TabsPageComponent } from './tabs.page';
-import {
-  HomePageComponent,
-  CrewListPageComponent,
-  MissionListPageComponent
-} from '..';
+import { TabsPageComponent } from '../tabs.page';
+import { HomePageComponent } from '../home.page';
+import { CrewPageComponent } from '../crew.page';
+import { MissionsPageComponent } from '../missions.page';
 
 describe('Pages:', () => {
   describe('Tabs', () => {
@@ -47,12 +45,12 @@ describe('Pages:', () => {
 
     it('should have Crew tab', () => {
       console.log(comp.crew);
-      expect(comp.crew).toEqual(CrewListPageComponent);
+      expect(comp.crew).toEqual(CrewPageComponent);
     });
 
     it('should have Missions tab', () => {
       console.log(comp.missions);
-      expect(comp.missions).toEqual(MissionListPageComponent);
+      expect(comp.missions).toEqual(MissionsPageComponent);
     });
   });
 });

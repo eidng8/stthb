@@ -6,23 +6,24 @@
 
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
-import { MissionListPageComponent } from './mission-list.page';
+import { NavController } from 'ionic-angular';
+import { HomePageComponent } from '../home.page';
 
 describe('Pages:', () => {
-  describe('Mission List', () => {
+  describe('Home Page', () => {
 
-    let comp: MissionListPageComponent;
-    let fixture: ComponentFixture<MissionListPageComponent>;
+    let comp: HomePageComponent;
+    let fixture: ComponentFixture<HomePageComponent>;
     let de: DebugElement;
 
     beforeEach(() => {
       TestBed.configureTestingModule(
         {
-          declarations: [MissionListPageComponent],
-          // providers:    [{provide: NavController, useValue: NavController}],
+          declarations: [HomePageComponent],
+          providers:    [{provide: NavController, useValue: NavController}],
           schemas:      [CUSTOM_ELEMENTS_SCHEMA],
         });
-      fixture = TestBed.createComponent(MissionListPageComponent);
+      fixture = TestBed.createComponent(HomePageComponent);
       // #trick
       // if you want to trigger ionViewWillEnter automatically de-comment the
       // following line
@@ -32,12 +33,12 @@ describe('Pages:', () => {
       de = fixture.debugElement;
     });
 
-    it('Should be defined', () => {
+    it('can be created', () => {
       expect(comp).toBeDefined();
     });
 
-    // it('Should has welcome message', () => {
-    //   expect(comp.message).toEqual('Welcome');
-    // });
+    it('should have welcome message', () => {
+      expect(comp.message).toEqual('Welcome');
+    });
   });
 });

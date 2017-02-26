@@ -9,11 +9,9 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import {
-  IServerData,
-  ICrewMember,
-  IMission
-} from './data/server-data.interface';
+import { IServerData } from '../interfaces/server-data.interface';
+import { IMember } from '../interfaces/member.interface';
+import { IMission } from '../interfaces/mission.interface';
 
 @Injectable()
 export class DataService implements IServerData {
@@ -45,7 +43,7 @@ export class DataService implements IServerData {
   /**
    * List of all crew member.
    */
-  get crew(): ICrewMember[] {
+  get crew(): IMember[] {
     return this.data.crew;
   }
 
@@ -122,10 +120,8 @@ export class DataService implements IServerData {
    * Fetch server data from local (pre-packaged) source
    */
   private getLocalData(): Observable<IServerData> {
-    return this.http.get(this.localUrl).map<IServerData>(res => {
-      this.data = res.json();
-      return this.data;
-    });
+    return this.http.get(this.localUrl)
+      .map<IServerData>(res => this.data = res.json());
   }
 
   // todo private fetchRemoteData() {

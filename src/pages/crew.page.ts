@@ -5,7 +5,7 @@
  */
 
 import { Component } from '@angular/core';
-import { PageBase } from '../base';
+import { PageBase } from './base';
 
 /*export type TLists = {
  crew:CrewMember[]
@@ -14,9 +14,9 @@ import { PageBase } from '../base';
  }[];*/
 
 @Component({
-  templateUrl: 'crew-list.html',
+  templateUrl: 'crew.html',
 })
-export class CrewListPageComponent extends PageBase {
+export class CrewPageComponent extends PageBase {
 
   public setFilter(): void {
     // this.navCtl.push(FilterPage);

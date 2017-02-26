@@ -7,9 +7,9 @@
 import { Component } from '@angular/core';
 
 @Component({
-    templateUrl: 'mission-list.html',
-  })
-export class MissionListPageComponent {
+  templateUrl: 'missions.html',
+})
+export class MissionsPageComponent {
   /*
    public groups:string[];
    public currentGroup:string;
@@ -48,7 +48,7 @@ export class MissionListPageComponent {
    this.nav.push(MissionCrew, {mission: mission});*!/
    }
 
-   private fitsMission(char:ICrewMember, mission:IMission):boolean
+   private fitsMission(char:IMember, mission:IMission):boolean
    {
    /!*let cs:number[];
    for(const skill of SKILLS.list.abbr)
@@ -70,7 +70,7 @@ export class MissionListPageComponent {
    return false;
    }
 
-   private fitsCadet(char:ICrewMember, mission:IMission, skill:string):boolean
+   private fitsCadet(char:IMember, mission:IMission, skill:string):boolean
    {
    if(EMissionTypes.cadet == mission.type)
    {

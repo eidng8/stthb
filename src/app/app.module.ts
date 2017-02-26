@@ -8,27 +8,25 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { HandbookAppComponent } from './app.component';
-import {
-  CrewListPageComponent,
-  HomePageComponent,
-  MissionListPageComponent,
-  TabsPageComponent
-} from '../pages';
-import { CollapsibleDirective } from '../directives';
+import { CollapsibleDirective } from '../directives/collapsible.directive';
+import { CrewPageComponent } from '../pages/crew.page';
+import { MissionsPageComponent } from '../pages/missions.page';
+import { HomePageComponent } from '../pages/home.page';
+import { TabsPageComponent } from '../pages/tabs.page';
 
 @NgModule({
   bootstrap:       [IonicApp],
   declarations:    [
     CollapsibleDirective,
-    CrewListPageComponent,
-    MissionListPageComponent,
+    CrewPageComponent,
+    MissionsPageComponent,
     HomePageComponent,
     TabsPageComponent,
     HandbookAppComponent,
   ],
   entryComponents: [
-    CrewListPageComponent,
-    MissionListPageComponent,
+    CrewPageComponent,
+    MissionsPageComponent,
     HomePageComponent,
     TabsPageComponent,
     HandbookAppComponent,

@@ -4,8 +4,6 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { CollapsibleDirective } from './collapsible/collapsible.directive';
+export class Step {
 
-export {
-  CollapsibleDirective,
 }

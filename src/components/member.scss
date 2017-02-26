@@ -1,0 +1,40 @@
+/*!
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
+
+hb-member {
+  ion-thumbnail.star {
+    position: relative;
+    @extend .ion;
+
+    &:after {
+      content: '\f4b3';
+      font-size: 16px;
+      width: 100%;
+      text-align: center;
+      color: yellowgreen;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      text-shadow: 0 0 2px rgba(a-color(dark), .8);
+    }
+
+    &-2:after {
+      content: '\f4b3\f4b3';
+    }
+
+    &-3:after {
+      content: '\f4b3\f4b3\f4b3';
+    }
+
+    &-4:after {
+      content: '\f4b3\f4b3\f4b3\f4b3';
+    }
+
+    &-5:after {
+      content: '\f4b3\f4b3\f4b3\f4b3\f4b3';
+    }
+  }
+}

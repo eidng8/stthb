@@ -6,23 +6,23 @@
 
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
-import { CrewListPageComponent } from './crew-list.page';
+import { CrewPageComponent } from '../crew.page';
 
 describe('Pages:', () => {
   describe('Crew List', () => {
 
-    let comp: CrewListPageComponent;
-    let fixture: ComponentFixture<CrewListPageComponent>;
+    let comp: CrewPageComponent;
+    let fixture: ComponentFixture<CrewPageComponent>;
     let de: DebugElement;
 
     beforeEach(() => {
       TestBed.configureTestingModule(
         {
-          declarations: [CrewListPageComponent],
+          declarations: [CrewPageComponent],
           // providers:    [{provide: NavController, useValue: NavController}],
           schemas:      [CUSTOM_ELEMENTS_SCHEMA],
         });
-      fixture = TestBed.createComponent(CrewListPageComponent);
+      fixture = TestBed.createComponent(CrewPageComponent);
       // #trick
       // if you want to trigger ionViewWillEnter automatically de-comment the
       // following line

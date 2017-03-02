@@ -4,9 +4,9 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import * as moment from 'moment';
-import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
+import { Moment, unix } from 'moment';
+import { Observable } from 'rxjs/Observable';
+import './rxops';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { IServerData } from '../interfaces/server-data.interface';
@@ -14,6 +14,9 @@ import { IMember } from '../interfaces/member.interface';
 import { IMission } from '../interfaces/mission.interface';
 
 @Injectable()
+/**
+ * Load raw data from local cache or remote server
+ */
 export class DataService implements IServerData {
 
   /**
@@ -83,10 +86,10 @@ export class DataService implements IServerData {
   }
 
   /**
-   * The timestamp when this data is generated
+   * The time when this data is generated
    */
-  get time(): moment.Moment {
-    return moment.unix(this.generatedAt);
+  get time(): Moment {
+    return unix(this.generatedAt);
   }
 
   /**

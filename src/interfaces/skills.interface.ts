@@ -10,5 +10,33 @@
  * The keys are index to the {@see IServerData.skills} list.
  */
 export interface ISkills {
-  [key: number]: number;
+  /**
+   * Command skill
+   */
+  cmd?: number|number[];
+
+  /**
+   * Diplomacy skill
+   */
+  dip?: number|number[];
+
+  /**
+   * Engineering skill
+   */
+  eng?: number|number[];
+
+  /**
+   * Medicine skill
+   */
+  med?: number|number[];
+
+  /**
+   * Science skill
+   */
+  sci?: number|number[];
+
+  /**
+   * Security skill
+   */
+  sec?: number|number[];
 }

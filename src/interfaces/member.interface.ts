@@ -4,8 +4,6 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { ISkills } from './skills.interface';
-
 /**
  * Crew member data
  */
@@ -28,12 +26,12 @@ export interface IMember {
   /**
    * Index value to the {@see IServerData.races} list.
    */
-  race: string;
+  race: number;
 
   /**
    * List of all skills with values at maximum level and fully equipped.
    */
-  skills: ISkills;
+  skills: {[key: number]: number|number[]};
 
   /**
    * Number of stars (rarity)

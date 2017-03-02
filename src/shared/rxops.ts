@@ -4,6 +4,5 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-export class MissionModel {
-
-}
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/map';

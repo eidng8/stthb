@@ -8,14 +8,14 @@
  * Created by JC on 2016-09-11.
  */
 import { Component, Input } from '@angular/core';
-import { Member } from '../models/member.model';
+import { MemberModel } from '../models/member.model';
 
 @Component({
   selector:    'hb-member',
   templateUrl: 'member.html',
 })
 export class MemberComponent {
-  @Input() public crew: Member;
+  @Input() public crew: MemberModel;
   @Input() public skill: string;
   @Input() public unlock: boolean;
 }

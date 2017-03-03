@@ -8,7 +8,7 @@
  * Don't forget to add `max-height` to the actual list,
  * or there will be no animation.
  */
-ion-list[hb-ollapsible] {
+ion-list[jc-collapsible] {
   //max-height: 20rem;
   overflow: hidden;
   transition: max-height ease-out, margin-bottom ease-out;
@@ -33,7 +33,7 @@ ion-list[hb-ollapsible] {
 }
 
 .ios {
-  ion-list[hb-ollapsible] {
+  ion-list[jc-collapsible] {
     transition-duration: $toggle-ios-transition-duration;
 
     .list-header-ios {
@@ -48,7 +48,7 @@ ion-list[hb-ollapsible] {
 }
 
 .md {
-  ion-list[hb-ollapsible] {
+  ion-list[jc-collapsible] {
     transition-duration: $toggle-md-transition-duration;
 
     .list-header-md {

@@ -17,19 +17,19 @@ import { CollapsibleDirective } from './collapsible.directive';
 
 @Component({
   template: `
-          <ion-list hb-ollapsible>
+          <ion-list jc-collapsible>
             <ion-list-header>test header</ion-list-header>
             <ion-item>test item 1</ion-item>
             <ion-item>test item 2</ion-item>
           </ion-list>
 
-          <ion-list hb-ollapsible>
+          <ion-list jc-collapsible>
             <ion-list-header>test header 2</ion-list-header>
             <ion-item>test item 3</ion-item>
             <ion-item>test item 4</ion-item>
           </ion-list>
 
-          <ion-list hb-ollapsible>
+          <ion-list jc-collapsible>
             <ion-item>list no header</ion-item>
           </ion-list>
 
@@ -66,7 +66,7 @@ describe('Directives:', () => {
       lists = fixture.debugElement.queryAll(By.directive(CollapsibleDirective));
       // the ion-list without the HighlightDirective
       bareList =
-        fixture.debugElement.query(By.css('ion-list:not([hb-ollapsible])'));
+        fixture.debugElement.query(By.css('ion-list:not([jc-collapsible])'));
 
       fixture.whenStable().then(() => done());
     });

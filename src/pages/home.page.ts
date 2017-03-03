@@ -11,7 +11,7 @@ import { PageBase } from './base';
 @Component({
   templateUrl: 'home.html',
 })
-export class HomePageComponent extends PageBase {
+export class HomePage extends PageBase {
   message: string = 'Welcome';
 
   constructor(nav: NavController) {

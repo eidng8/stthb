@@ -11,7 +11,7 @@ import { Component, Input } from '@angular/core';
 import { MemberModel } from '../models/member.model';
 
 @Component({
-  selector:    'hb-member',
+  selector:    'jc-member',
   templateUrl: 'member.html',
 })
 export class MemberComponent {

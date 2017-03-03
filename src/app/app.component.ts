@@ -8,7 +8,7 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 import { TabsPageComponent } from '../pages/tabs.page';
-import { CrewPageComponent } from '../pages/crew.page';
+import { CrewPage } from '../pages/crew.page';
 
 declare const cordova: any;
 
@@ -32,7 +32,7 @@ export class HandbookAppComponent implements OnInit {
     // used for an example of ngFor and navigation
     this.pages = [
       {
-        component: CrewPageComponent,
+        component: CrewPage,
         title:     'Crew List',
       }, /* {
        component: MissionListPage,

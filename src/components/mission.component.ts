@@ -11,7 +11,7 @@ import { Component, Input } from '@angular/core';
 import { MissionModel } from '../models/mission.model';
 
 @Component({
-  selector:    'hb-mission',
+  selector:    'jc-mission',
   templateUrl: 'mission.html',
 })
 export class MissionComponent {

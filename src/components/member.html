@@ -13,17 +13,17 @@
 
   <h2>{{ crew.name }}</h2>
 
-  <hb-skill
+  <jc-skill
     *ngIf="skill" class="skills single" [name]="skill"
     [value]="crew.skillValue(skill)">
-  </hb-skill>
+  </jc-skill>
 
   <p *ngIf="!skill" class="skills">
     <span *ngFor="let skill of crew.possessing">
-      <hb-skill
+      <jc-skill
         [name]="skill"
         [value]="crew.skillValue(skill)">
-      </hb-skill>
+      </jc-skill>
     </span>
   </p>
 </ion-item>

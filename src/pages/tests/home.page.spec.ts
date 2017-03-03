@@ -7,23 +7,23 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HomePageComponent } from '../home.page';
+import { HomePage } from '../home.page';
 
 describe('Pages:', () => {
   describe('Home Page', () => {
 
-    let comp: HomePageComponent;
-    let fixture: ComponentFixture<HomePageComponent>;
+    let comp: HomePage;
+    let fixture: ComponentFixture<HomePage>;
     let de: DebugElement;
 
     beforeEach(() => {
       TestBed.configureTestingModule(
         {
-          declarations: [HomePageComponent],
+          declarations: [HomePage],
           providers:    [{provide: NavController, useValue: NavController}],
           schemas:      [CUSTOM_ELEMENTS_SCHEMA],
         });
-      fixture = TestBed.createComponent(HomePageComponent);
+      fixture = TestBed.createComponent(HomePage);
       // #trick
       // if you want to trigger ionViewWillEnter automatically de-comment the
       // following line

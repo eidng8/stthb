@@ -16,7 +16,7 @@ import { PageBase } from './base';
 @Component({
   templateUrl: 'crew.html',
 })
-export class CrewPageComponent extends PageBase {
+export class CrewPage extends PageBase {
 
   public setFilter(): void {
     // this.navCtl.push(FilterPage);

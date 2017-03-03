@@ -10,7 +10,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector:    'hb-skill',
+  selector:    'jc-skill',
   templateUrl: 'skill.html',
 })
 export class SkillComponent {

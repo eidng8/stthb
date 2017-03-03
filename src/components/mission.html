@@ -8,7 +8,7 @@
   <h2>{{ mission.name }}</h2>
 
   <p class="skills">
-    <hb-skill *ngFor="let skill of mission.skills" [name]="skill"></hb-skill>
+    <jc-skill *ngFor="let skill of mission.skills" [name]="skill"></jc-skill>
   </p>
 
   <p *ngIf="mission.locks.length" class="locks">

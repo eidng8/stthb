@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 @Component({
   templateUrl: 'missions.html',
 })
-export class MissionsPageComponent {
+export class MissionsPage {
   /*
    public groups:string[];
    public currentGroup:string;

@@ -23,7 +23,8 @@ const ContextReplacementPlugin =
   require('webpack/lib/ContextReplacementPlugin');
 
 process.env.NODE_ENV = 'test';
-const ENV = process.env.ENV;
+process.env.ENV = 'test';
+const ENV = 'test';
 
 const coverageEnabled = process.env.NO_COVERAGE !== 'true';
 

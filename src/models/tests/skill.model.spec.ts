@@ -5,6 +5,7 @@
  */
 
 import { SkillModel } from '../skill.model';
+import { ExceptionsMessages } from '../../shared/exceptions';
 
 describe('Models:', () => {
   describe('SkillModel', () => {
@@ -54,29 +55,22 @@ describe('Models:', () => {
     }); // end Static Features
 
     describe('Instance Features', () => {
-      it('can be created with skill value', () => {
-        const model: SkillModel = new SkillModel('cmd', 1);
-        expect(model).toBeDefined();
-        expect(model.abbr).toBe('cmd');
-        expect(model.name).toBe('command');
-        expect(model.value).toBe(1);
-      }); // end can be created
-
-      it('can be created with value range', () => {
-        const model: SkillModel = new SkillModel('dip', [1, 2]);
-        expect(model).toBeDefined();
-        expect(model.abbr).toBe('dip');
-        expect(model.name).toBe('diplomacy');
-        expect(model.value).toEqual([1, 2]);
-      }); // end can be created
-
-      it('can be created with skill value & range', () => {
+      it('can be created', () => {
         const model: SkillModel = new SkillModel('sec', [1, 2, 3]);
         expect(model).toBeDefined();
         expect(model.abbr).toBe('sec');
         expect(model.name).toBe('security');
         expect(model.value).toEqual([1, 2, 3]);
       }); // end can be created
+
+      it('should throw error if not range', () => {
+        expect(() => new SkillModel('cmd', <any>1))
+          .toThrow(ExceptionsMessages.skills.value);
+        expect(() => new SkillModel('cmd', [1]))
+          .toThrow(ExceptionsMessages.skills.value);
+        expect(() => new SkillModel('cmd', [1, 2]))
+          .toThrow(ExceptionsMessages.skills.value);
+      }); // end should throw error if not range
 
     }); // end Instance Features
 

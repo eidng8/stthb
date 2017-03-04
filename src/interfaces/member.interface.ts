@@ -31,7 +31,7 @@ export interface IMember {
   /**
    * List of all skills with values at maximum level and fully equipped.
    */
-  skills: {[key: number]: number|number[]};
+  skills: {[key: number]: number[]};
 
   /**
    * Number of stars (rarity)

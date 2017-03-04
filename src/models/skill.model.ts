@@ -4,6 +4,8 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
+import { ExceptionsMessages } from '../shared/exceptions';
+
 export class SkillModel {
   /**
    * Name and abbreviation mappings
@@ -29,7 +31,7 @@ export class SkillModel {
    * An array denotes a value range, with the first element as the lower bound,
    * and the second element as the upper bound.
    */
-  value: number|number[];
+  value: number[];
 
   /**
    * The skill abbreviation
@@ -52,7 +54,11 @@ export class SkillModel {
     return SkillModel.map[skill][1];
   }
 
-  constructor(skill: string, value: number|number[]) {
+  constructor(skill: string, value: number[]) {
+    if(value.length != 3) {
+      throw ExceptionsMessages.skills.value;
+    }
+
     this.abbr = skill;
     this.value = value;
   }
@@ -83,5 +89,26 @@ export class SkillModel {
 
   set name(value: string) {
     this._skill = SkillModel.map[value][1];
+  }
+
+  /**
+   * The base skill value
+   */
+  get base(): number {
+    return this.value[0];
+  }
+
+  /**
+   * The lower limit of skill range
+   */
+  get lower(): number {
+    return this.value[1];
+  }
+
+  /**
+   * The upper limit of skill range
+   */
+  get upper(): number {
+    return this.value[2];
   }
 }

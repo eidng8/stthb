@@ -25,36 +25,36 @@ describe('Models:', () => {
     }); // end can be created
 
     it('can set & get cmd skill', () => {
-      model.cmd = 2;
-      expect(model.cmd).toBe(2);
+      model.cmd = [2, 3, 4];
+      expect(model.cmd).toEqual([2, 3, 4]);
       const skill: string = 'cmd';
-      model[skill] = 3;
-      expect(model.cmd).toBe(3);
+      model[skill] = [3, 4, 5];
+      expect(model.cmd).toEqual([3, 4, 5]);
     }); // end can be created
 
     it('can set & get dip skill', () => {
-      model.dip = 2;
-      expect(model.dip).toBe(2);
+      model.dip = [2, 3, 4];
+      expect(model.dip).toEqual([2, 3, 4]);
     }); // end can be created
 
     it('can set & get eng skill', () => {
-      model.eng = 2;
-      expect(model.eng).toBe(2);
+      model.eng = [2, 3, 4];
+      expect(model.eng).toEqual([2, 3, 4]);
     }); // end can be created
 
     it('can set & get med skill', () => {
-      model.med = 2;
-      expect(model.med).toBe(2);
+      model.med = [2, 3, 4];
+      expect(model.med).toEqual([2, 3, 4]);
     }); // end can be created
 
     it('can set & get sci skill', () => {
-      model.sci = 2;
-      expect(model.sci).toBe(2);
+      model.sci = [2, 3, 4];
+      expect(model.sci).toEqual([2, 3, 4]);
     }); // end can be created
 
     it('can set & get sec skill', () => {
-      model.sec = 2;
-      expect(model.sec).toBe(2);
+      model.sec = [2, 3, 4];
+      expect(model.sec).toEqual([2, 3, 4]);
     }); // end can be created
 
   }); // end SkillsModel

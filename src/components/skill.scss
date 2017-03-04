@@ -11,7 +11,7 @@ jc-skill {
     font-size: 30px;
 
     > span {
-      &:before {
+      &::before {
         height: 30px;
         width: 30px;
         margin-bottom: -5px;
@@ -23,7 +23,7 @@ jc-skill {
   > span {
     display: inline-block;
 
-    &:before {
+    &::before {
       content: ' ';
       display: block;
       height: 18px;
@@ -36,27 +36,27 @@ jc-skill {
     }
   }
 
-  .cmd:before {
+  .cmd::before {
     background-image: url(/assets/img/Command_Icon.png);
   }
 
-  .dip:before {
+  .dip::before {
     background-image: url(/assets/img/Diplomacy_Icon.png);
   }
 
-  .eng:before {
+  .eng::before {
     background-image: url(/assets/img/Engineering_Icon.png);
   }
 
-  .med:before {
+  .med::before {
     background-image: url(/assets/img/Medical_Icon.png);
   }
 
-  .sci:before {
+  .sci::before {
     background-image: url(/assets/img/Science_Icon.png);
   }
 
-  .sec:before {
+  .sec::before {
     background-image: url(/assets/img/Security_Icon.png);
   }
 }

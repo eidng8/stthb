@@ -18,13 +18,14 @@ ion-list[jc-collapsible] {
     max-height: 4rem !important;
     transition-timing-function: ease-in, ease-in;
 
-    ion-list-header:after {
+    ion-list-header::after {
       transform: rotate(180deg);
     }
   }
 
-  ion-list-header:after {
+  ion-list-header::after {
     @extend .ionicons;
+
     font-size: 2.4rem;
     display: block;
     position: absolute;
@@ -37,14 +38,14 @@ ion-list[jc-collapsible] {
     transition-duration: $toggle-ios-transition-duration;
 
     .list-header-ios {
-      &:after {
-        @extend .ion-ios-arrow-up:before;
+      &::after {
+        @extend .ion-ios-arrow-up::before;
+
         right: round($list-ios-header-padding-left / 2);
         transition-duration: $toggle-ios-transition-duration;
       }
     }
   }
-
 }
 
 .md {
@@ -52,12 +53,12 @@ ion-list[jc-collapsible] {
     transition-duration: $toggle-md-transition-duration;
 
     .list-header-md {
-      &:after {
-        @extend .ion-md-arrow-dropup:before;
+      &::after {
+        @extend .ion-md-arrow-dropup::before;
+
         right: round($list-md-header-padding-left / 2);
         transition-duration: $toggle-md-transition-duration;
       }
     }
   }
-
 }

@@ -18,7 +18,7 @@ compile:
 test:
 #  pre:
 #    - export DISPLAY=:99.0
-#    - sh -e /etc/init.d/xvfb start
+#    - scripts -e /etc/init.d/xvfb start
   override:
     - npm run coverage
 #    - npm run e2e

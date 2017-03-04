@@ -72,6 +72,21 @@ describe('Models:', () => {
           .toThrow(ExceptionsMessages.skills.value);
       }); // end should throw error if not range
 
+      it('should return base value', () => {
+        const model: SkillModel = new SkillModel('sec', [1, 2, 3]);
+        expect(model.base).toBe(1);
+      }); // end should return base value
+
+      it('should return lower limit', () => {
+        const model: SkillModel = new SkillModel('sec', [1, 2, 3]);
+        expect(model.lower).toBe(2);
+      }); // end should return lower limit
+
+      it('should return upper limit', () => {
+        const model: SkillModel = new SkillModel('sec', [1, 2, 3]);
+        expect(model.upper).toBe(3);
+      }); // end should return upper limit
+
     }); // end Instance Features
 
   }); // end SkillsModel

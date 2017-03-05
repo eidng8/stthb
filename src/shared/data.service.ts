@@ -22,15 +22,18 @@ export class DataService implements IServerData {
   /**
    * URL to local (pre-packaged) data file
    */
-  private readonly localUrl: string = 'data.json';
+  protected readonly localUrl: string = 'data.json';
 
   // private readonly removeUrl: string = 'http://*****/data.json';
 
   /**
    * Server data got from local or remote source
    */
-  private data: IServerData;
+  protected data: IServerData;
 
+  /**
+   * @param http Angular HTTP service
+   */
   constructor(private http: Http) {
   }
 
@@ -122,12 +125,12 @@ export class DataService implements IServerData {
   /**
    * Fetch server data from local (pre-packaged) source
    */
-  private getLocalData(): Observable<IServerData> {
+  protected getLocalData(): Observable<IServerData> {
     return this.http.get(this.localUrl)
       .map<IServerData>(res => this.data = res.json());
   }
 
-  // todo private fetchRemoteData() {
+  // todo protected fetchRemoteData() {
   //   return this.http.get(this.localUrl);
   // }
 }

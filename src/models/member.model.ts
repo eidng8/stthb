@@ -4,7 +4,7 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { ISkills } from '../interfaces/skills.interface';
+import { SkillsModel } from './skills.model';
 
 export class MemberModel {
   /**
@@ -30,7 +30,7 @@ export class MemberModel {
   /**
    * List of all skills with values at maximum level and fully equipped.
    */
-  skills: ISkills;
+  skills: SkillsModel;
 
   /**
    * Number of stars (rarity)

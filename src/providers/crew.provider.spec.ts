@@ -6,9 +6,9 @@
 
 import { TestBed, inject } from '@angular/core/testing';
 import { provideMockDataService } from '../testing/data.service.mock';
-import { Factory } from './factory';
+import { Factory } from '../shared/factory';
 import { CrewProvider } from './crew.provider';
-import { DataService } from './data.service';
+import { DataService } from '../shared/data.service';
 
 describe('Crew Provider:', () => {
 

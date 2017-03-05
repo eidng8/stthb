@@ -6,8 +6,8 @@
 
 import each from 'lodash-es/each';
 import { Injectable } from '@angular/core';
-import { Factory } from './factory';
-import { DataService } from './data.service';
+import { Factory } from '../shared/factory';
+import { DataService } from '../shared/data.service';
 import { MemberModel } from '../models/member.model';
 import { IMember } from '../interfaces/member.interface';
 

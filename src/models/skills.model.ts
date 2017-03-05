@@ -4,102 +4,59 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { ISkills } from '../interfaces/skills.interface';
 import { SkillModel } from './skill.model';
 
 export type TSkills = {[key: number]: number[]};
 
-export class SkillsModel implements ISkills {
+export class SkillsModel {
 
-  private _cmd: boolean|SkillModel = false;
-  private _dip: boolean|SkillModel = false;
-  private _eng: boolean|SkillModel = false;
-  private _med: boolean|SkillModel = false;
-  private _sci: boolean|SkillModel = false;
-  private _sec: boolean|SkillModel = false;
+  protected _cmd: SkillModel = undefined;
+  protected _dip: SkillModel = undefined;
+  protected _eng: SkillModel = undefined;
+  protected _med: SkillModel = undefined;
+  protected _sci: SkillModel = undefined;
+  protected _sec: SkillModel = undefined;
 
-  get cmd(): number[] {
-    if(this._cmd instanceof SkillModel) {
-      return this._cmd.value;
-    }
-    return undefined;
+  // region Properties
+
+  get cmd(): SkillModel {
+    return this.get('cmd');
   }
 
-  set cmd(value: number[]) {
-    if(this._cmd instanceof SkillModel) {
-      this._cmd.value = value;
-    }
-    this._cmd = this.createModel('cmd', value);
+  get dip(): SkillModel {
+    return this.get('dip');
   }
 
-  get dip(): number[] {
-    if(this._dip instanceof SkillModel) {
-      return this._dip.value;
-    }
-    return undefined;
+  get eng(): SkillModel {
+    return this.get('eng');
   }
 
-  set dip(value: number[]) {
-    if(this._dip instanceof SkillModel) {
-      this._dip.value = value;
-    }
-    this._dip = this.createModel('dip', value);
+  get med(): SkillModel {
+    return this.get('med');
   }
 
-  get eng(): number[] {
-    if(this._eng instanceof SkillModel) {
-      return this._eng.value;
-    }
-    return undefined;
+  get sci(): SkillModel {
+    return this.get('sci');
   }
 
-  set eng(value: number[]) {
-    if(this._eng instanceof SkillModel) {
-      this._eng.value = value;
-    }
-    this._eng = this.createModel('eng', value);
+  get sec(): SkillModel {
+    return this.get('sec');
   }
 
-  get med(): number[] {
-    if(this._med instanceof SkillModel) {
-      return this._med.value;
-    }
-    return undefined;
+  // endregion
+
+  get(skill: string): SkillModel {
+    return this[`_${skill}`];
   }
 
-  set med(value: number[]) {
-    if(this._med instanceof SkillModel) {
-      this._med.value = value;
+  set(skill: string|SkillModel, values: number[] = undefined): void {
+    if(skill instanceof SkillModel) {
+      this[`_${skill.abbr}`] = skill;
+      return;
     }
-    this._med = this.createModel('med', value);
-  }
 
-  get sci(): number[] {
-    if(this._sci instanceof SkillModel) {
-      return this._sci.value;
-    }
-    return undefined;
-  }
-
-  set sci(value: number[]) {
-    if(this._sci instanceof SkillModel) {
-      this._sci.value = value;
-    }
-    this._sci = this.createModel('sci', value);
-  }
-
-  get sec(): number[] {
-    if(this._sec instanceof SkillModel) {
-      return this._sec.value;
-    }
-    return undefined;
-  }
-
-  set sec(value: number[]) {
-    if(this._sec instanceof SkillModel) {
-      this._sec.value = value;
-    }
-    this._sec = this.createModel('sec', value);
+    const model: SkillModel = this.createModel(skill, values);
+    this[`_${model.abbr}`] = model;
   }
 
   protected createModel(skill: string, value: number[]): SkillModel {

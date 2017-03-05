@@ -79,7 +79,6 @@
     "object-literal-sort-keys": true,
     "align": [
       true,
-      "parameters",
       "statements"
     ],
     "class-name": true,

@@ -10,8 +10,6 @@ import { StatusBar } from 'ionic-native';
 import { TabsPageComponent } from '../pages/tabs.page';
 import { CrewPage } from '../pages/crew.page';
 
-declare const cordova: any;
-
 @Component(
   {
     templateUrl: 'app.html',
@@ -22,12 +20,9 @@ export class HandbookAppComponent implements OnInit {
   public rootPage: any = TabsPageComponent;
   public pages: Array<{title: string, component: any}>;
 
-  private platform: Platform;
-
   public constructor(platform: Platform,
     /*private _db:DataService, private _store:Store<IAppState>,
      private _crewActions:CrewActions*/) {
-    this.platform = platform;
 
     // used for an example of ngFor and navigation
     this.pages = [
@@ -42,7 +37,7 @@ export class HandbookAppComponent implements OnInit {
 
     platform.ready().then(
       () => {
-        if('undefined' != typeof cordova) {
+        if(platform.is('cordova')) {
           // okay, so the platform is ready and our plugins
           // are available. here you can do any higher level
           // native things you might need.

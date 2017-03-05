@@ -5,9 +5,11 @@
  */
 
 import each from 'lodash-es/each';
-import { DataService } from './data.service';
+import { Injectable } from '@angular/core';
+import { DataService } from '../shared/data.service';
 import { MissionModel } from '../models/mission.model';
 
+@Injectable()
 /**
  * Fundamental mission data processing features
  */

@@ -5,9 +5,9 @@
  */
 
 import { Observable } from 'rxjs/Observable';
-import './rxops';
+import '../shared/rxops';
 import { Injectable } from '@angular/core';
-import { DataService } from './data.service';
+import { DataService } from '../shared/data.service';
 import { CrewProvider } from './crew.provider';
 import { MissionsProvider } from './missions.provider';
 
@@ -22,39 +22,17 @@ export class DataProvider {
   /**
    * Indicates if the instance is ready to serve.
    */
-  private _ready: boolean = false;
-
-  /**
-   * Crew features
-   */
-  private _crew: CrewProvider;
-
-  /**
-   * Mission features
-   */
-  private _missions: MissionsProvider;
+  protected ready: boolean = false;
 
   // endregion
 
   // region Read-only Properties
 
-  /**
-   * Crew features
-   */
-  get crew(): CrewProvider {
-    return this._crew;
-  }
-
-  /**
-   * Mission features
-   */
-  get missions(): MissionsProvider {
-    return this._missions;
-  }
-
   // endregion
 
-  constructor(private _data: DataService) {
+  constructor(protected server: DataService,
+    protected readonly crew: CrewProvider,
+    protected readonly missions: MissionsProvider) {
   }
 
   /**
@@ -62,15 +40,13 @@ export class DataProvider {
    *
    * Always emits `true` after data has been loaded successfully.
    */
-  ready(): Observable<true> {
-    if(this._ready) {
+  whenReady(): Observable<boolean> {
+    if(this.ready) {
       return Observable.of(true);
     }
 
-    return this._data.fetch().map(() => {
-      this._crew = new CrewProvider(this._data);
-      this._missions = new MissionsProvider(this._data);
-      this._ready = true;
+    return this.server.fetch().map(() => {
+      this.ready = true;
       return true;
     });
   }

@@ -9,6 +9,10 @@ import { SkillModel } from './skill.model';
 export type TSkills = {[key: number]: number[]};
 
 export class SkillsModel {
+  /**
+   * List of all skill abbreviations
+   */
+  static list: string[] = ['cmd', 'dip', 'eng', 'med', 'sci', 'sec'];
 
   protected _cmd: SkillModel = undefined;
   protected _dip: SkillModel = undefined;
@@ -57,6 +61,21 @@ export class SkillsModel {
 
     const model: SkillModel = this.createModel(skill, values);
     this[`_${model.abbr}`] = model;
+  }
+
+  each(func: (skill: SkillModel, abbr: string) => boolean|void): boolean {
+    let found: boolean = false;
+    for(const abbr of SkillsModel.list) {
+      const skill: SkillModel = this[`_${abbr}`];
+      if(!skill) {
+        continue;
+      }
+      found = true;
+      if(false === func(skill, abbr)) {
+        break;
+      }
+    }
+    return found;
   }
 
   protected createModel(skill: string, value: number[]): SkillModel {

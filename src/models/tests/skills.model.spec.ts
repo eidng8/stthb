@@ -57,6 +57,53 @@ describe('Models:', () => {
       expect(model.sec.base).toBe(2);
     }); // end can be created
 
+    it('can be iterated', () => {
+      const values: any = {
+        'dip': [2, 3, 4],
+        'eng': [3, 4, 5],
+        'sci': [5, 6, 7],
+      };
+
+      model.set('dip', values.dip);
+      model.set('eng', values.eng);
+      model.set('sci', values.sci);
+
+      let looped: number = 0;
+      model.each((skill, abbr) => {
+        looped++;
+        expect(skill.abbr).toBe(abbr);
+        expect(skill.base).toBe(values[abbr][0]);
+        expect(skill.lower).toBe(values[abbr][1]);
+        expect(skill.upper).toBe(values[abbr][2]);
+      });
+
+      expect(looped).toBe(3);
+    }); // end can be iterated
+
+    it('iteration can be stopped explicitly', () => {
+      const values: any = {
+        'dip': [2, 3, 4],
+        'eng': [3, 4, 5],
+        'sci': [5, 6, 7],
+      };
+
+      model.set('dip', values.dip);
+      model.set('eng', values.eng);
+      model.set('sci', values.sci);
+
+      let looped: number = 0;
+      model.each((skill, abbr) => {
+        looped++;
+        expect(skill.abbr).toBe(abbr);
+        expect(skill.base).toBe(values[abbr][0]);
+        expect(skill.lower).toBe(values[abbr][1]);
+        expect(skill.upper).toBe(values[abbr][2]);
+        return false;
+      });
+
+      expect(looped).toBe(1);
+    }); // end can be iterated
+
   }); // end SkillsModel
 
 }); // end Models:

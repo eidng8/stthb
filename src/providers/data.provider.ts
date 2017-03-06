@@ -46,6 +46,8 @@ export class DataProvider {
     }
 
     return this.server.fetch().map(() => {
+      this.crew.load(this.server);
+      // this.missions.load(this.server);
       this.ready = true;
       return true;
     });

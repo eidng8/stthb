@@ -34,6 +34,10 @@ export class CrewProvider {
    * Load crew member from the given server data
    */
   load(server: DataService): void {
+    if(!(server instanceof DataService)) {
+      return;
+    }
+
     this.crew = [];
     each(server.crew, (data: IMember, idx: number) => {
       this.crew[idx] = this._factory.member(data);

@@ -4,6 +4,7 @@
   ~  @link    https://github.com/eidng8/stthb
   -->
 
-<span class="{{ name }}">
-  <small *ngIf="undefined != value && null != value">{{ value }}</small>
+<span class="skill-{{ skill.abbr }}-icon"></span>
+<span class="skill-values">
+  {{ skill.base }} ({{ skill.lower }} - {{ skill.upper }})
 </span>

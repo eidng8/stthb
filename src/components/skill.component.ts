@@ -8,12 +8,12 @@
  * Created by JC on 2016-09-11.
  */
 import { Component, Input } from '@angular/core';
+import { SkillModel } from '../models/skill.model';
 
 @Component({
   selector:    'jc-skill',
   templateUrl: 'skill.html',
 })
 export class SkillComponent {
-  @Input() public name: string;
-  @Input() public value: number;
+  @Input() skill: SkillModel;
 }

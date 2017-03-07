@@ -5,7 +5,9 @@
  */
 
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
 import { PageBase } from './base';
+import { CrewProvider } from '../providers/crew.provider';
 
 /*export type TLists = {
  crew:CrewMember[]
@@ -18,11 +20,15 @@ import { PageBase } from './base';
 })
 export class CrewPage extends PageBase {
 
-  public setFilter(): void {
+  constructor(public crew: CrewProvider, nav: NavController) {
+    super(nav);
+  }
+
+  setFilter(): void {
     // this.navCtl.push(FilterPage);
   }
 
-  /*public crew:CrewProvider;
+  /*
    public groups:string[] = ['Alphabet', 'Skills', 'Stars', 'Traits'];
 
    public currentGroup:string = this.groups[0];

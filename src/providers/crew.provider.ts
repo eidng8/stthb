@@ -30,6 +30,10 @@ export class CrewProvider {
     return this.crew;
   }
 
+  get count(): number {
+    return this.crew.length;
+  }
+
   /**
    * Load crew member from the given server data
    */

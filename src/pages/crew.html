@@ -10,7 +10,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Crew
-      <!--<small>({{ (filters | async)?.length }} in total)</small>-->
+      <small>({{ crew.count }} in total)</small>
     </ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="setFilter()">
@@ -23,6 +23,8 @@
 <ion-content fullscreen padding class="crew-list">
 
   <ion-list no-lines jc-collapsible>
+    <jc-member-brief *ngFor="let member of crew.all" [member]="member">
+    </jc-member-brief>
     <!--<crew-item *ngFor="let list of lists | async" [crew]="list"></crew-item>-->
   </ion-list>
 

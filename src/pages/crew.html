@@ -22,61 +22,9 @@
 
 <ion-content fullscreen padding class="crew-list">
 
-  <ion-list no-lines jc-collapsible>
+  <ion-list no-lines>
     <jc-member-brief *ngFor="let member of crew.all" [member]="member">
     </jc-member-brief>
-    <!--<crew-item *ngFor="let list of lists | async" [crew]="list"></crew-item>-->
   </ion-list>
 
-  <!--
-    <ion-list no-lines collapsible *ngFor="let list of lists | async">
-      <ion-list-header *ngIf="list.header">
-        {{ list.header | uppercase }}
-      </ion-list-header>
-      <crew-item *ngFor="let crew of list.crew"
-                 [crew]="crew" [skill]="list.skill"></crew-item>
-    </ion-list>
-  -->
-
 </ion-content>
-
-<ion-footer no-border>
-  <!--
-    <ion-toolbar>
-      <div [ngSwitch]="currentGroup">
-        &lt;!&ndash;ion-searchbar *ngSwitchCase="groups[0]"></ion-searchbar&ndash;&gt;
-
-        <ion-select *ngSwitchCase="groups[1]"
-                    [(ngModel)]="skillFilter" (ionChange)="tabSkills()">
-          <ion-option *ngFor="let sf of skills; let i = index" value="{{ sf }}">
-            {{ skillNames[i] | titleCase }}
-          </ion-option>
-        </ion-select>
-
-        <ion-select *ngSwitchCase="groups[2]"
-                    [(ngModel)]="starFilter" (ionChange)="tabStars()">
-          <ion-option *ngFor="let sf of [5,4,3,2,1]" value="{{ sf }}">
-            {{ sf + '-star' }}
-          </ion-option>
-        </ion-select>
-
-        <ion-select *ngSwitchCase="groups[3]"
-                    [(ngModel)]="traitFilter" (ionChange)="tabTraits()">
-          <ion-option *ngFor="let tf of traitList" value="{{ tf }}">
-            {{ tf | titleCase }}
-          </ion-option>
-        </ion-select>
-      </div>
-
-    </ion-toolbar>
-
-    <ion-toolbar>
-      <ion-segment [(ngModel)]="currentGroup"
-                   (ionChange)="switchTab(currentGroup)">
-        <ion-segment-button *ngFor="let group of groups" value="{{ group }}">
-          {{ group }}
-        </ion-segment-button>
-      </ion-segment>
-    </ion-toolbar>
-  -->
-</ion-footer>

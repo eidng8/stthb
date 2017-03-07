@@ -7,7 +7,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
-import { TabsPageComponent } from '../pages/tabs.page';
+import { TabsPage } from '../pages/tabs.page';
 import { CrewPage } from '../pages/crew.page';
 
 @Component(
@@ -17,7 +17,7 @@ import { CrewPage } from '../pages/crew.page';
 export class HandbookAppComponent implements OnInit {
   @ViewChild(Nav) public nav: Nav;
 
-  public rootPage: any = TabsPageComponent;
+  public rootPage: any = TabsPage;
   public pages: Array<{title: string, component: any}>;
 
   public constructor(platform: Platform,

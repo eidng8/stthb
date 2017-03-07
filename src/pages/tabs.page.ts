@@ -12,7 +12,7 @@ import { MissionsPage } from './missions.page';
 @Component({
   templateUrl: 'tabs.html',
 })
-export class TabsPageComponent {
+export class TabsPage {
 
   public home: any;
   public crew: any;

@@ -7,6 +7,7 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
+import { DataService } from '../shared/data.service';
 import { TabsPage } from '../pages/tabs.page';
 import { CrewPage } from '../pages/crew.page';
 
@@ -20,8 +21,8 @@ export class HandbookAppComponent implements OnInit {
   public rootPage: any = TabsPage;
   public pages: Array<{title: string, component: any}>;
 
-  public constructor(platform: Platform,
-    /*private _db:DataService, private _store:Store<IAppState>,
+  public constructor(platform: Platform, private server: DataService
+    /*, private _store:Store<IAppState>,
      private _crewActions:CrewActions*/) {
 
     // used for an example of ngFor and navigation
@@ -43,6 +44,8 @@ export class HandbookAppComponent implements OnInit {
           // native things you might need.
           StatusBar.styleDefault();
         }
+
+        this.server.fetch().subscribe();
       });
   }
 

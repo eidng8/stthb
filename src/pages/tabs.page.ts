@@ -14,15 +14,10 @@ import { MissionsPage } from './missions.page';
 })
 export class TabsPage {
 
-  public home: any;
-  public crew: any;
-  public missions: any;
+  home: any = HomePage;
+  crew: any = CrewPage;
+  missions: any = MissionsPage;
 
-  public constructor() {
-    // this tells the tabs component which Pages
-    // should be each tab's root Page
-    this.home = HomePage;
-    this.crew = CrewPage;
-    this.missions = MissionsPage;
+  constructor() {
   }
 }

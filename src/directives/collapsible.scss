@@ -24,7 +24,7 @@ ion-list[jc-collapsible] {
   }
 
   ion-list-header::after {
-    @extend .ionicons;
+    //@extend .ionicons;
 
     font-size: 2.4rem;
     display: block;
@@ -39,7 +39,7 @@ ion-list[jc-collapsible] {
 
     .list-header-ios {
       &::after {
-        @extend .ion-ios-arrow-up::before;
+        //@extend .ion-ios-arrow-up::before;
 
         right: round($list-ios-header-padding-left / 2);
         transition-duration: $toggle-ios-transition-duration;
@@ -54,7 +54,7 @@ ion-list[jc-collapsible] {
 
     .list-header-md {
       &::after {
-        @extend .ion-md-arrow-dropup::before;
+        //@extend .ion-md-arrow-dropup::before;
 
         right: round($list-md-header-padding-left / 2);
         transition-duration: $toggle-md-transition-duration;

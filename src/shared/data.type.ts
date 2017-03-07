@@ -5,3 +5,11 @@
  */
 
 export const enum EMissionType {away = 1, battle}
+
+export enum ERarity {
+  common = 1,
+  uncommon,
+  rare,
+  'super-rare',
+  legendary,
+}

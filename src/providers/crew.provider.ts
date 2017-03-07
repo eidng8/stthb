@@ -6,20 +6,21 @@
 
 import each from 'lodash-es/each';
 import { Injectable } from '@angular/core';
-import { Factory } from '../shared/factory';
-import { DataService } from '../shared/data.service';
-import { MemberModel } from '../models/member.model';
 import { IMember } from '../interfaces/member.interface';
+import { IProvider } from '../interfaces/provider.interface';
+import { MemberModel } from '../models/member.model';
+import { DataService } from '../shared/data.service';
+import { Factory } from '../shared/factory';
 
 @Injectable()
 /**
  * Fundamental crew data processing features
  */
-export class CrewProvider {
+export class CrewProvider implements IProvider {
 
   protected crew: MemberModel[];
 
-  constructor(private _factory: Factory, server: DataService) {
+  constructor(private factory: Factory, server: DataService) {
     this.load(server);
   }
 
@@ -44,7 +45,7 @@ export class CrewProvider {
 
     this.crew = [];
     each(server.crew, (data: IMember, idx: number) => {
-      this.crew[idx] = this._factory.member(data);
+      this.crew[idx] = this.factory.member(data);
       /* TODO build various indices here */
     });
   }

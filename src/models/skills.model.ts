@@ -21,7 +21,18 @@ export class SkillsModel {
   protected _sci: SkillModel = undefined;
   protected _sec: SkillModel = undefined;
 
+  protected _all: SkillModel[] = [];
+
   // region Properties
+
+  get all(): SkillModel[] {
+    if(this._all.length < 1) {
+      this.each(skill => {
+        this._all.push(skill);
+      });
+    }
+    return this._all;
+  }
 
   get cmd(): SkillModel {
     return this.get('cmd');

@@ -4,9 +4,6 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-/**
- * Created by JC on 2016-09-11.
- */
 import { Component, Input, OnInit } from '@angular/core';
 import { MemberModel } from '../models/member.model';
 import { SkillModel } from '../models/skill.model';
@@ -25,9 +22,6 @@ export class MemberBriefComponent implements OnInit {
 
   ngOnInit(): void {
     this.rarity = ERarity[this.member.stars];
-    this.skills = [];
-    this.member.skills.each(skill => {
-      this.skills.push(skill);
-    });
+    this.skills = this.member.skills.all;
   }
 }

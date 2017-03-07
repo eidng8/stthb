@@ -1,0 +1,16 @@
+<!--
+  ~  @author  eidng8
+  ~  @license https://creativecommons.org/licenses/by-sa/4.0/
+  ~  @link    https://github.com/eidng8/stthb
+  -->
+
+<ion-item>
+  <ion-thumbnail item-left class="rarity-{{ rarity }}">
+    <img src="{{ member.picture }}">
+  </ion-thumbnail>
+
+  <h3>{{ member.name }}</h3>
+
+  <jc-skill *ngFor="let skill of skills" [skill]="skill"></jc-skill>
+
+</ion-item>

@@ -1,3 +1,9 @@
+<!--
+  ~  @author  eidng8
+  ~  @license https://creativecommons.org/licenses/by-sa/4.0/
+  ~  @link    https://github.com/eidng8/stthb
+  -->
+
 <ion-menu [content]="content">
 
   <ion-header>
@@ -9,7 +15,7 @@
   <ion-content>
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
+        {{ p.title }}
       </button>
     </ion-list>
   </ion-content>

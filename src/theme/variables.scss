@@ -1,3 +1,9 @@
+/*!
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
+
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/v2/theming/
 $font-path: "../assets/fonts";
@@ -10,6 +16,11 @@ $font-path: "../assets/fonts";
 // the Sass variables found in Ionic's source scss files.
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+$background-color: #012;
+$tabs-background: lighten(adjust_color($background-color, $green: 10), 20%);
+$toolbar-background: $tabs-background;
+
+$list-text-color: #eee;
 
 // Named Color Variables
 // --------------------------------------------------
@@ -20,7 +31,7 @@ $font-path: "../assets/fonts";
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary: #387ef5,
+  primary: #abc,
   secondary: #32db64,
   danger: #f53d3d,
   light: #f4f4f4,
@@ -46,6 +57,7 @@ $colors: (
 // so that the above variables are used and Ionic's
 // default are overridden.
 
+//@import "ionic.theme.dark";
 @import "ionic.theme.default";
 
 // Ionicons

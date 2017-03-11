@@ -4,7 +4,7 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-export const enum EMissionType {away = 1, battle}
+export enum EMissionType {away = 1, battle}
 
 export enum ERarity {
   common = 1,

@@ -6,6 +6,7 @@
 
 import forOwn from 'lodash-es/forOwn';
 import { Injectable } from '@angular/core';
+import { EMissionType } from './data.type';
 import { DataService } from './data.service';
 import { IMember } from '../interfaces/member.interface';
 import { MemberModel } from '../models/member.model';
@@ -14,7 +15,6 @@ import { IMission } from '../interfaces/mission.interface';
 import { MissionModel } from '../models/mission.model';
 import { IStep } from '../interfaces/step.interface';
 import { StepModel } from '../models/step.model';
-import { EMissionType } from './data.type';
 
 @Injectable()
 export class Factory {

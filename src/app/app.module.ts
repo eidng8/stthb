@@ -15,6 +15,7 @@ import { HomePage } from '../pages/home.page';
 import { TabsPage } from '../pages/tabs.page';
 import { SkillComponent } from '../components/skill.component';
 import { MemberBriefComponent } from '../components/member-brief.component';
+import { MissionBriefComponent } from '../components/mission-brief.component';
 import { CrewProvider } from '../providers/crew.provider';
 import { MissionsProvider } from '../providers/missions.provider';
 import { DataProvider } from '../providers/data.provider';
@@ -28,6 +29,7 @@ import { Factory } from '../shared/factory';
     CollapsibleDirective,
     SkillComponent,
     MemberBriefComponent,
+    MissionBriefComponent,
     TabsPage,
     CrewPage,
     MissionsPage,

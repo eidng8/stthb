@@ -4,7 +4,6 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import each from 'lodash-es/each';
 import { Injectable } from '@angular/core';
 import { IMember } from '../interfaces/member.interface';
 import { IProvider } from '../interfaces/provider.interface';
@@ -44,7 +43,7 @@ export class CrewProvider implements IProvider {
     }
 
     this.crew = [];
-    each(server.crew, (data: IMember, idx: number) => {
+    server.crew.forEach((data: IMember, idx: number) => {
       this.crew[idx] = this.factory.member(data);
       /* TODO build various indices here */
     });

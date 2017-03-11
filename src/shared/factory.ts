@@ -10,6 +10,11 @@ import { DataService } from './data.service';
 import { IMember } from '../interfaces/member.interface';
 import { MemberModel } from '../models/member.model';
 import { TSkills, SkillsModel } from '../models/skills.model';
+import { IMission } from '../interfaces/mission.interface';
+import { MissionModel } from '../models/mission.model';
+import { IStep } from '../interfaces/step.interface';
+import { StepModel } from '../models/step.model';
+import { EMissionType } from './data.type';
 
 @Injectable()
 export class Factory {
@@ -52,4 +57,25 @@ export class Factory {
     return model;
   }
 
+  mission(data: IMission): MissionModel {
+    const model: MissionModel = new MissionModel();
+    model.name = data.name;
+    model.cost = data.cost;
+    model.type = data.type;
+    if(EMissionType.away == data.type) {
+      model.steps = [];
+      data.steps.forEach(step => {
+        model.steps.push(this.step(step));
+      });
+    }
+    return model;
+  }
+
+  step(data: IStep): StepModel {
+    const model: StepModel = new StepModel();
+    model.bonus = data.bonus;
+    model.locks = data.locks;
+    model.req = data.req;
+    return model;
+  }
 }

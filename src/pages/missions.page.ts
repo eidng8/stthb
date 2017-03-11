@@ -5,11 +5,19 @@
  */
 
 import { Component } from '@angular/core';
+import { NavController } from 'ionic-angular';
+import { MissionsProvider } from '../providers/missions.provider';
+import { PageBase } from './base';
 
 @Component({
   templateUrl: 'missions.html',
 })
-export class MissionsPage {
+export class MissionsPage extends PageBase {
+
+  constructor(public missions: MissionsProvider, nav: NavController) {
+    super(nav);
+  }
+
   /*
    public groups:string[];
    public currentGroup:string;

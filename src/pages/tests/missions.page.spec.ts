@@ -7,6 +7,10 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { MissionsPage } from '../missions.page';
+import { NavController } from 'ionic-angular';
+import { provideMockDataService } from '../../testing/data.service.mock';
+import { Factory } from '../../shared/factory';
+import { MissionsProvider } from '../../providers/missions.provider';
 
 describe('Pages:', () => {
   describe('Mission List', () => {
@@ -19,7 +23,12 @@ describe('Pages:', () => {
       TestBed.configureTestingModule(
         {
           declarations: [MissionsPage],
-          // providers:    [{provide: NavController, useValue: NavController}],
+          providers:    [
+            {provide: NavController, useValue: NavController},
+            provideMockDataService,
+            Factory,
+            MissionsProvider,
+          ],
           schemas:      [CUSTOM_ELEMENTS_SCHEMA],
         });
       fixture = TestBed.createComponent(MissionsPage);

@@ -9,6 +9,7 @@ import { Factory } from './factory';
 import { provideMockDataService } from '../testing/data.service.mock';
 import { MemberModel } from '../models/member.model';
 import { SkillsModel } from '../models/skills.model';
+import { MissionModel } from '../models/mission.model';
 
 const fixtureData: any = require('../../www/data.json');  // tslint:disable-line
 
@@ -45,6 +46,24 @@ describe('Model Factory:', () => {
       expect(skills.med.lower).toBe(201);
       expect(skills.sec.upper).toBe(332);
     }); // end should create skill model
+
+  }); // end can be injected
+
+  describe('MissionModel creator', () => {
+    let factory: Factory;
+
+    beforeEach(inject([Factory], (fab: Factory) => {
+      factory = fab;
+    })); // end beforeEach()
+
+    it('can be injected', () => {
+      expect(factory).toBeDefined();
+    }); // end can be injected
+
+    it('should create mission model', () => {
+      const mission: MissionModel = factory.mission(fixtureData.missions[0]);
+      expect(mission.name).toBe('The Wrong Crowd');
+    }); // end should create member model
 
   }); // end can be injected
 

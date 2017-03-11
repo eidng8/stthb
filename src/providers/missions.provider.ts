@@ -6,6 +6,7 @@
 
 import { Injectable } from '@angular/core';
 import { IProvider } from '../interfaces/provider.interface';
+import { IMission } from '../interfaces/mission.interface';
 import { MissionModel } from '../models/mission.model';
 import { DataService } from '../shared/data.service';
 import { Factory } from '../shared/factory';
@@ -42,10 +43,9 @@ export class MissionsProvider implements IProvider {
     }
 
     this.missions = [];
-    this.missions = <any>this.factory; // dummy remove me
-    // each(server.missions, (data: IMission, idx: number) => {
-    //   this.missions[idx] = this.factory.mission(data);
-    //   /* TODO build various indices here */
-    // });
+    server.missions.forEach((data: IMission, idx: number) => {
+      this.missions[idx] = this.factory.mission(data);
+      /* TODO build various indices here */
+    });
   }
 }

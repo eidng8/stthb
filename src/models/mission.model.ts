@@ -4,6 +4,10 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
+import { EMissionType } from '../shared/data.type';
 export class MissionModel {
-
+  name: string;
+  cost: number[];
+  type: EMissionType;
+  steps?: any;
 }

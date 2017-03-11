@@ -4,6 +4,11 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-export class Step {
-
+export class StepModel {
+  bonus: number[][];
+  locks: number[][];
+  req: number[][];
+  skills: number[];
+  traits: string;
+  crew: any;
 }

@@ -44,7 +44,7 @@ import { Factory } from '../shared/factory';
   ],
   imports:         [
     HttpModule,
-    IonicModule.forRoot(HandbookAppComponent),
+    IonicModule.forRoot(HandbookAppComponent, {hoverCSS: false}),
   ],
   providers:       [
     DataService,

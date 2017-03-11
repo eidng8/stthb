@@ -17,7 +17,4 @@ export class TabsPage {
   home: any = HomePage;
   crew: any = CrewPage;
   missions: any = MissionsPage;
-
-  constructor() {
-  }
 }

@@ -5,15 +5,9 @@
  */
 
 jc-skill {
+  display: inline-block;
 
-}
-
-.item-ios {
-  jc-skill {
-  }
-}
-
-.item-md {
-  jc-skill {
+  span {
+    font-size: 1.4rem;
   }
 }

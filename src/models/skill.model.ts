@@ -5,6 +5,7 @@
  */
 
 import { ExceptionsMessages } from '../shared/exceptions';
+import { IRange } from '../shared/data.type';
 
 export class SkillModel {
   /**
@@ -110,5 +111,17 @@ export class SkillModel {
    */
   get upper(): number {
     return this.value[2];
+  }
+
+  get effective(): IRange {
+    return {
+      lower: this.base + this.lower,
+      upper: this.base + this.upper,
+    };
+  }
+
+  get average(): number {
+    const range: IRange = this.effective;
+    return (range.lower + range.upper) / 2;
   }
 }

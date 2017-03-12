@@ -5,12 +5,14 @@
   -->
 
 <ion-item>
-  <ion-thumbnail item-left class="rarity-{{ rarity }}">
+  <ion-thumbnail item-left class="rarity-stars">
     <img src="{{ member.picture }}">
   </ion-thumbnail>
 
-  <h3>{{ member.name }}</h3>
+  <div class="skills">
+    <jc-skill *ngFor="let skill of skills" [skill]="skill"></jc-skill>
+  </div>
 
-  <jc-skill *ngFor="let skill of skills" [skill]="skill"></jc-skill>
+  <h2>{{ member.name }}</h2>
 
 </ion-item>

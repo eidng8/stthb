@@ -17,10 +17,16 @@ $font-path: "../assets/fonts";
 // To view all the possible Ionic variables, see:
 // http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
 $background-color: #012;
-$tabs-background: lighten(adjust_color($background-color, $green: 10), 20%);
-$toolbar-background: $tabs-background;
+$toolbar-background: #142740;
 
 $list-text-color: #eee;
+
+$tabs-background: transparent;
+$tabs-tab-color-active: #345;
+$tabs-ios-tab-icon-color: #fff;
+$tabs-ios-tab-icon-color-active: #987;
+
+$grid-gutter-width: 20px;
 
 // Named Color Variables
 // --------------------------------------------------

@@ -5,6 +5,7 @@
  */
 
 import { SkillsModel } from './skills.model';
+import { ERarity } from '../shared/data.type';
 
 export class MemberModel {
   /**
@@ -43,4 +44,8 @@ export class MemberModel {
    * Index value to the {@see IServerData.traits} list.
    */
   traits: string[];
+
+  get rarity(): string {
+    return ERarity[this.stars];
+  }
 }

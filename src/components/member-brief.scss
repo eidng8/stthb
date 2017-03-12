@@ -4,38 +4,78 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-jc-member {
-  ion-thumbnail.star {
-    //@extend .ion;
+jc-member-brief {
+  background: linear-gradient(to bottom, $background-color, lighten($background-color, 10%));
+  display: block;
+  margin-bottom: round($grid-gutter-width / 2);
+  border: 5px solid #999;
+  border-bottom-width: 30px;
+  border-radius: 0 5px 5px 0;
 
-    position: relative;
+  &.rarity-uncommon {
+    border-color: #50aa3c;
+  }
 
-    &::after {
-      content: '\f4b3';
-      font-size: 16px;
-      width: 100%;
-      text-align: center;
-      color: yellowgreen;
-      display: block;
-      position: absolute;
-      bottom: 0;
-      text-shadow: 0 0 2px rgba(a-color(dark), 0.8);
+  &.rarity-rare {
+    border-color: #3888cc;
+  }
+
+  &.rarity-super-rare {
+    border-color: #aa2deb;
+  }
+
+  &.rarity-legendary {
+    border-color: #fdd26a;
+  }
+
+  .item-inner {
+    padding: 0;
+
+    ion-label {
+      white-space: normal;
+
+      &.label-md {
+        margin-top: 2px;
+        margin-bottom: 0;
+        margin-right: 0;
+      }
     }
+  }
 
-    &-2::after {
-      content: '\f4b3\f4b3';
+  .item-block {
+    padding-left: 0;
+    margin: -5px -5px -30px;
+    background: transparent;
+
+    ion-thumbnail {
+      &[item-left] {
+        margin-top: 0;
+        margin-bottom: 0;
+        position: relative;
+      }
+
+      &.rarity-stars::after {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 1;
+      }
     }
+  }
 
-    &-3::after {
-      content: '\f4b3\f4b3\f4b3';
-    }
+  .skills {
+    min-height: 46px;
 
-    &-4::after {
-      content: '\f4b3\f4b3\f4b3\f4b3';
-    }
+    jc-skill {
+      width: 50%;
+      min-width: 103px;
+      margin-bottom: round($grid-gutter-width / 5);
 
-    &-5::after {
-      content: '\f4b3\f4b3\f4b3\f4b3\f4b3';
+      .skill-values {
+        margin-left: -2px;
+      }
     }
   }
 }

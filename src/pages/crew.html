@@ -23,7 +23,8 @@
 <ion-content fullscreen class="crew-list">
 
   <ion-list no-lines>
-    <jc-member-brief *ngFor="let member of crew.all" [member]="member">
+    <jc-member-brief *ngFor="let member of crew.all"
+                     [member]="member" class="rarity-{{ member.rarity }}">
     </jc-member-brief>
   </ion-list>
 

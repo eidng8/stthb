@@ -1,3 +1,9 @@
+/*!
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
+
 // http://ionicframework.com/docs/v2/theming/
 
 // App Global Sass
@@ -13,3 +19,72 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.tabs-md .tab-button-icon {
+  width: 5rem;
+  height: 5rem;
+  background: #517296;
+  border-radius: 50%;
+  padding-top: 1.2rem;
+}
+
+.rarity-stars {
+  &::after {
+    font-family: Ionicons;
+    font-size: 16px;
+    color: orange;
+    display: inline-block;
+    text-shadow: -1px -1px 1px #fff, 1px 1px 2px #000;
+  }
+}
+
+.rarity-common .rarity-stars::after {
+  content: '\f4b3';
+}
+
+.rarity-uncommon .rarity-stars::after {
+  content: '\f4b3\f4b3';
+}
+
+.rarity-rare .rarity-stars::after {
+  content: '\f4b3\f4b3\f4b3';
+}
+
+.rarity-super-rare .rarity-stars::after {
+  content: '\f4b3\f4b3\f4b3\f4b3';
+}
+
+.rarity-legendary .rarity-stars::after {
+  content: '\f4b3\f4b3\f4b3\f4b3\f4b3';
+}
+
+.skill-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  background-size: contain;
+
+  &.skill-cmd {
+    background-image: url('/assets/img/icon-cmd.png');
+  }
+
+  &.skill-dip {
+    background-image: url('/assets/img/icon-dip.png');
+  }
+
+  &.skill-eng {
+    background-image: url('/assets/img/icon-eng.png');
+  }
+
+  &.skill-med {
+    background-image: url('/assets/img/icon-med.png');
+  }
+
+  &.skill-sci {
+    background-image: url('/assets/img/icon-sci.png');
+  }
+
+  &.skill-sec {
+    background-image: url('/assets/img/icon-sec.png');
+  }
+}

@@ -7,13 +7,20 @@
 /**
  * Created by JC on 2016-09-11.
  */
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SkillModel } from '../models/skill.model';
+import { IRange } from '../shared/data.type';
 
 @Component({
   selector:    'jc-skill',
   templateUrl: 'skill.html',
 })
-export class SkillComponent {
+export class SkillComponent implements OnInit {
   @Input() skill: SkillModel;
+
+  effective: IRange;
+
+  ngOnInit(): void {
+    this.effective = this.skill.effective;
+  }
 }

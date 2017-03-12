@@ -13,3 +13,8 @@ export enum ERarity {
   'super-rare',
   legendary,
 }
+
+export interface IRange {
+  lower: number;
+  upper: number;
+}

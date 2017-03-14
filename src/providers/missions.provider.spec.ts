@@ -16,7 +16,7 @@ describe('Missions Provider:', () => {
     TestBed.configureTestingModule(
       {
         providers: [
-          provideMockDataService,
+          provideMockDataService(),
           Factory,
           MissionsProvider,
         ],

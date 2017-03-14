@@ -16,7 +16,7 @@ describe('Crew Provider:', () => {
     TestBed.configureTestingModule(
       {
         providers: [
-          provideMockDataService,
+          provideMockDataService(),
           Factory,
           CrewProvider,
         ],

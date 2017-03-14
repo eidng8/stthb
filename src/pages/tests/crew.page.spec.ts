@@ -9,9 +9,13 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { CrewPage } from '../crew.page';
 import { NavController } from 'ionic-angular';
-import { provideMockDataService } from '../../testing/data.service.mock';
+import {
+  provideMockDataService,
+  trimCrew
+} from '../../testing/data.service.mock';
 import { Factory } from '../../shared/factory';
 import { CrewProvider } from '../../providers/crew.provider';
+import { MemberBriefComponent } from '../../components/member-brief.component';
 
 describe('Pages:', () => {
   describe('Crew List', () => {
@@ -20,13 +24,13 @@ describe('Pages:', () => {
     let fixture: ComponentFixture<CrewPage>;
     let de: DebugElement;
 
-    beforeEach(() => {
+    beforeEach(done => {
       TestBed.configureTestingModule(
         {
-          declarations: [CrewPage],
+          declarations: [MemberBriefComponent, CrewPage],
           providers:    [
             {provide: NavController, useValue: NavController},
-            provideMockDataService,
+            provideMockDataService(trimCrew),
             Factory,
             CrewProvider,
           ],
@@ -41,6 +45,7 @@ describe('Pages:', () => {
       fixture.detectChanges();
       comp = fixture.componentInstance;
       de = fixture.debugElement;
+      fixture.whenStable().then(() => done());
     });
 
     it('should have been created', () => {
@@ -51,6 +56,19 @@ describe('Pages:', () => {
     it('should list all crew members', () => {
       expect(de.queryAll(By.css('jc-member-brief')).length)
         .toBe(comp.crew.count);
+    });
+
+    it('should list all rarities', () => {
+      expect(de.queryAll(By.css('.rarity-common')).length)
+        .toBeGreaterThan(0);
+      expect(de.queryAll(By.css('.rarity-uncommon')).length)
+        .toBeGreaterThan(0);
+      expect(de.queryAll(By.css('.rarity-rare')).length)
+        .toBeGreaterThan(0);
+      expect(de.queryAll(By.css('.rarity-super-rare')).length)
+        .toBeGreaterThan(0);
+      expect(de.queryAll(By.css('.rarity-legendary')).length)
+        .toBeGreaterThan(0);
     });
 
   });

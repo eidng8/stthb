@@ -52,7 +52,7 @@ describe('Components:', () => {
     it('should have skill values', () => {
       expect(
         sut.query(By.css('.skill-values')).nativeElement.textContent.trim())
-        .toBe('2 (3 - 4)');
+        .toBe('5 - 6');
     }); // end should have skill values
 
   });

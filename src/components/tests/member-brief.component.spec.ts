@@ -31,13 +31,13 @@ class TestComponent {
     member.skills.set('cmd', [1, 2, 3]);
     member.skills.set('dip', [4, 5, 6]);
     member.skills.set('sec', [444, 445, 446]);
-    member.skills.set('med', [9999, 9999, 9999]);
+    member.skills.set('med', [9999, 999, 9999]);
     this.member = member;
   }
 }
 
 describe('Components:', () => {
-  describe('Skill Component', () => {
+  describe('Member Brief Component', () => {
     let fixture: ComponentFixture<TestComponent>;
     let sut: DebugElement;
 
@@ -64,28 +64,39 @@ describe('Components:', () => {
       expect(sut).not.toBeNull();
     });
 
+    it('should have rarity', () => {
+      expect(sut.query(By.css('.rarity-rare'))).not.toBeNull();
+    }); // end should have thumbnail
+
     it('should have thumbnail', () => {
-      expect(sut.query(By.css('ion-thumbnail.rarity-rare'))).not.toBeNull();
+      expect(sut.query(By.css('ion-thumbnail'))).not.toBeNull();
+    }); // end should have thumbnail
+
+    it('should have stars', () => {
+      expect(sut.query(By.css('.rarity-stars'))).not.toBeNull();
     }); // end should have thumbnail
 
     it('should have name', () => {
       expect(
-        sut.query(By.css('h3')).nativeElement.textContent)
+        sut.query(By.css('h2')).nativeElement.textContent)
         .toBe('a member name');
     }); // end should have name
 
     it('should have skills', () => {
       const skills: DebugElement[] = sut.queryAll(By.css('jc-skill'));
       expect(skills.length).toBe(4);
-      expect(sut.query(By.css('jc-skill .skill-cmd-icon'))).not.toBeNull();
-      expect(sut.query(By.css('jc-skill .skill-dip-icon'))).not.toBeNull();
-      expect(sut.query(By.css('jc-skill .skill-sec-icon'))).not.toBeNull();
+      expect(sut.query(By.css('jc-skill .skill-icon.skill-cmd')))
+        .not.toBeNull();
+      expect(sut.query(By.css('jc-skill .skill-icon.skill-dip')))
+        .not.toBeNull();
+      expect(sut.query(By.css('jc-skill .skill-icon.skill-sec')))
+        .not.toBeNull();
 
       const med: DebugElement = sut.query(
-        By.css('jc-skill .skill-med-icon + .skill-values'));
+        By.css('jc-skill .skill-icon.skill-med + .skill-values'));
       expect(med).not.toBeNull();
       expect(med.nativeElement.textContent.trim())
-        .toBe('9999 (9999 - 9999)');
+        .toBe('10998 - 19998');
     }); // end should have skills
   });
 

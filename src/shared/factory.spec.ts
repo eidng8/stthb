@@ -18,7 +18,7 @@ describe('Model Factory:', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        provideMockDataService,
+        provideMockDataService(),
         Factory,
       ],
     });

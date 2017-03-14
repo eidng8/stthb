@@ -8,11 +8,16 @@ import { Observable } from 'rxjs/Observable';
 import { IServerData } from '../interfaces/server-data.interface';
 import { DataService } from '../shared/data.service';
 
+export type TDataCustomizer = (data: IServerData) => void;
+
 export class MockDataService extends DataService {
   data: IServerData = require('../../www/data.json');  // tslint:disable-line
 
-  constructor() {
+  constructor(...customizer: TDataCustomizer[]) {
     super(null);
+    if(customizer) {
+      customizer.forEach(func => func(this.data));
+    }
   }
 
   /**
@@ -26,7 +31,13 @@ export class MockDataService extends DataService {
   }
 }
 
-export const provideMockDataService: any = {
-  provide:  DataService,
-  useValue: new MockDataService(),
-};
+export function provideMockDataService(...customizer: TDataCustomizer[]): any {
+  return {
+    provide:  DataService,
+    useValue: new MockDataService(...customizer),
+  };
+}
+
+export function trimCrew(data: IServerData): void {
+  data.crew = data.crew.slice(0, 50);
+}

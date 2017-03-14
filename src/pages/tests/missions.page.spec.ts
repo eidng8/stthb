@@ -25,7 +25,7 @@ describe('Pages:', () => {
           declarations: [MissionsPage],
           providers:    [
             {provide: NavController, useValue: NavController},
-            provideMockDataService,
+            provideMockDataService(),
             Factory,
             MissionsProvider,
           ],

@@ -8,8 +8,8 @@ import { Component, ViewChild, OnInit } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 import { DataService } from '../shared/data.service';
-import { TabsPage } from '../pages/tabs.page';
 import { CrewPage } from '../pages/crew.page';
+import { SplashPage } from '../pages/splash.page';
 
 @Component(
   {
@@ -18,7 +18,7 @@ import { CrewPage } from '../pages/crew.page';
 export class HandbookAppComponent implements OnInit {
   @ViewChild(Nav) public nav: Nav;
 
-  public rootPage: any = TabsPage;
+  public rootPage: any = SplashPage;
   public pages: Array<{title: string, component: any}>;
 
   public constructor(platform: Platform, private server: DataService

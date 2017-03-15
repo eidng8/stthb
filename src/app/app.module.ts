@@ -21,11 +21,13 @@ import { MissionsProvider } from '../providers/missions.provider';
 import { DataProvider } from '../providers/data.provider';
 import { DataService } from '../shared/data.service';
 import { Factory } from '../shared/factory';
+import { SplashPage } from '../pages/splash.page';
 
 @NgModule({
   bootstrap:       [IonicApp],
   declarations:    [
     HandbookAppComponent,
+    SplashPage,
     CollapsibleDirective,
     SkillComponent,
     MemberBriefComponent,
@@ -37,6 +39,7 @@ import { Factory } from '../shared/factory';
   ],
   entryComponents: [
     HandbookAppComponent,
+    SplashPage,
     TabsPage,
     CrewPage,
     MissionsPage,

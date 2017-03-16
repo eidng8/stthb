@@ -18,3 +18,7 @@ export interface IRange {
   lower: number;
   upper: number;
 }
+
+export interface IState {
+
+}

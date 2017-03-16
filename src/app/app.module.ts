@@ -6,10 +6,8 @@
 
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
-import { StoreModule } from '@ngrx/store';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { HandbookAppComponent } from './app.component';
-import { reducers } from '../ngrx/state.service';
 import { CollapsibleDirective } from '../directives/collapsible.directive';
 import { CrewPage } from '../pages/crew.page';
 import { MissionsPage } from '../pages/missions.page';
@@ -49,7 +47,7 @@ import { SplashPage } from '../pages/splash.page';
   ],
   imports:         [
     HttpModule,
-    StoreModule.provideStore(reducers),
+    /*StoreModule.provideStore(reducers),*/
     IonicModule.forRoot(HandbookAppComponent, {hoverCSS: false}),
   ],
   providers:       [

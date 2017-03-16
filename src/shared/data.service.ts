@@ -125,7 +125,7 @@ export class DataService implements IServerData {
    * Fetch data from first available source
    */
   fetch(): Observable<IServerData> {
-    return this.getLocalData().do(() => this.loaded = true);
+    return this.getLocalData();
   }
 
   /**
@@ -133,7 +133,10 @@ export class DataService implements IServerData {
    */
   protected getLocalData(): Observable<IServerData> {
     return this.http.get(this.localUrl)
-      .map<IServerData>(res => this.data = res.json());
+      .map<IServerData>(res => {
+        this.loaded = true;
+        return this.data = res.json();
+      });
   }
 
   // todo protected fetchRemoteData() {

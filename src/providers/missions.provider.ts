@@ -38,7 +38,7 @@ export class MissionsProvider implements IProvider {
    * Load crew member from the given server data
    */
   load(server: DataService): void {
-    if(!(server instanceof DataService)) {
+    if(!server.ready) {
       return;
     }
 

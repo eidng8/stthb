@@ -11,11 +11,10 @@ import { Store } from '@ngrx/store';
 import { IState } from '../shared/data.type';
 
 @Injectable()
-export class FilterSelector
-{
-  static reducer = 'filter';
+export class FilterSelector {
+  static reducer: string = 'filter';
 
-  get filter() {
+  get filter(): Function {
     return (store: Store<IState>): Observable<IState> => store
       .select<IState>(FilterSelector.reducer)
       .filter(state => !!state)

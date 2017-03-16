@@ -8,15 +8,14 @@ import { Observable } from 'rxjs/Observable';
 import '../shared/rxops';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { IState } from '../shared/data.type';
 
 @Injectable()
-export class FilterSelector {
+export class FilterSelector<T, R> {
   static reducer: string = 'filter';
 
-  get filter(): Function {
-    return (store: Store<IState>): Observable<IState> => store
-      .select<IState>(FilterSelector.reducer)
+  get filter(): (selector: Observable<T>) => Observable<R> {
+    return (store: Store<T>): Observable<R> => store
+      .select<R>(FilterSelector.reducer)
       .filter(state => !!state)
       ;
   }

@@ -22,14 +22,14 @@ const red: any =
 // ng2-final AoT needs this declaration to be static
 // don't use the style `export const func = () => {...}`
 // https://github.com/ngrx/store/issues/190
-export function reducers(state: IState, action: Action): any {
+export function reducers<T>(state: T, action: Action): any {
   return red(state, action);
 }
 
 @Injectable()
-export class StateService {
-  constructor(private store: Store<IState>, private filter: FilterAction,
-    private fs: FilterSelector) {
+export class StateService<T, R> {
+  constructor(private store: Store<T>, private filter: FilterAction,
+    private fs: FilterSelector<T, R>) {
   }
 
   get filters(): FilterAction {

@@ -31,6 +31,8 @@ export class DataService implements IServerData {
    */
   protected data: IServerData;
 
+  protected loaded: boolean = false;
+
   /**
    * @param http Angular HTTP service
    */
@@ -38,6 +40,10 @@ export class DataService implements IServerData {
   }
 
   // region Read-only Properties
+
+  get ready(): boolean {
+    return this.loaded;
+  }
 
   /**
    * List of all characters
@@ -119,7 +125,7 @@ export class DataService implements IServerData {
    * Fetch data from first available source
    */
   fetch(): Observable<IServerData> {
-    return this.getLocalData();
+    return this.getLocalData().do(() => this.loaded = true);
   }
 
   /**

@@ -13,6 +13,8 @@ export type TDataCustomizer = (data: IServerData) => void;
 export class MockDataService extends DataService {
   data: IServerData = require('../../www/data.json');  // tslint:disable-line
 
+  protected loaded: boolean = true;
+
   constructor(...customizer: TDataCustomizer[]) {
     super(null);
     if(customizer) {

@@ -4,38 +4,23 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { Component, ViewChild, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
-import { DataService } from '../shared/data.service';
-import { CrewPage } from '../pages/crew.page';
 import { SplashPage } from '../pages/splash.page';
 
 @Component(
   {
     templateUrl: 'app.html',
   })
-export class HandbookAppComponent implements OnInit {
+export class HandbookAppComponent {
+
   @ViewChild(Nav) public nav: Nav;
 
-  public rootPage: any = SplashPage;
-  public pages: Array<{title: string, component: any}>;
+  rootPage: any = SplashPage;
+  pages: Array<{title: string, component: any}>;
 
-  public constructor(platform: Platform, private server: DataService
-    /*, private _store:Store<IAppState>,
-     private _crewActions:CrewActions*/) {
-
-    // used for an example of ngFor and navigation
-    this.pages = [
-      {
-        component: CrewPage,
-        title:     'Crew List',
-      }, /* {
-       component: MissionListPage,
-       title:     'Mission List',
-       },*/
-    ];
-
+  public constructor(platform: Platform) {
     platform.ready().then(
       () => {
         if(platform.is('cordova')) {
@@ -44,18 +29,12 @@ export class HandbookAppComponent implements OnInit {
           // native things you might need.
           StatusBar.styleDefault();
         }
-
-        this.server.fetch().subscribe();
       });
   }
 
-  public ngOnInit(): void {
-    // this._store.dispatch(this._crewActions.loadCrew());
-  }
-
-  public openPage(page: any): void {
+  openPage(page: any): void {
     // reset the content nav to have just this page
     // we wouldn't want the back button to show in this scenario
-    this.nav.setRoot(page.component);
+    this.nav.setRoot(page.component).then(() => console.debug('set root done'));
   }
 }

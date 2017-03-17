@@ -13,7 +13,7 @@ export class MissionModel implements IDataModel<IMission> {
   name: string;
   cost: number[];
   type: EMissionType;
-  steps?: any;
+  steps?: StepModel[];
 
   load(data: IMission): void {
     this.name = data.name;

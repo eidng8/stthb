@@ -7,14 +7,21 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { MissionsProvider } from './missions.provider';
 import { IServerData } from '../interfaces/server-data.interface';
+import { MemberModel } from '../models/member.model';
 
-const data: IServerData = require('../../www/data.json');  // tslint:disable-line
+let data: IServerData, crew: MemberModel[];
 
 describe('Providers:', () =>
 {
 
   describe('Missions Provider:', () =>
   {
+
+    beforeAll(() =>
+    {
+      data = require('../../www/data.json');  // tslint:disable-line
+      crew = data.crew.map(() => new MemberModel());
+    });//end beforeAll()
 
     beforeEach(() =>
     {
@@ -28,11 +35,14 @@ describe('Providers:', () =>
         expect(missions).not.toBeNull();
       }));
 
-    it('should fetch & store local data',
+    it('should load from server data',
       inject([MissionsProvider], (missions: MissionsProvider) =>
         {
           missions.load(data);
+          missions.loadCrew(crew);
           expect(missions.all.length).toBe(data.missions.length);
+          expect(missions.all[0].steps[0].crew.critical[0])
+            .toEqual(jasmine.any(MemberModel));
         }));
   });
 

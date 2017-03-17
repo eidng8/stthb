@@ -8,13 +8,18 @@ import { TestBed, inject } from '@angular/core/testing';
 import { CrewProvider } from './crew.provider';
 import { IServerData } from '../interfaces/server-data.interface';
 
-const data: IServerData = require('../../www/data.json');  // tslint:disable-line
+let data: IServerData;
 
 describe('Providers:', () =>
 {
 
   describe('Crew Provider:', () =>
   {
+
+    beforeAll(() =>
+    {
+      data = require('../../www/data.json');  // tslint:disable-line
+    }); // end beforeAll()
 
     beforeEach(() =>
     {

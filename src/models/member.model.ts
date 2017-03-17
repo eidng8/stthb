@@ -9,6 +9,7 @@ import { ERarity } from '../shared/data.type';
 import { IServerData } from '../interfaces/server-data.interface';
 import { IMember } from '../interfaces/member.interface';
 import { IDataModel } from '../interfaces/data-model.interface';
+import { MissionModel } from './mission.model';
 
 export class MemberModel implements IDataModel<IMember> {
   /**
@@ -47,6 +48,15 @@ export class MemberModel implements IDataModel<IMember> {
    * Index value to the {@see IServerData.traits} list.
    */
   traits: string[];
+
+  /**
+   * List of all mission steps capable of
+   */
+  missions: {
+    critical?: {[key: number]: {mission: MissionModel, steps: number[]}};
+    pass?: {[key: number]: {mission: MissionModel, steps: number[]}};
+    unlock?: {[key: number]: {mission: MissionModel, steps: number[]}};
+  } = {};
 
   get rarity(): string {
     return ERarity[this.stars];

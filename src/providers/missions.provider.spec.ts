@@ -9,18 +9,22 @@ import { MissionsProvider } from './missions.provider';
 import { IServerData } from '../interfaces/server-data.interface';
 import { MemberModel } from '../models/member.model';
 
-let data: IServerData, crew: MemberModel[];
 
 describe('Providers:', () =>
 {
 
   describe('Missions Provider:', () =>
   {
+    let data: IServerData, crew: MemberModel[];
 
     beforeAll(() =>
     {
-      data = require('../../www/data.json');  // tslint:disable-line
-      crew = data.crew.map(() => new MemberModel());
+      data = require('../../www/mission-test.data.json');  // tslint:disable-line
+      crew = data.crew.map(member => {
+        const mem: MemberModel = new MemberModel();
+        mem.load(member, data);
+        return mem;
+      });
     }); // end beforeAll()
 
     beforeEach(() =>
@@ -39,12 +43,31 @@ describe('Providers:', () =>
       inject([MissionsProvider], (missions: MissionsProvider) =>
         {
           missions.load(data);
-          missions.loadCrew(crew);
           expect(missions.all.length).toBe(data.missions.length);
-          expect(missions.all[0].steps[0].crew.critical[0])
-            .toEqual(jasmine.any(MemberModel));
         }));
-  });
 
-}); // end Providers:
+    it('should properly associate mission steps and crew',
+      inject([MissionsProvider], (missions: MissionsProvider) =>
+        {
+          missions.load(data);
+          missions.loadCrew(crew);
+
+          // check association from mission side
+          expect(missions.all[0].steps[0].crew.critical[0].name)
+            .toBe('1701 Sisko');
+          // the above one is easier to see in karma output
+          // below one is the real deal
+          expect(missions.all[0].steps[0].crew.critical[0])
+            .toBe(crew[data.missions[0].steps[0].crew.critical[0]]);
+
+          // check association from crew side
+          expect(crew[3].missions.critical[0].mission.name)
+            .toBe('The Wrong Crowd');
+          expect(crew[3].missions.critical[0].mission).toBe(missions.all[0]);
+          expect(crew[3].missions.critical[0].steps).toEqual([0, 1, 2, 3]);
+        }));
+
+  }); // end Missions Provider
+
+}); // end Providers
 

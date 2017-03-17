@@ -3,14 +3,15 @@
  *  @license https://creativecommons.org/licenses/by-sa/4.0/
  *  @link    https://github.com/eidng8/stthb
  */
-
-import { IMember } from './member.interface';
-import { IMission } from './mission.interface';
+import { Moment } from 'moment';
+import { MemberModel } from '../models/member.model';
+import { MissionModel } from '../models/mission.model';
+import { ISkill } from './skills.interface';
 
 /**
  * Server generated data definition
  */
-export interface IServerData {
+export interface IData {
   /**
    * List of all characters
    */
@@ -19,7 +20,7 @@ export interface IServerData {
   /**
    * List of all crew member.
    */
-  crew: IMember[];
+  crew: MemberModel[];
 
   /**
    * List of all episodes
@@ -29,12 +30,12 @@ export interface IServerData {
   /**
    * The timestamp when this data is generated
    */
-  generatedAt: number;
+  generatedAt: Moment;
 
   /**
    * List of all missions
    */
-  missions: IMission[];
+  missions: MissionModel[];
 
   /**
    * List of all races
@@ -44,7 +45,7 @@ export interface IServerData {
   /**
    * List of all skills
    */
-  skills: string[];
+  skills: ISkill[];
 
   /**
    * List of all traits

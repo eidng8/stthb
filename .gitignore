@@ -36,6 +36,7 @@ plugins/*
 
 www/*
 !www/data.json
+!www/*.data.json
 
 
 # Logs and trash

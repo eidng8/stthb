@@ -49,15 +49,52 @@ export class MissionsProvider implements IProvider {
   }
 
   loadCrew(crew: MemberModel[]): void {
-    this.all.forEach(mission => {
-      if(EMissionType.away == mission.type) {
-        mission.steps.forEach(step => {
-          forOwn<MemberModel[]>(step.crew, (members, key) => {
-            step.crew[key] = members.map((member, idx) =>
-              'number' == typeof member ? crew[idx] : member);
+    this.all.forEach((mission, idx) => {
+      if(EMissionType.away != mission.type) {
+        return;
+      }
+
+      mission.steps.forEach((step, sidx) => {
+        forOwn<MemberModel[]>(step.crew, (members, key) => {
+          step.crew[key] = members.map(member => {
+            let mem: MemberModel = member;
+            if('number' == typeof member) {
+              mem = crew[member as number];
+            }
+            this.associate(mem, mission, sidx, key, idx);
+            return mem;
           });
         });
-      }
+      });
     });
+  }
+
+  /**
+   * Associate member and mission step
+   *
+   * @param member The member to be associated
+   * @param mission The mission to be associated
+   * @param step The mission step (index in mission) to be associated
+   * @param key Which key to associate to, 'critical', 'pass', or 'unlock'
+   * @param idx Mission index
+   */
+  protected associate(member: MemberModel, mission: MissionModel, step: number,
+    key: string, idx: number): void {
+    // create critical/pass/unlock entry if necessary
+    if(!member.missions[key]) {
+      member.missions[key] = {};
+    }
+
+    // associate the mission
+    if(!member.missions[key][idx]) {
+      member.missions[key][idx] = {};
+    }
+    member.missions[key][idx].mission = mission;
+
+    // associate mission step
+    if(!member.missions[key][idx].steps) {
+      member.missions[key][idx].steps = [];
+    }
+    member.missions[key][idx].steps.push(step);
   }
 }

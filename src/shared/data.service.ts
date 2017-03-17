@@ -15,7 +15,10 @@ import { IMission } from '../interfaces/mission.interface';
 
 @Injectable()
 /**
- * Load raw data from local cache or remote server
+ * Load raw data from local cache or remote server.
+ *
+ * Members are declared `protected` instead of `private` to ease mocking in
+ * unit tests.
  */
 export class DataService implements IServerData {
 
@@ -133,13 +136,16 @@ export class DataService implements IServerData {
    */
   protected getLocalData(): Observable<IServerData> {
     return this.http.get(this.localUrl)
-      .map<IServerData>(res => {
-        this.loaded = true;
-        return this.data = res.json();
-      });
+      .map<IServerData>(res => this.loadData(res.json()));
   }
 
   // todo protected fetchRemoteData() {
   //   return this.http.get(this.localUrl);
   // }
+
+  protected loadData(data: IServerData): IServerData {
+    this.data = data;
+    this.loaded = true;
+    return this.data;
+  }
 }

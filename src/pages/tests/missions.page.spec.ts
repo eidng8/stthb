@@ -12,16 +12,22 @@ import { MissionsProvider } from '../../providers/missions.provider';
 import { IServerData } from '../../interfaces/server-data.interface';
 
 
-const server: IServerData = require('../../../www/data.json');  // tslint:disable-line
-const missionsProvider: MissionsProvider = new MissionsProvider();
-missionsProvider.load(server);
-
 describe('Pages:', () => {
+
   describe('Mission List', () => {
 
     let comp: MissionsPage;
     let fixture: ComponentFixture<MissionsPage>;
     let de: DebugElement;
+    let server: IServerData;
+    let missionsProvider: MissionsProvider;
+
+    beforeAll(() =>
+    {
+      server = require('../../../www/mission-test.data.json');  // tslint:disable-line
+      missionsProvider = new MissionsProvider();
+      missionsProvider.load(server);
+    }); // end beforeAll()
 
     beforeEach(() => {
       TestBed.configureTestingModule(
@@ -51,4 +57,5 @@ describe('Pages:', () => {
     //   expect(comp.message).toEqual('Welcome');
     // });
   });
+
 });

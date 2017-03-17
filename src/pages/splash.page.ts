@@ -23,6 +23,7 @@ export class SplashPage implements AfterViewInit {
     this.server.fetch().subscribe(() => {
       this.crew.load(this.server);
       this.missions.load(this.server);
+      this.missions.loadCrew(this.crew.all);
       this.nav.setRoot(TabsPage).then(() => console.debug('at home now.'));
     });
   }

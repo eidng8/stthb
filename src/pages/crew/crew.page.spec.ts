@@ -7,7 +7,7 @@
 import { By } from '@angular/platform-browser';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
-import { CrewPage } from '../crew.page';
+import { CrewPage } from './crew.page';
 import { NavController } from 'ionic-angular';
 import { CrewProvider } from '../../providers/crew.provider';
 import { MemberBriefComponent } from '../../components/member-brief.component';

@@ -6,7 +6,7 @@
 
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
-import { MissionsPage } from '../missions.page';
+import { MissionsPage } from './missions.page';
 import { NavController } from 'ionic-angular';
 import { MissionsProvider } from '../../providers/missions.provider';
 import { IServerData } from '../../interfaces/server-data.interface';

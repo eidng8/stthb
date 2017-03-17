@@ -5,11 +5,11 @@
  */
 
 import { Component, AfterViewInit } from '@angular/core';
-import { DataService } from '../shared/data.service';
-import { CrewProvider } from '../providers/crew.provider';
-import { MissionsProvider } from '../providers/missions.provider';
+import { DataService } from '../../shared/data.service';
+import { CrewProvider } from '../../providers/crew.provider';
+import { MissionsProvider } from '../../providers/missions.provider';
 import { Nav } from 'ionic-angular';
-import { TabsPage } from './tabs.page';
+import { TabsPage } from '../tabs/tabs.page';
 
 @Component({
   templateUrl: 'splash.html',

@@ -7,7 +7,7 @@
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { HomePage } from '../home.page';
+import { HomePage } from '../home/home.page';
 
 describe('Pages:', () => {
 

@@ -6,25 +6,24 @@
 
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
-import { TabsPage } from '../tabs.page';
-import { HomePage } from '../home.page';
-import { CrewPage } from '../crew.page';
-import { MissionsPage } from '../missions.page';
+import { NavController } from 'ionic-angular';
+import { HomePage } from './home.page';
 
 describe('Pages:', () => {
-  describe('Tabs', () => {
+  describe('Home Page', () => {
 
-    let comp: TabsPage;
-    let fixture: ComponentFixture<TabsPage>;
+    let comp: HomePage;
+    let fixture: ComponentFixture<HomePage>;
     let de: DebugElement;
 
     beforeEach(() => {
       TestBed.configureTestingModule(
         {
-          declarations: [TabsPage],
+          declarations: [HomePage],
+          providers:    [{provide: NavController, useValue: NavController}],
           schemas:      [CUSTOM_ELEMENTS_SCHEMA],
         });
-      fixture = TestBed.createComponent(TabsPage);
+      fixture = TestBed.createComponent(HomePage);
       // #trick
       // if you want to trigger ionViewWillEnter automatically de-comment the
       // following line
@@ -38,19 +37,8 @@ describe('Pages:', () => {
       expect(comp).toBeDefined();
     });
 
-    it('should have Home tab', () => {
-      console.log(comp.home);
-      expect(comp.home).toEqual(HomePage);
-    });
-
-    it('should have Crew tab', () => {
-      console.log(comp.crew);
-      expect(comp.crew).toEqual(CrewPage);
-    });
-
-    it('should have Missions tab', () => {
-      console.log(comp.missions);
-      expect(comp.missions).toEqual(MissionsPage);
+    it('should have welcome message', () => {
+      expect(comp.message).toEqual('Welcome');
     });
   });
 });

@@ -5,9 +5,9 @@
  */
 
 import { Component } from '@angular/core';
-import { HomePage } from './home.page';
-import { CrewPage } from './crew.page';
-import { MissionsPage } from './missions.page';
+import { HomePage } from '../home/home.page';
+import { CrewPage } from '../crew/crew.page';
+import { MissionsPage } from '../missions/missions.page';
 
 @Component({
   templateUrl: 'tabs.html',

@@ -9,10 +9,10 @@ import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule } from 'ionic-angular';
 import { HandbookAppComponent } from './app.component';
 import { CollapsibleDirective } from '../directives/collapsible.directive';
-import { CrewPage } from '../pages/crew.page';
-import { MissionsPage } from '../pages/missions.page';
-import { HomePage } from '../pages/home.page';
-import { TabsPage } from '../pages/tabs.page';
+import { CrewPage } from '../pages/crew/crew.page';
+import { MissionsPage } from '../pages/missions/missions.page';
+import { HomePage } from '../pages/home/home.page';
+import { TabsPage } from '../pages/tabs/tabs.page';
 import { SkillComponent } from '../components/skill.component';
 import { MemberBriefComponent } from '../components/member-brief.component';
 import { MissionBriefComponent } from '../components/mission-brief.component';
@@ -20,7 +20,7 @@ import { CrewProvider } from '../providers/crew.provider';
 import { MissionsProvider } from '../providers/missions.provider';
 import { DataProvider } from '../providers/data.provider';
 import { DataService } from '../shared/data.service';
-import { SplashPage } from '../pages/splash.page';
+import { SplashPage } from '../pages/splash/splash.page';
 
 @NgModule({
   bootstrap:       [IonicApp],

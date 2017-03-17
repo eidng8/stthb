@@ -6,8 +6,8 @@
 
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { PageBase } from './base';
-import { CrewProvider } from '../providers/crew.provider';
+import { PageBase } from '../base';
+import { CrewProvider } from '../../providers/crew.provider';
 
 /*export type TLists = {
  crew:CrewMember[]

@@ -6,7 +6,7 @@
 
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { PageBase } from './base';
+import { PageBase } from '../base';
 
 @Component({
   templateUrl: 'home.html',

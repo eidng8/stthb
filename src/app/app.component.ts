@@ -7,7 +7,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { Platform, Nav } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
-import { SplashPage } from '../pages/splash.page';
+import { SplashPage } from '../pages/splash/splash.page';
 
 @Component(
   {

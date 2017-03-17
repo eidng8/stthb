@@ -8,13 +8,13 @@ import { TestBed, inject } from '@angular/core/testing';
 import { CrewProvider } from './crew.provider';
 import { IServerData } from '../interfaces/server-data.interface';
 
-let data: IServerData;
 
 describe('Providers:', () =>
 {
 
   describe('Crew Provider:', () =>
   {
+    let data: IServerData;
 
     beforeAll(() =>
     {

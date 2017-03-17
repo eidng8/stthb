@@ -18,6 +18,10 @@ module.exports = config => {
     // base path that will be used to resolve all patterns (e.g. files, exclude)
     basePath: '',
 
+    browserDisconnectTimeout: 30000,
+
+    browserNoActivityTimeout: 30000,
+
     /*
      * start these browsers
      * available launchers: https://npmjs.org/browse/keyword/karma-launcher

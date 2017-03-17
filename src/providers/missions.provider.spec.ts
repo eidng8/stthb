@@ -21,7 +21,7 @@ describe('Providers:', () =>
     {
       data = require('../../www/data.json');  // tslint:disable-line
       crew = data.crew.map(() => new MemberModel());
-    });//end beforeAll()
+    }); // end beforeAll()
 
     beforeEach(() =>
     {

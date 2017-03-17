@@ -5,9 +5,28 @@
  */
 
 import { EMissionType } from '../shared/data.type';
-export class MissionModel {
+import { IDataModel } from '../interfaces/data-model.interface';
+import { IMission } from '../interfaces/mission.interface';
+import { StepModel } from './step.model';
+
+export class MissionModel implements IDataModel<IMission> {
   name: string;
   cost: number[];
   type: EMissionType;
   steps?: any;
+
+  load(data: IMission): void {
+    this.name = data.name;
+    this.cost = data.cost;
+    this.type = data.type;
+    if(EMissionType.away == data.type) {
+      this.steps = [];
+      data.steps.forEach(step =>
+      {
+        const model: StepModel = new StepModel();
+        model.load(step);
+        this.steps.push(model);
+      });
+    }
+  }
 }

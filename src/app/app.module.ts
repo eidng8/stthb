@@ -20,7 +20,6 @@ import { CrewProvider } from '../providers/crew.provider';
 import { MissionsProvider } from '../providers/missions.provider';
 import { DataProvider } from '../providers/data.provider';
 import { DataService } from '../shared/data.service';
-import { Factory } from '../shared/factory';
 import { SplashPage } from '../pages/splash.page';
 
 @NgModule({
@@ -52,7 +51,6 @@ import { SplashPage } from '../pages/splash.page';
   ],
   providers:       [
     DataService,
-    Factory,
     CrewProvider,
     MissionsProvider,
     DataProvider,

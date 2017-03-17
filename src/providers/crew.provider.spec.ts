@@ -5,30 +5,34 @@
  */
 
 import { TestBed, inject } from '@angular/core/testing';
-import { provideMockDataService } from '../testing/data.service.mock';
-import { Factory } from '../shared/factory';
 import { CrewProvider } from './crew.provider';
-import { DataService } from '../shared/data.service';
+import { IServerData } from '../interfaces/server-data.interface';
 
-describe('Crew Provider:', () => {
+const data: IServerData = require('../../www/data.json');  // tslint:disable-line
 
-  beforeEach(() => {
-    TestBed.configureTestingModule(
+describe('Providers:', () =>
+{
+
+  describe('Crew Provider:', () =>
+  {
+
+    beforeEach(() =>
+    {
+      TestBed.configureTestingModule({providers: [CrewProvider]});
+    });
+
+    it('can be injected', inject([CrewProvider], (crew: CrewProvider) =>
+    {
+      expect(crew).toBeDefined();
+      expect(crew).not.toBeNull();
+    }));
+
+    it('should fetch & store local data', inject([CrewProvider],
+      (crew: CrewProvider) =>
       {
-        providers: [
-          provideMockDataService(),
-          Factory,
-          CrewProvider,
-        ],
-      });
+        crew.load(data);
+        expect(crew.all.length).toBe(data.crew.length);
+      }));
   });
 
-  it('can be injected', inject([CrewProvider], (crew: CrewProvider) => {
-    expect(crew).toBeDefined();
-  }));
-
-  it('should fetch & store local data', inject([CrewProvider, DataService],
-    (crew: CrewProvider, server: DataService) => {
-      expect(crew.all.length).toBe(server.crew.length);
-    }));
-});
+}); // end Providers:

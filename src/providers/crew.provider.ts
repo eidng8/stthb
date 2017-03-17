@@ -8,8 +8,7 @@ import { Injectable } from '@angular/core';
 import { IMember } from '../interfaces/member.interface';
 import { IProvider } from '../interfaces/provider.interface';
 import { MemberModel } from '../models/member.model';
-import { DataService } from '../shared/data.service';
-import { Factory } from '../shared/factory';
+import { IServerData } from '../interfaces/server-data.interface';
 
 @Injectable()
 /**
@@ -17,11 +16,7 @@ import { Factory } from '../shared/factory';
  */
 export class CrewProvider implements IProvider {
 
-  protected crew: MemberModel[];
-
-  constructor(private factory: Factory, server: DataService) {
-    this.load(server);
-  }
+  protected crew: MemberModel[] = [];
 
   /**
    * Returns all crew members
@@ -37,14 +32,15 @@ export class CrewProvider implements IProvider {
   /**
    * Load crew member from the given server data
    */
-  load(server: DataService): void {
-    if(!server.ready) {
+  load(data: IServerData): void {
+    if(!data || !data.crew) {
       return;
     }
 
     this.crew = [];
-    server.crew.forEach((data: IMember, idx: number) => {
-      this.crew[idx] = this.factory.member(data);
+    data.crew.forEach((member: IMember, idx: number) => {
+      this.crew[idx] = new MemberModel();
+      this.crew[idx].load(member, data);
       /* TODO build various indices here */
     });
   }

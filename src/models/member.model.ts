@@ -6,8 +6,11 @@
 
 import { SkillsModel } from './skills.model';
 import { ERarity } from '../shared/data.type';
+import { IServerData } from '../interfaces/server-data.interface';
+import { IMember } from '../interfaces/member.interface';
+import { IDataModel } from '../interfaces/data-model.interface';
 
-export class MemberModel {
+export class MemberModel implements IDataModel<IMember> {
   /**
    * Index value to the {@see IServerData.character} list.
    */
@@ -47,5 +50,16 @@ export class MemberModel {
 
   get rarity(): string {
     return ERarity[this.stars];
+  }
+
+  load(member: IMember, server: IServerData): void {
+    this.character = server.characters[member.character];
+    this.name = member.name;
+    this.picture = member.picture;
+    this.race = server.races[member.race];
+    this.stars = member.stars;
+    this.traits = member.traits.map(trait => server.traits[trait]);
+    this.skills = new SkillsModel();
+    this.skills.load(member.skills, server);
   }
 }

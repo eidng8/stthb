@@ -9,13 +9,13 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { CrewPage } from '../crew.page';
 import { NavController } from 'ionic-angular';
-import {
-  provideMockDataService,
-  trimCrew
-} from '../../testing/data.service.mock';
-import { Factory } from '../../shared/factory';
 import { CrewProvider } from '../../providers/crew.provider';
 import { MemberBriefComponent } from '../../components/member-brief.component';
+import { IServerData } from '../../interfaces/server-data.interface';
+
+const server: IServerData = require('../../../www/data.json');  // tslint:disable-line
+const crewProvider: CrewProvider = new CrewProvider();
+crewProvider.load(server);
 
 describe('Pages:', () => {
   describe('Crew List', () => {
@@ -30,9 +30,7 @@ describe('Pages:', () => {
           declarations: [MemberBriefComponent, CrewPage],
           providers:    [
             {provide: NavController, useValue: NavController},
-            provideMockDataService(trimCrew),
-            Factory,
-            CrewProvider,
+            {provide: CrewProvider, useValue: crewProvider},
           ],
           schemas:      [CUSTOM_ELEMENTS_SCHEMA],
         });

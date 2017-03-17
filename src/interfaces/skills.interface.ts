@@ -5,6 +5,15 @@
  */
 
 /**
+ * Skill name & abbr
+ */
+export interface ISkill {
+  ordinate: number;
+  abbr: string;
+  name: string;
+}
+
+/**
  * List of acquired skills and corresponding value.
  *
  * The keys are index to the {@see IServerData.skills} list.

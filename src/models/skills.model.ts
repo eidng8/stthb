@@ -4,11 +4,14 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
+import forOwn from 'lodash-es/forOwn';
 import { SkillModel } from './skill.model';
+import { IServerData } from '../interfaces/server-data.interface';
+import { IDataModel } from '../interfaces/data-model.interface';
 
 export type TSkills = {[key: number]: number[]};
 
-export class SkillsModel {
+export class SkillsModel implements IDataModel<TSkills> {
   /**
    * List of all skill abbreviations
    */
@@ -91,5 +94,17 @@ export class SkillsModel {
 
   protected createModel(skill: string, value: number[]): SkillModel {
     return new SkillModel(skill, value);
+  }
+
+  load(skills: TSkills, server: IServerData): void {
+    forOwn<TSkills>(skills, (values, key) =>
+    {
+      try {
+        this.set(server.skills[key], values);
+      }
+      catch(e) {
+        console.warn(e.message);
+      }
+    });
   }
 }

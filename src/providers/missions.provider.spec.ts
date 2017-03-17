@@ -5,31 +5,36 @@
  */
 
 import { TestBed, inject } from '@angular/core/testing';
-import { provideMockDataService } from '../testing/data.service.mock';
-import { Factory } from '../shared/factory';
-import { DataService } from '../shared/data.service';
 import { MissionsProvider } from './missions.provider';
+import { IServerData } from '../interfaces/server-data.interface';
 
-describe('Missions Provider:', () => {
+const data: IServerData = require('../../www/data.json');  // tslint:disable-line
 
-  beforeEach(() => {
-    TestBed.configureTestingModule(
+describe('Providers:', () =>
+{
+
+  describe('Missions Provider:', () =>
+  {
+
+    beforeEach(() =>
+    {
+      TestBed.configureTestingModule({providers: [MissionsProvider]});
+    });
+
+    it('can be injected', inject([MissionsProvider],
+      (missions: MissionsProvider) =>
       {
-        providers: [
-          provideMockDataService(),
-          Factory,
-          MissionsProvider,
-        ],
-      });
+        expect(missions).toBeDefined();
+        expect(missions).not.toBeNull();
+      }));
+
+    it('should fetch & store local data',
+      inject([MissionsProvider], (missions: MissionsProvider) =>
+        {
+          missions.load(data);
+          expect(missions.all.length).toBe(data.missions.length);
+        }));
   });
 
-  it('can be injected', inject([MissionsProvider],
-    (missions: MissionsProvider) => {
-      expect(missions).toBeDefined();
-    }));
+}); // end Providers:
 
-  it('should fetch & store local data', inject([MissionsProvider, DataService],
-    (missions: MissionsProvider, server: DataService) => {
-      expect(missions.all.length).toBe(server.missions.length);
-    }));
-});

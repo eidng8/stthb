@@ -97,8 +97,7 @@ export class SkillsModel implements IDataModel<TSkills> {
   }
 
   load(skills: TSkills, server: IServerData): void {
-    forOwn<TSkills>(skills, (values, key) =>
-    {
+    forOwn<TSkills>(skills, (values, key) => {
       try {
         this.set(server.skills[key], values);
       }

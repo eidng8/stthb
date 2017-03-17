@@ -11,12 +11,14 @@ import { DataService } from '../shared/data.service';
 export type TDataCustomizer = (data: IServerData) => void;
 
 export class MockDataService extends DataService {
-  data: IServerData = require('../../www/data.json');  // tslint:disable-line
+
+  data: IServerData;
 
   protected loaded: boolean = true;
 
-  constructor(...customizer: TDataCustomizer[]) {
+  constructor(mockData: IServerData, ...customizer: TDataCustomizer[]) {
     super(null);
+    this.data = mockData;
     if(customizer) {
       customizer.forEach(func => func(this.data));
     }
@@ -33,10 +35,11 @@ export class MockDataService extends DataService {
   }
 }
 
-export function provideMockDataService(...customizer: TDataCustomizer[]): any {
+export function provideMockDataService(mockData: IServerData,
+  ...customizer: TDataCustomizer[]): any {
   return {
     provide:  DataService,
-    useValue: new MockDataService(...customizer),
+    useValue: new MockDataService(mockData, ...customizer),
   };
 }
 

@@ -11,7 +11,6 @@ import { NavController } from 'ionic-angular';
 import { MissionsProvider } from '../../providers/missions.provider';
 import { IServerData } from '../../interfaces/server-data.interface';
 
-
 describe('Pages:', () => {
 
   describe('Mission List', () => {
@@ -22,9 +21,8 @@ describe('Pages:', () => {
     let server: IServerData;
     let missionsProvider: MissionsProvider;
 
-    beforeAll(() =>
-    {
-      server = require('../../../www/mission-test.data.json');  // tslint:disable-line
+    beforeAll(() => {
+      server = require('../../testing/mission-test.data.json');  // tslint:disable-line
       missionsProvider = new MissionsProvider();
       missionsProvider.load(server);
     }); // end beforeAll()

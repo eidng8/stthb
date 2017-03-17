@@ -3,6 +3,7 @@
  *  @license https://creativecommons.org/licenses/by-sa/4.0/
  *  @link    https://github.com/eidng8/stthb
  */
+
 import { Moment } from 'moment';
 import { MemberModel } from '../models/member.model';
 import { MissionModel } from '../models/mission.model';

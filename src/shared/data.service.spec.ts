@@ -15,10 +15,10 @@ import { TestBed, inject, fakeAsync } from '@angular/core/testing';
 import { MockBackend } from '@angular/http/testing';
 import { DataService } from './data.service';
 
-const fixtureData: any = require('../../www/data.json');  // tslint:disable-line
-
 describe('Data Service:', () => {
+
   let responseOptions: ResponseOptions = new BaseResponseOptions();
+  const fixtureData: any = require('../testing/mission-test.data.json');  // tslint:disable-line
   responseOptions = responseOptions.merge({body: JSON.stringify(fixtureData)});
 
   beforeEach(() => {

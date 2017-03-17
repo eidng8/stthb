@@ -15,7 +15,7 @@ describe('Providers:', () => {
     let data: IServerData, crew: MemberModel[];
 
     beforeAll(() => {
-      data = require('../../www/mission-test.data.json');  // tslint:disable-line
+      data = require('../testing/mission-test.data.json');  // tslint:disable-line
       crew = data.crew.map(member => {
         const mem: MemberModel = new MemberModel();
         mem.load(member, data);

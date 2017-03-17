@@ -1,0 +1,636 @@
+{
+  "version": 1,
+  "generatedAt": 1488900111,
+  "characters": [
+    "APU 3947", "Alexander", "Antaak", "Apollo", "Archer", "Ardra", "Arik",
+    "B'Etor", "Barclay", "Bashir", "Bateson", "Boothby", "Brahms", "Brunt",
+    "Cartwright", "Castillo", "Chakotay", "Chang", "Changeling", "Chaotica",
+    "Chapel", "Chekov", "Cochrane", "Cretak", "Crusher", "Culluh", "Damar",
+    "Danara", "Daren", "Data", "Dathon", "David", "Daystrom", "Degra", "Doctor",
+    "Dolim", "Donik", "Dr. Russell", "Dukat", "Eddington", "Ezri", "Feezal",
+    "Fesek", "Founder", "Fox", "Garak", "Gegen", "Goran'Agar", "Gorn", "Gowron",
+    "Gralik", "Grilka", "Haron", "Harriman", "Harris", "Hugh", "Idrin",
+    "J. Dax", "Jake", "Janeway", "Jennifer", "K'Ehleyr", "Kang", "Karr",
+    "Keeler", "Keevan", "Keiko", "Kelby", "Kes", "Khan", "Kim", "Kira", "Kirk",
+    "Koloth", "Kor", "Kruge", "Kurak", "Kurn", "La Forge", "Leeta", "Lefler",
+    "Lily", "Lincoln", "Locutus", "Lore", "Lursa", "Lwaxana", "Maddox",
+    "Madred", "Mara", "Marcus", "Martok", "Mayweather", "McCoy", "Melora",
+    "Mendon", "Money", "Mora", "Morn", "Moset", "Naomi", "Nechayev", "Neelix",
+    "Nog", "O'Brien", "Odo", "Ogawa", "Opaka", "Orion Slaver", "Paris", "Pel",
+    "Persis", "Phlox", "Picard", "Pike", "Professor", "Pulaski", "Q", "Quark",
+    "R'Mor", "Rand", "Rasmussen", "Reed", "Rejal", "Remata'Klan", "Reyga",
+    "Rianna", "Riker", "Ro", "Rom", "Saavik", "Sarek", "Sato", "Scotty", "Sela",
+    "Selar", "Seska", "Seven", "Shakaar", "Shinzon", "Shran", "Silik", "Sisko",
+    "Sito", "Sloan", "Soong", "Soran", "Spock", "Suder", "Sulan", "Sulu",
+    "T'Pol", "T'Rul", "Tain", "Tarses", "Tash", "Tomalak", "Torres", "Traveler",
+    "Trelane (Character)", "Trip", "Troi", "Tuvix", "Tuvok", "Uhura", "Valeris",
+    "Vash", "Vic", "Viceroy", "Vina", "Vorik", "Wesley", "Weyoun", "Winn",
+    "Worf", "Yar", "Yates", "Zek"
+  ],
+  "crew": [
+    {
+      "character": 93,
+      "name": "\"Dark Ages\" McCoy",
+      "picture": "https://stt.wiki/w/images/thumb/c/c2/%27%27Dark_Ages%27%27_McCoy_Head.png/100px-%27%27Dark_Ages%27%27_McCoy_Head.png",
+      "race": 17,
+      "skills": {
+        "1": [157, 16, 37],
+        "3": [972, 201, 503],
+        "5": [745, 187, 332]
+      },
+      "stars": 5,
+      "traits": [22, 36, 46, 55, 97]
+    }, {
+      "character": 57,
+      "name": "1701 Jadzia Dax",
+      "picture": "https://stt.wiki/w/images/thumb/b/bc/1701_Jadzia_Dax_Head.png/100px-1701_Jadzia_Dax_Head.png",
+      "race": 32,
+      "skills": {
+        "2": [60, 12, 24],
+        "4": [813, 61, 128],
+        "5": [301, 60, 122]
+      },
+      "stars": 4,
+      "traits": [4, 44, 46, 55, 97, 109]
+    },
+    {
+      "character": 32,
+      "name": "Dr. Richard Daystrom",
+      "picture": "https://stt.wiki/w/images/thumb/0/0a/Dr._Richard_Daystrom_Head.png/100px-Dr._Richard_Daystrom_Head.png",
+      "race": 17,
+      "skills": {
+        "2": [882, 134, 447],
+        "4": [857, 259, 761]
+      },
+      "stars": 5,
+      "traits": [22, 31, 46, 55, 57, 58, 84]
+    }, {
+      "character": 142,
+      "name": "1701 Sisko",
+      "picture": "https://stt.wiki/w/images/thumb/9/9c/1701_Sisko_Head.png/100px-1701_Sisko_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [103, 17, 34],
+        "1": [513, 87, 173],
+        "5": [1031, 76, 127]
+      },
+      "stars": 5,
+      "traits": [8, 31, 46, 58, 97]
+    },
+    {
+      "character": 91,
+      "name": "23rd Century Martok",
+      "picture": "https://stt.wiki/w/images/thumb/7/76/23rd_Century_Martok_Head.png/100px-23rd_Century_Martok_Head.png",
+      "race": 20,
+      "skills": {
+        "0": [468, 138, 283],
+        "1": [868, 187, 454],
+        "5": [1040, 180, 468]
+      },
+      "stars": 5,
+      "traits": [26, 38, 65, 110, 112]
+    }, {
+      "character": 82,
+      "name": "Abraham Lincoln",
+      "picture": "https://stt.wiki/w/images/thumb/1/1e/Abraham_Lincoln_Head.png/100px-Abraham_Lincoln_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [83, 20, 40],
+        "1": [927, 329, 639],
+        "5": [416, 103, 203]
+      },
+      "stars": 5,
+      "traits": [22, 31, 35, 55, 58, 83, 87]
+    },
+    {
+      "character": 171,
+      "name": "Acting Ensign Crusher",
+      "picture": "https://stt.wiki/w/images/thumb/1/1a/Acting_Ensign_Crusher_Head.png/100px-Acting_Ensign_Crusher_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [23, 5, 11],
+        "2": [251, 53, 148],
+        "4": [258, 56, 160]
+      },
+      "stars": 2,
+      "traits": [46, 55, 84, 97]
+    }, {
+      "character": 13,
+      "name": "Acting Nagus Brunt",
+      "picture": "https://stt.wiki/w/images/thumb/4/45/Acting_Nagus_Brunt_Head.png/100px-Acting_Nagus_Brunt_Head.png",
+      "race": 13,
+      "skills": {
+        "0": [42, 2, 8],
+        "1": [421, 119, 287],
+        "5": [271, 8, 26]
+      },
+      "stars": 3,
+      "traits": [29, 31, 35, 47]
+    },
+    {
+      "character": 14,
+      "name": "Admiral Cartwright",
+      "picture": "https://stt.wiki/w/images/thumb/5/54/Admiral_Cartwright_Head.png/100px-Admiral_Cartwright_Head.png",
+      "race": 17,
+      "skills": [[1159, 167, 360], [854, 165, 371]],
+      "stars": 5,
+      "traits": [34, 46, 48, 55, 90]
+    }, {
+      "character": 59,
+      "name": "Admiral Janeway",
+      "picture": "https://stt.wiki/w/images/thumb/5/54/Admiral_Janeway_Head.png/100px-Admiral_Janeway_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [116, 16, 36],
+        "4": [842, 118, 231],
+        "5": [959, 269, 553]
+      },
+      "stars": 5,
+      "traits": [46, 55, 87, 97]
+    },
+
+    {
+      "character": 101,
+      "name": "Admiral Nechayev",
+      "picture": "https://stt.wiki/w/images/thumb/c/cb/Admiral_Nechayev_Head.png/100px-Admiral_Nechayev_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [888, 266, 706],
+        "1": [784, 184, 411],
+        "5": [498, 82, 202]
+      },
+      "stars": 5,
+      "traits": [35, 46, 55, 97, 100, 112]
+    }, {
+      "character": 127,
+      "name": "Admiral Riker",
+      "picture": "https://stt.wiki/w/images/thumb/c/c8/Admiral_Riker_Head.png/100px-Admiral_Riker_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [947, 256, 540],
+        "1": [351, 181, 484],
+        "5": [827, 207, 408]
+      },
+      "stars": 5,
+      "traits": [46, 48, 55, 73, 82, 97]
+    },
+    {
+      "character": 24,
+      "name": "Age of Sail Crusher",
+      "picture": "https://stt.wiki/w/images/thumb/7/70/Age_of_Sail_Crusher_Head.png/99px-Age_of_Sail_Crusher_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [409, 87, 309],
+        "1": [822, 135, 456],
+        "3": [1005, 199, 526]
+      },
+      "stars": 5,
+      "traits": [26, 36, 46, 55, 97]
+    }, {
+      "character": 54,
+      "name": "Agent Harris",
+      "picture": "https://stt.wiki/w/images/thumb/c/cc/Agent_Harris_Head.png/100px-Agent_Harris_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [645, 161, 347],
+        "1": [397, 186, 372],
+        "5": [305, 111, 261]
+      },
+      "stars": 4,
+      "traits": [46, 55, 87, 92, 97, 110]
+    },
+    {
+      "character": 9,
+      "name": "Alternate Future Bashir",
+      "picture": "https://stt.wiki/w/images/thumb/9/95/Alternate_Future_Bashir_Head.png/100px-Alternate_Future_Bashir_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [83, 12, 25],
+        "3": [991, 277, 649],
+        "4": [794, 115, 326]
+      },
+      "stars": 5,
+      "traits": [6, 32, 36, 46, 48, 55, 97]
+    }, {
+      "character": 44,
+      "name": "Ambassador Fox",
+      "picture": "https://stt.wiki/w/images/thumb/1/1f/Ambassador_Fox_Head.png/100px-Ambassador_Fox_Head.png",
+      "race": 17,
+      "skills": [[352, 91, 206], [435, 90, 217]],
+      "stars": 3,
+      "traits": [0, 22, 24, 35, 46, 55]
+    },
+    {
+      "character": 102,
+      "name": "Ambassador Neelix",
+      "picture": "https://stt.wiki/w/images/thumb/4/47/Ambassador_Neelix_Head.png/100px-Ambassador_Neelix_Head.png",
+      "race": 30,
+      "skills": {
+        "1": [74, 7, 14],
+        "2": [371, 39, 105]
+      },
+      "stars": 3,
+      "traits": [0, 21, 22, 24, 76, 87, 99, 102]
+    }, {
+      "character": 131,
+      "name": "Ambassador Sarek",
+      "picture": "https://stt.wiki/w/images/thumb/e/e3/Ambassador_Sarek_Head.png/100px-Ambassador_Sarek_Head.png",
+      "race": 37,
+      "skills": {
+        "0": [0, 0, 0],
+        "1": [719, 199, 402],
+        "4": [529, 137, 514]
+      },
+      "stars": 4,
+      "traits": [24, 31, 35, 46, 117]
+    },
+    {
+      "character": 147,
+      "name": "Ambassador Spock",
+      "picture": "https://stt.wiki/w/images/thumb/8/80/Ambassador_Spock_Head.png/100px-Ambassador_Spock_Head.png",
+      "race": 37,
+      "skills": {
+        "1": [46, 22, 59],
+        "4": [516, 118, 279],
+        "5": [232, 122, 296]
+      },
+      "stars": 4,
+      "traits": [4, 22, 35, 44, 46, 55, 97, 117]
+    }, {
+      "character": 127,
+      "name": "Angel I Riker",
+      "picture": "https://stt.wiki/w/images/thumb/6/6e/Angel_I_Riker_Head.png/99px-Angel_I_Riker_Head.png",
+      "race": 17,
+      "skills": [[110, 35, 84], [552, 175, 420]],
+      "stars": 4,
+      "traits": [46, 48, 55, 73, 82, 97]
+    },
+
+    {
+      "character": 2,
+      "name": "Antaak",
+      "picture": "https://stt.wiki/w/images/thumb/6/6f/Antaak_Head.png/100px-Antaak_Head.png",
+      "race": 20,
+      "skills": {
+        "3": [532, 214, 753],
+        "4": [630, 60, 159]
+      },
+      "stars": 4,
+      "traits": [34, 36, 49, 65]
+    }, {
+      "character": 3,
+      "name": "Apollo",
+      "picture": null,
+      "race": 33,
+      "skills": {
+        "0": [303, 96, 196],
+        "1": [590, 74, 170],
+        "3": [582, 236, 586]
+      },
+      "stars": 4,
+      "traits": [15, 17, 31, 58, 75, 95]
+    },
+    {
+      "character": 0,
+      "name": "Automated Unit 3947",
+      "picture": "https://stt.wiki/w/images/thumb/b/bc/Automated_Unit_3947_Head.png/100px-Automated_Unit_3947_Head.png",
+      "race": 3,
+      "skills": {
+        "2": [717, 128, 305],
+        "4": [607, 52, 117],
+        "5": [263, 115, 318]
+      },
+      "stars": 4,
+      "traits": [7, 34, 85]
+    },
+    {
+      "character": 59,
+      "name": "Arachnia Janeway",
+      "picture": "https://stt.wiki/w/images/thumb/e/ee/Arachnia_Janeway_Head.png/100px-Arachnia_Janeway_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [83, 15, 34],
+        "1": [1109, 239, 501],
+        "5": [413, 76, 170]
+      },
+      "stars": 5,
+      "traits": [26, 46, 55, 87, 97]
+    }, {
+      "character": 5,
+      "name": "Ardra",
+      "picture": "https://stt.wiki/w/images/thumb/c/c6/Ardra_Head.png/100px-Ardra_Head.png",
+      "race": 33,
+      "skills": {
+        "1": [537, 104, 183],
+        "2": [309, 87, 191],
+        "5": [703, 120, 243]
+      },
+      "stars": 4,
+      "traits": [26, 29, 31, 108, 114]
+    },
+    {
+      "character": 6,
+      "name": "Arik Soong",
+      "picture": "https://stt.wiki/w/images/thumb/2/25/Arik_Soong_Head.png/100px-Arik_Soong_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [43, 34, 73],
+        "3": [508, 57, 120],
+        "4": [726, 119, 276]
+      },
+      "stars": 4,
+      "traits": [49, 55, 73, 108]
+    }, {
+      "character": 175,
+      "name": "Aviator Yar",
+      "picture": "https://stt.wiki/w/images/thumb/d/de/Aviator_Yar_Head.png/100px-Aviator_Yar_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [515, 95, 229],
+        "2": [1095, 73, 186],
+        "5": [1021, 217, 543]
+      },
+      "stars": 5,
+      "traits": [26, 51, 55, 73, 82]
+    },
+
+    {
+      "character": 4,
+      "name": "Away Team Archer",
+      "picture": "https://stt.wiki/w/images/thumb/a/a3/Away_Team_Archer_Head.png/100px-Away_Team_Archer_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [29, 4, 19],
+        "2": [147, 23, 55],
+        "5": [271, 20, 53]
+      },
+      "stars": 2,
+      "traits": [45, 55, 82, 97]
+    }, {
+      "character": 174,
+      "name": "Ba'ku Worf",
+      "picture": "https://stt.wiki/w/images/thumb/e/e5/Ba%27ku_Worf_Head.png/100px-Ba%27ku_Worf_Head.png",
+      "race": 20,
+      "skills": {
+        "0": [547, 117, 268],
+        "5": [902, 119, 304]
+      },
+      "stars": 4,
+      "traits": [34, 46, 65, 97, 100]
+    },
+    {
+      "character": 118,
+      "name": "Bartender Quark",
+      "picture": "https://stt.wiki/w/images/thumb/d/dc/Bartender_Quark_Head.png/100px-Bartender_Quark_Head.png",
+      "race": 13,
+      "skills": {
+        "0": [16, 3, 11],
+        "1": [211, 36, 150],
+        "5": [81, 15, 57]
+      },
+      "stars": 1,
+      "traits": [9, 22, 47, 48, 74, 91]
+    }, {
+      "character": 9,
+      "name": "Bashir, Julian Bashir",
+      "picture": "https://stt.wiki/w/images/thumb/4/49/Bashir%2C_Julian_Bashir_Head.png/100px-Bashir%2C_Julian_Bashir_Head.png",
+      "race": 17,
+      "skills": {
+        "1": [119, 38, 77],
+        "3": [927, 194, 394],
+        "5": [595, 194, 388]
+      },
+      "stars": 5,
+      "traits": [6, 26, 32, 36, 46, 48, 55, 97]
+    },
+    {
+      "character": 7,
+      "name": "B'Etor Duras",
+      "picture": "https://stt.wiki/w/images/thumb/5/53/B%27Etor_Duras_Head.png/100px-B%27Etor_Duras_Head.png",
+      "race": 20,
+      "skills": {
+        "1": [45, 30, 67],
+        "5": [227, 151, 337]
+      },
+      "stars": 3,
+      "traits": [65, 91]
+    }, {
+      "character": 70,
+      "name": "Beowulf Kim",
+      "picture": "https://stt.wiki/w/images/thumb/2/29/Beowulf_Kim_Head.png/100px-Beowulf_Kim_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [388, 108, 153],
+        "2": [951, 147, 307],
+        "5": [985, 239, 494]
+      },
+      "stars": 5,
+      "traits": [15, 26, 38, 55, 46]
+    },
+    {
+      "character": 121,
+      "name": "Berlinghoff Rasmussen",
+      "picture": "https://stt.wiki/w/images/thumb/9/99/Berlinghoff_Rasmussen_Head.png/100px-Berlinghoff_Rasmussen_Head.png",
+      "race": 17,
+      "skills": {
+        "1": [237, 141, 291],
+        "4": [439, 146, 447],
+        "5": [811, 58, 145]
+      },
+      "stars": 4,
+      "traits": [22, 29, 34, 87, 91]
+    }, {
+      "character": 58,
+      "name": "Bestselling Author Jake Sisko",
+      "picture": "https://stt.wiki/w/images/thumb/d/d5/Bestselling_Author_Jake_Sisko_Head.png/100px-Bestselling_Author_Jake_Sisko_Head.png",
+      "race": 17,
+      "skills": {
+        "1": [682, 73, 146],
+        "4": [648, 162, 393]
+      },
+      "stars": 4,
+      "traits": [22, 31, 48, 55, 58, 88, 120]
+    },
+    {
+      "character": 57,
+      "name": "Blood Oath Jadzia Dax",
+      "picture": "https://stt.wiki/w/images/thumb/2/2f/Blood_Oath_Jadzia_Dax_Head.png/100px-Blood_Oath_Jadzia_Dax_Head.png",
+      "race": 32,
+      "skills": {
+        "2": [224, 153, 356],
+        "4": [480, 160, 349],
+        "5": [724, 140, 265]
+      },
+      "stars": 4,
+      "traits": [38, 46, 55, 97, 100, 109]
+    }, {
+      "character": 92,
+      "name": "Boomer Mayweather",
+      "picture": "https://stt.wiki/w/images/thumb/1/15/Boomer_Mayweather_Head.png/100px-Boomer_Mayweather_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [33, 11, 30],
+        "2": [166, 58, 153]
+      },
+      "stars": 2,
+      "traits": [12, 22, 55, 82]
+    },
+
+    {
+      "character": 66,
+      "name": "Botanist Keiko",
+      "picture": "https://stt.wiki/w/images/thumb/6/6e/Botanist_Keiko_Head.png/100px-Botanist_Keiko_Head.png",
+      "race": 17,
+      "skills": {
+        "4": [219, 48, 186]
+      },
+      "stars": 1,
+      "traits": [14, 17, 22, 46, 55]
+    }, {
+      "character": 16,
+      "name": "Boxer Chakotay",
+      "picture": "https://stt.wiki/w/images/thumb/7/7d/Boxer_Chakotay_Head.png/100px-Boxer_Chakotay_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [272, 24, 58],
+        "1": [332, 18, 46],
+        "5": [558, 65, 105]
+      },
+      "stars": 3,
+      "traits": [5, 26, 55, 56, 97, 119]
+    },
+    {
+      "character": 161,
+      "name": "Bridge Officer Troi",
+      "picture": "https://stt.wiki/w/images/thumb/b/bd/Bridge_Officer_Troi_Head.png/100px-Bridge_Officer_Troi_Head.png",
+      "race": 6,
+      "skills": {
+        "0": [594, 76, 197],
+        "1": [303, 93, 195],
+        "3": [613, 169, 514]
+      },
+      "stars": 4,
+      "traits": [11, 17, 27, 41, 46, 55, 97]
+    }, {
+      "character": 113,
+      "name": "C.O.P. Founder Picard",
+      "picture": "https://stt.wiki/w/images/thumb/1/1e/C.O.P._Founder_Picard_Head.png/100px-C.O.P._Founder_Picard_Head.png",
+      "race": 17,
+      "skills": [[1144, 84, 164], [1026, 221, 460]],
+      "stars": 5,
+      "traits": [24, 31, 55, 58, 97, 46]
+    },
+    {
+      "character": 103,
+      "name": "Cadet Nog",
+      "picture": "https://stt.wiki/w/images/thumb/4/48/Cadet_Nog_Head.png/100px-Cadet_Nog_Head.png",
+      "race": 13,
+      "skills": {
+        "1": [31, 1, 2],
+        "2": [154, 5, 13],
+        "5": [320, 29, 113]
+      },
+      "stars": 2,
+      "traits": [47, 48, 74, 97]
+    }, {
+      "character": 143,
+      "name": "Cadet Sito Jaxa",
+      "picture": "https://stt.wiki/w/images/thumb/b/be/Cadet_Sito_Jaxa_Head.png/100px-Cadet_Sito_Jaxa_Head.png",
+      "race": 4,
+      "skills": {
+        "0": [25, 5, 15],
+        "1": [253, 26, 77],
+        "5": [125, 28, 79]
+      },
+      "stars": 2,
+      "traits": [8, 29, 46, 73, 82, 84, 97]
+    },
+    {
+      "character": 30,
+      "name": "Captain Dathon",
+      "picture": "https://stt.wiki/w/images/thumb/3/3b/Captain_Dathon_Head.png/100px-Captain_Dathon_Head.png",
+      "race": 31,
+      "skills": {
+        "0": [185, 48, 122],
+        "1": [488, 90, 212],
+        "5": [475, 20, 60]
+      },
+      "stars": 3,
+      "traits": [24, 73, 99, 103]
+    }, {
+      "character": 59,
+      "name": "Captain Janeway",
+      "picture": "https://stt.wiki/w/images/thumb/6/6a/Captain_Janeway_Head.png/100px-Captain_Janeway_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [95, 6, 14],
+        "1": [532, 74, 213],
+        "4": [475, 34, 73]
+      },
+      "stars": 4,
+      "traits": [46, 48, 55, 87, 97]
+    },
+    {
+      "character": 53,
+      "name": "Captain John Harriman",
+      "picture": "https://stt.wiki/w/images/thumb/e/e6/Captain_John_Harriman_Head.png/100px-Captain_John_Harriman_Head.png",
+      "race": 17,
+      "skills": [[589, 83, 188], [778, 132, 255]],
+      "stars": 4,
+      "traits": [24, 46, 55, 97]
+    }, {
+      "character": 176,
+      "name": "Captain Kasidy Yates",
+      "picture": "https://stt.wiki/w/images/thumb/f/fa/Captain_Kasidy_Yates_Head.png/100px-Captain_Kasidy_Yates_Head.png",
+      "race": 17,
+      "skills": {
+        "0": [446, 70, 205],
+        "1": [191, 53, 144],
+        "5": [336, 39, 93]
+      },
+      "stars": 3,
+      "traits": [8, 22, 46, 55, 94]
+    }
+  ],
+  "episodes": [
+    "The Art of War", "Never Forgive, Never Forget", "From On High",
+    "Hostile Takeover", "Ethical Alternatives", "Something Rotten",
+    "When Falcons Clash", "Delphic Expanse", "The Delphic Expanse",
+    "Delphic Expanse", "The Delphic Expanse", "Delphic Expanse",
+    "The Delphic Expanse", "Celestial Temple", "Ex Astris, Scientia",
+    "The United Federation", "A Certain Formality", "Adv: United Federation"
+  ],
+  "missions": [],
+  "races": [
+    "?", "Andorian", "Android", "Automated Unit", "Bajoran", "Benzite",
+    "Betazoid", "Borg", "Cardassian", "Changeling", "Denobulan", "El-Aurian",
+    "Elaysian", "Ferengi", "Gorn", "Hirogen", "Hologram", "Human", "Jemhadar",
+    "Kazon", "Klingon", "Ktarian", "Lurian", "Malon", "Ocampa", "Orion", "Q",
+    "Reman", "Romulan", "Suliban", "Talaxian", "Tamarian", "Trill", "Unknown",
+    "Vidiian", "Vorta", "Voth", "Vulcan", "Xindi"
+  ],
+  "skills": ["cmd", "dip", "eng", "med", "sci", "sec"],
+  "traits": [
+    "ambassador", "andorian", "android", "artist", "astrophysicist", "athlete",
+    "augment", "automated unit", "bajoran", "bartender", "benzite", "betazoid",
+    "boomer", "borg", "botanist", "brutal", "cardassian", "caregiver", "casual",
+    "chancellor", "changeling", "chef", "civilian", "clone", "communicator",
+    "constable", "costumed", "counselor", "courier", "crafty", "criminal",
+    "cultural figure", "cyberneticist", "denobulan", "desperate", "diplomat",
+    "doctor", "dominion", "duelist", "el-aurian", "elaysian", "empath",
+    "empress", "exoarchaeology", "exobiology", "explorer", "federation",
+    "ferengi", "gambler", "geneticist", "gorn", "hero", "high command",
+    "hirogen", "hologram", "human", "hunter", "innovator", "inspiring",
+    "interrogator", "investigator", "jemhadar", "jury rigger", "kai", "kazon",
+    "klingon", "ktarian", "lord", "lurian", "maco", "malon", "maquis",
+    "marksman", "maverick", "merchant", "musician", "mylean", "neurologist",
+    "nurse", "obsidian order", "ocampa", "orion", "pilot", "president",
+    "prodigy", "quantum mechanics", "reman", "resourceful", "romantic",
+    "romulan", "saboteur", "scoundrel", "section 31", "shapeshifter",
+    "smuggler", "spiritual", "spy", "starfleet", "suliban", "survivalist",
+    "tactician", "tailor", "talaxian", "tamarian", "telekinetic", "telepath",
+    "temporal agent", "terran empire", "thief", "trill", "undercover operative",
+    "vedek", "veteran", "vidiian", "villain", "vorta", "voth", "vulcan",
+    "warp theorist", "warrior", "writer", "xindi"
+  ]
+}

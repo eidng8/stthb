@@ -13,16 +13,20 @@ import { CrewProvider } from '../../providers/crew.provider';
 import { MemberBriefComponent } from '../../components/member-brief.component';
 import { IServerData } from '../../interfaces/server-data.interface';
 
-const server: IServerData = require('../../../www/data.json');  // tslint:disable-line
-const crewProvider: CrewProvider = new CrewProvider();
-crewProvider.load(server);
-
 describe('Pages:', () => {
+
   describe('Crew List', () => {
 
     let comp: CrewPage;
     let fixture: ComponentFixture<CrewPage>;
     let de: DebugElement;
+
+    const crewProvider: CrewProvider = new CrewProvider();
+
+    beforeAll(() => {
+      const server: IServerData = require('../../testing/crew-test.data.json');  // tslint:disable-line
+      crewProvider.load(server);
+    }); // end beforeAll()
 
     beforeEach(done => {
       TestBed.configureTestingModule(
@@ -69,5 +73,6 @@ describe('Pages:', () => {
         .toBeGreaterThan(0);
     });
 
-  });
-});
+  }); // end crew List
+
+}); // end Pages:

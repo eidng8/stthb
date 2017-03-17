@@ -8,36 +8,26 @@ import { TestBed, inject } from '@angular/core/testing';
 import { CrewProvider } from './crew.provider';
 import { IServerData } from '../interfaces/server-data.interface';
 
+describe('Providers:', () => {
 
-describe('Providers:', () =>
-{
+  describe('Crew Provider:', () => {
+    const data: IServerData = require('../testing/crew-test.data.json');  // tslint:disable-line
 
-  describe('Crew Provider:', () =>
-  {
-    let data: IServerData;
-
-    beforeAll(() =>
-    {
-      data = require('../../www/data.json');  // tslint:disable-line
-    }); // end beforeAll()
-
-    beforeEach(() =>
-    {
+    beforeEach(() => {
       TestBed.configureTestingModule({providers: [CrewProvider]});
     });
 
-    it('can be injected', inject([CrewProvider], (crew: CrewProvider) =>
-    {
+    it('can be injected', inject([CrewProvider], (crew: CrewProvider) => {
       expect(crew).toBeDefined();
       expect(crew).not.toBeNull();
     }));
 
     it('should fetch & store local data', inject([CrewProvider],
-      (crew: CrewProvider) =>
-      {
+      (crew: CrewProvider) => {
         crew.load(data);
         expect(crew.all.length).toBe(data.crew.length);
       }));
-  });
+
+  }); // end Crew Provider
 
 }); // end Providers:

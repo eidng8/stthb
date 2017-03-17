@@ -21,8 +21,7 @@ export class MissionModel implements IDataModel<IMission> {
     this.type = data.type;
     if(EMissionType.away == data.type) {
       this.steps = [];
-      data.steps.forEach(step =>
-      {
+      data.steps.forEach(step => {
         const model: StepModel = new StepModel();
         model.load(step);
         this.steps.push(model);

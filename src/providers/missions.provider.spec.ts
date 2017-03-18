@@ -50,7 +50,7 @@ describe('Providers:', () => {
         // the above one is easier to see in karma output
         // below one is the real deal
         expect(missions.all[0].steps[0].crew.critical[0])
-          .toBe(data.missions[0].steps[0].crew.critical[0]);
+          .toBe(crew[data.missions[0].steps[0].crew.critical[0]]);
 
         // check association from crew side
         expect(crew[3].missions.critical[0].mission.name)

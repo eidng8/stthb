@@ -13,17 +13,23 @@ export class StepModel implements IDataModel<IStep> {
   locks: number[][];
   req: number[][];
   skills: number[];
-  traits: string;
+  traits: number[][];
   crew: {
     critical?: MemberModel[],
     pass?: MemberModel[],
     unlock?: MemberModel[]
   };
 
+  /**
+   * Load data form the given step
+   * @param data
+   */
   load(data: IStep): void {
-    this.bonus = data.bonus;
-    this.locks = data.locks;
-    this.req = data.req;
-    this.crew = data.crew as any;
+    /* We don't want to mutate base data, deep-clone everything! */
+    this.bonus = JSON.parse(JSON.stringify(data.bonus));
+    this.locks = JSON.parse(JSON.stringify(data.locks));
+    this.req = JSON.parse(JSON.stringify(data.req));
+    this.crew = JSON.parse(JSON.stringify(data.crew));
+    this.skills = data.skills.slice();
   }
 }

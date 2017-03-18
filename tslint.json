@@ -70,10 +70,7 @@
       true,
       "spaces"
     ],
-    "max-line-length": [
-      true,
-      80
-    ],
+    "max-line-length": false,
     "no-require-imports": true,
     "no-trailing-whitespace": true,
     "object-literal-sort-keys": true,

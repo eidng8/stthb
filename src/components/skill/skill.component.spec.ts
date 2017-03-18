@@ -8,7 +8,7 @@ import { Component, DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { IonicModule } from 'ionic-angular';
-import { SkillComponent } from '../skill.component';
+import { SkillComponent } from './skill.component';
 import { SkillModel } from '../../models/skill.model';
 
 @Component({

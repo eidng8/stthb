@@ -8,7 +8,7 @@
  * Created by JC on 2016-09-11.
  */
 import { Component, Input } from '@angular/core';
-import { MissionModel } from '../models/mission.model';
+import { MissionModel } from '../../models/mission.model';
 
 @Component({
   selector:    'jc-mission-brief',

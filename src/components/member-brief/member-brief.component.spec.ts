@@ -10,8 +10,8 @@ import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { IonicModule } from 'ionic-angular';
 import { MemberModel } from '../../models/member.model';
 import { SkillsModel } from '../../models/skills.model';
-import { MemberBriefComponent } from '../member-brief.component';
-import { SkillComponent } from '../skill.component';
+import { MemberBriefComponent } from './member-brief.component';
+import { SkillComponent } from '../skill/skill.component';
 
 @Component({
   template: '<jc-member-brief [member]="member"></jc-member-brief>',

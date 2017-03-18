@@ -37,7 +37,10 @@ describe('Pages:', () => {
         {
           declarations: [CrewMissionsPage],
           providers:    [
-            {provide: NavParams, useValue: new NavParams()},
+            {
+              provide:  NavParams,
+              useValue: new NavParams({member: crewProvider.get(0)}),
+            },
             {provide: NavController, useValue: NavController},
             {provide: MissionsProvider, useValue: missionsProvider},
             {provide: CrewProvider, useValue: crewProvider},
@@ -54,7 +57,7 @@ describe('Pages:', () => {
       de = fixture.debugElement;
     });
 
-    it('Should be defined', () => {
+    it('should be defined', () => {
       expect(comp).toBeDefined();
     });
 

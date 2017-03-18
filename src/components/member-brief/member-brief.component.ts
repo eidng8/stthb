@@ -5,9 +5,9 @@
  */
 
 import { Component, Input, OnInit } from '@angular/core';
-import { MemberModel } from '../models/member.model';
-import { SkillModel } from '../models/skill.model';
-import { ERarity } from '../shared/data.type';
+import { MemberModel } from '../../models/member.model';
+import { SkillModel } from '../../models/skill.model';
+import { ERarity } from '../../shared/data.type';
 
 @Component({
   selector:    'jc-member-brief',

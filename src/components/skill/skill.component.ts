@@ -8,8 +8,8 @@
  * Created by JC on 2016-09-11.
  */
 import { Component, Input, OnInit } from '@angular/core';
-import { SkillModel } from '../models/skill.model';
-import { IRange } from '../shared/data.type';
+import { SkillModel } from '../../models/skill.model';
+import { IRange } from '../../shared/data.type';
 
 @Component({
   selector:    'jc-skill',

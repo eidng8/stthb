@@ -8,6 +8,8 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PageBase } from '../base';
 import { CrewProvider } from '../../providers/crew.provider';
+import { MemberModel } from '../../models/member.model';
+import { CrewMissionsPage } from '../crew-missions/crew-missions.page';
 
 /*export type TLists = {
  crew:CrewMember[]
@@ -26,6 +28,11 @@ export class CrewPage extends PageBase {
 
   setFilter(): void {
     // this.navCtl.push(FilterPage);
+  }
+
+  view(member: MemberModel): void {
+    this.navCtl.push(CrewMissionsPage, {member})
+      .then(() => console.debug('crew mission page shown'));
   }
 
   /*

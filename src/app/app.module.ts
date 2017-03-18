@@ -21,6 +21,7 @@ import { MissionsProvider } from '../providers/missions.provider';
 import { DataProvider } from '../providers/data.provider';
 import { DataService } from '../shared/data.service';
 import { SplashPage } from '../pages/splash/splash.page';
+import { CrewMissionsPage } from '../pages/crew-missions/crew-missions.page';
 
 @NgModule({
   bootstrap:       [IonicApp],
@@ -32,17 +33,19 @@ import { SplashPage } from '../pages/splash/splash.page';
     MemberBriefComponent,
     MissionBriefComponent,
     TabsPage,
+    HomePage,
     CrewPage,
     MissionsPage,
-    HomePage,
+    CrewMissionsPage,
   ],
   entryComponents: [
     HandbookAppComponent,
     SplashPage,
     TabsPage,
+    HomePage,
     CrewPage,
     MissionsPage,
-    HomePage,
+    CrewMissionsPage,
   ],
   imports:         [
     HttpModule,

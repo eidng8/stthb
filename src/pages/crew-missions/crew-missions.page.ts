@@ -4,20 +4,41 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
+import values from 'lodash-es/values';
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { MissionsProvider } from '../../providers/missions.provider';
 import { PageBase } from '../base';
-import { CrewProvider } from '../../providers/crew.provider';
+import { MemberModel } from '../../models/member.model';
+import { MissionModel } from '../../models/mission.model';
 
 @Component({
   templateUrl: 'crew-missions.html',
 })
 export class CrewMissionsPage extends PageBase {
 
-  constructor(nav: NavController, public params: NavParams,
-    public missions: MissionsProvider, public crew: CrewProvider) {
+  /**
+   * The member to show
+   */
+  member: MemberModel;
+
+  /**
+   * one of 'critical', 'pass', or 'unlock'
+   */
+  types: string[];
+
+  /**
+   * Capable missions
+   */
+  missions: {[key: string]: MissionModel[]} = {};
+
+  constructor(nav: NavController, public params: NavParams) {
     super(nav);
+    this.member = params.data.member;
+    this.types = Object.keys(this.member.missions);
+
+    this.types.forEach(type => {
+      this.missions[type] = values< MissionModel>(this.member.missions[type]);
+    });
   }
 
 }

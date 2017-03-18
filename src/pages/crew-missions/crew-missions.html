@@ -10,19 +10,20 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <span>Missions</span>
+      <span>Crew Missions</span>
       <!--<small>({{ missions.length }} in total)</small>-->
     </ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content fullscreen class="mission-list">
+<ion-content fullscreen class="crew-missions">
 
-  <jc-member-brief *ngFor="let member of crew.all" [member]="member">
-  </jc-member-brief>
+  <jc-member-brief [member]="member"></jc-member-brief>
 
-  <ion-list>
-    <jc-mission-brief *ngFor="let mission of missions.all" [mission]="mission">
+  <ion-list collapsible *ngFor="let type of types">
+    <ion-list-header><h3>{{ type }}</h3></ion-list-header>
+    <jc-mission-brief *ngFor="let mission of missions[type]"
+                      [mission]="mission">
     </jc-mission-brief>
   </ion-list>
 </ion-content>

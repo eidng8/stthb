@@ -30,6 +30,13 @@ export class CrewProvider implements IProvider {
   }
 
   /**
+   * Get member by index
+   */
+  get(idx: number): MemberModel {
+    return this.all[idx];
+  }
+
+  /**
    * Load crew member from the given server data
    */
   load(data: IServerData): void {

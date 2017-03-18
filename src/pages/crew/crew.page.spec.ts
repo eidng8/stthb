@@ -10,7 +10,7 @@ import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
 import { CrewPage } from './crew.page';
 import { NavController } from 'ionic-angular';
 import { CrewProvider } from '../../providers/crew.provider';
-import { MemberBriefComponent } from '../../components/member-brief.component';
+import { MemberBriefComponent } from '../../components/member-brief/member-brief.component';
 import { IServerData } from '../../interfaces/server-data.interface';
 
 describe('Pages:', () => {

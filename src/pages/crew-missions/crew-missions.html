@@ -1,0 +1,28 @@
+<!--
+  ~  @author  eidng8
+  ~  @license https://creativecommons.org/licenses/by-sa/4.0/
+  ~  @link    https://github.com/eidng8/stthb
+  -->
+
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <span>Missions</span>
+      <!--<small>({{ missions.length }} in total)</small>-->
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content fullscreen class="mission-list">
+
+  <jc-member-brief *ngFor="let member of crew.all" [member]="member">
+  </jc-member-brief>
+
+  <ion-list>
+    <jc-mission-brief *ngFor="let mission of missions.all" [mission]="mission">
+    </jc-mission-brief>
+  </ion-list>
+</ion-content>

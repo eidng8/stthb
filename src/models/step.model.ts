@@ -26,10 +26,10 @@ export class StepModel implements IDataModel<IStep> {
    */
   load(data: IStep): void {
     /* We don't want to mutate base data, deep-clone everything! */
-    this.bonus = JSON.parse(JSON.stringify(data.bonus));
-    this.locks = JSON.parse(JSON.stringify(data.locks));
-    this.req = JSON.parse(JSON.stringify(data.req));
-    this.crew = JSON.parse(JSON.stringify(data.crew));
-    this.skills = data.skills.slice();
+    this.bonus = data.bonus ? JSON.parse(JSON.stringify(data.bonus)) : [];
+    this.locks = data.locks ? JSON.parse(JSON.stringify(data.locks)) : [];
+    this.req = data.req ? JSON.parse(JSON.stringify(data.req)) : [];
+    this.crew = data.crew ? JSON.parse(JSON.stringify(data.crew)) : [];
+    this.skills = data.skills ? data.skills.slice() : [];
   }
 }

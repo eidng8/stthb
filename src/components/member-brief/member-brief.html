@@ -4,15 +4,17 @@
   ~  @link    https://github.com/eidng8/stthb
   -->
 
-<ion-item class="rarity-{{ rarity }}">
+<ion-item>
   <ion-thumbnail item-left class="rarity-stars">
-    <img src="{{ member.picture }}">
+    <img src="{{ member?.picture }}">
   </ion-thumbnail>
 
   <div class="skills">
-    <jc-skill *ngFor="let skill of skills" [skill]="skill"></jc-skill>
+    <jc-skill *ngFor="let skill of member?.skills.all" [skill]="skill">
+
+    </jc-skill>
   </div>
 
-  <h2>{{ member.name }}</h2>
+  <h2>{{ member?.name }}</h2>
 
 </ion-item>

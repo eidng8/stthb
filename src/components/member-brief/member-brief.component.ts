@@ -4,9 +4,8 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ElementRef, Renderer } from '@angular/core';
 import { MemberModel } from '../../models/member.model';
-import { SkillModel } from '../../models/skill.model';
 import { ERarity } from '../../shared/data.type';
 
 @Component({
@@ -14,14 +13,16 @@ import { ERarity } from '../../shared/data.type';
   templateUrl: 'member-brief.html',
 })
 export class MemberBriefComponent implements OnInit {
+
   @Input() member: MemberModel;
 
-  skills: SkillModel[];
-
-  rarity: string;
+  constructor(private elem: ElementRef, private renderer: Renderer) {
+  }
 
   ngOnInit(): void {
-    this.rarity = ERarity[this.member.stars];
-    this.skills = this.member.skills.all;
+    if(this.member) {
+      this.renderer.setElementClass(this.elem.nativeElement,
+        `rarity-${ERarity[this.member.stars]}`, true);
+    }
   }
 }

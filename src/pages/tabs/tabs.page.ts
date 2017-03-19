@@ -4,13 +4,14 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { HomePage } from '../home/home.page';
 import { CrewPage } from '../crew/crew.page';
 import { MissionsPage } from '../missions/missions.page';
 
 @Component({
-  templateUrl: 'tabs.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl:     'tabs.html',
 })
 export class TabsPage {
 

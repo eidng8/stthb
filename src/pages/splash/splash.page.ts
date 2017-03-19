@@ -4,7 +4,11 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { Component, AfterViewInit } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ChangeDetectionStrategy
+} from '@angular/core';
 import { DataService } from '../../shared/data.service';
 import { CrewProvider } from '../../providers/crew.provider';
 import { MissionsProvider } from '../../providers/missions.provider';
@@ -12,7 +16,8 @@ import { Nav } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs.page';
 
 @Component({
-  templateUrl: 'splash.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl:     'splash.html',
 })
 export class SplashPage implements AfterViewInit {
   constructor(private nav: Nav, private server: DataService,

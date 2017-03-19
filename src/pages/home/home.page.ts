@@ -4,12 +4,13 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { PageBase } from '../base';
 
 @Component({
-  templateUrl: 'home.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl:     'home.html',
 })
 export class HomePage extends PageBase {
   message: string = 'Welcome';

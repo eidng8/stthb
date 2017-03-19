@@ -5,14 +5,15 @@
  */
 
 import values from 'lodash-es/values';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { PageBase } from '../base';
 import { MemberModel } from '../../models/member.model';
 import { MissionModel } from '../../models/mission.model';
 
 @Component({
-  templateUrl: 'crew-missions.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl:     'crew-missions.html',
 })
 export class CrewMissionsPage extends PageBase {
 

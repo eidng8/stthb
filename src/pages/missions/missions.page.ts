@@ -4,13 +4,14 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { MissionsProvider } from '../../providers/missions.provider';
 import { PageBase } from '../base';
 
 @Component({
-  templateUrl: 'missions.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  templateUrl:     'missions.html',
 })
 export class MissionsPage extends PageBase {
 

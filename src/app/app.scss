@@ -173,34 +173,3 @@ $rarity-star-small: 16px;
 //.rarity-legendary .rarity-stars::after {
 //  content: '\f4b3\f4b3\f4b3\f4b3\f4b3';
 //}
-
-.skill-icon {
-  width: 32px;
-  height: 32px;
-  display: inline-block;
-  background: center/contain no-repeat transparent;
-
-  &.skill-cmd {
-    background-image: url('/assets/icon/cmd.png');
-  }
-
-  &.skill-dip {
-    background-image: url('/assets/icon/dip.png');
-  }
-
-  &.skill-eng {
-    background-image: url('/assets/icon/eng.png');
-  }
-
-  &.skill-med {
-    background-image: url('/assets/icon/med.png');
-  }
-
-  &.skill-sci {
-    background-image: url('/assets/icon/sci.png');
-  }
-
-  &.skill-sec {
-    background-image: url('/assets/icon/sec.png');
-  }
-}

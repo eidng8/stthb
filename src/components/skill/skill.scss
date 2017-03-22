@@ -4,13 +4,84 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
+$skill-icon-size: 2rem;
+$skill-font-size: $skill-icon-size - 0.4rem;
+$skill-value-spacing: 0.5em;
+
+.skill-icon {
+  @include box($skill-icon-size);
+
+  display: inline-block;
+  background: center/contain no-repeat transparent;
+
+  &.skill-cmd {
+    background-image: url('/assets/icon/cmd.png');
+  }
+
+  &.skill-dip {
+    background-image: url('/assets/icon/dip.png');
+  }
+
+  &.skill-eng {
+    background-image: url('/assets/icon/eng.png');
+  }
+
+  &.skill-med {
+    background-image: url('/assets/icon/med.png');
+  }
+
+  &.skill-sci {
+    background-image: url('/assets/icon/sci.png');
+  }
+
+  &.skill-sec {
+    background-image: url('/assets/icon/sec.png');
+  }
+}
+
+.skill-values {
+  font-size: 0;
+  display: inline-block;
+  white-space: nowrap;
+
+  .skill-icon + & {
+    float: right;
+  }
+
+  .skill-base,
+  .skill-lower,
+  .skill-upper {
+    font-size: $skill-font-size;
+  }
+
+  .skill-base,
+  .skill-lower {
+    margin-left: $skill-value-spacing;
+  }
+
+  .skill-upper {
+    margin-left: $skill-value-spacing / 2;
+  }
+
+  .skill-lower {
+    &::before {
+      content: '(';
+      margin-right: $skill-value-spacing / 2;
+    }
+
+    &::after {
+      content: '-';
+      margin-left: $skill-value-spacing / 2;
+    }
+  }
+
+  .skill-upper::after {
+    content: ')';
+    margin-left: $skill-value-spacing / 2;
+  }
+}
+
 jc-skill {
   display: inline-block;
-  font-size: 1.35rem;
-
-  .skill-icon {
-    width: 1.35rem;
-    height: 1.35rem;
-    margin-bottom: -0.3rem;
-  }
+  font-size: $skill-font-size;
 }

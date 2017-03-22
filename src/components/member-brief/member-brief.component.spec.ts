@@ -85,7 +85,7 @@ describe('Components:', () => {
 
     it('should have skills', () => {
       const skills: DebugElement[] = sut.queryAll(By.css('.skill-icon'));
-      expect(skills.length).toBe(5);
+      expect(skills.length).toBe(4);
       expect(sut.query(By.css('jc-skill')))
         .not.toBeNull();
       expect(sut.query(By.css('.skill-icon.skill-cmd')))
@@ -99,7 +99,7 @@ describe('Components:', () => {
         By.css('jc-skill .skill-icon.skill-med + .skill-values'));
       expect(med).not.toBeNull();
       expect(med.nativeElement.textContent.trim())
-        .toBe('10998 - 19998');
+        .toMatch(/\s*9999\s*999\s*9999\s*/);
     }); // end should have skills
   });
 

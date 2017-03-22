@@ -1,0 +1,11 @@
+/*!
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
+
+/// Sets width & height. If $height is omitted, then generate a square.
+@mixin box($size, $height:null) {
+  width: $size;
+  height: if($height, $height, $size);
+}

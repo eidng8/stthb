@@ -93,8 +93,11 @@ jc-member-brief {
       right: 0;
       bottom: 1px;
       margin: 0;
-      padding: 0;
+      padding: 0 0 0 0.5em;
       line-height: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     img {

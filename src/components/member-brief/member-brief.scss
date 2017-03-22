@@ -4,54 +4,113 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
+$border-width: 30px;
+$border-bottom-width: 20px;
+$thumbnail-width: 100px;
+
 jc-member-brief {
-  background: linear-gradient(to bottom, $background-color, lighten($background-color, 10%));
   display: block;
-  margin-bottom: round($grid-gutter-width / 2);
-  border: 5px solid #999;
-  border-bottom-width: 30px;
-  border-radius: 0 5px 5px 0;
+  height: 100px;
+  margin: round($grid-gutter-width / 2) 0;
+  padding: 0 round($grid-gutter-width / 2);
+  background: linear-gradient(to bottom, rgba($background-color, 0.8) 40%, rgba(lighten($background-color, 10%), 0.8));
 
-  &.rarity-uncommon {
-    border-color: #50aa3c;
+  @media (min-width: $screen-sm-min) {
+    width: 50%;
+    float: left;
   }
 
-  &.rarity-rare {
-    border-color: #3888cc;
+  @media (min-width: $screen-md-min) {
+    width: 33%;
   }
 
-  &.rarity-super-rare {
-    border-color: #aa2deb;
+  @media (min-width: $screen-lg-min) {
+    width: 25%;
   }
 
-  &.rarity-legendary {
-    border-color: #fdd26a;
-  }
+  &.rarity-uncommon .item-block {
+    border-color: $color-uncommon;
 
-  .item-inner {
-    padding: 0;
-
-    ion-label {
-      white-space: normal;
-
-      &.label-md {
-        margin-top: 2px;
-        margin-bottom: 0;
-        margin-right: 0;
-      }
+    &::before {
+      border-image-source: url('/assets/img/frame-uncommon.png');
     }
   }
 
+  &.rarity-rare .item-block {
+    border-color: $color-rare;
+
+    &::before {
+      border-image-source: url('/assets/img/frame-rare.png');
+    }
+  }
+
+  &.rarity-super-rare .item-block {
+    border-color: $color-super-rare;
+
+    &::before {
+      border-image-source: url('/assets/img/frame-super-rare.png');
+    }
+  }
+
+  &.rarity-legendary .item-block {
+    border-color: $color-legendary;
+
+    &::before {
+      border-image-source: url('/assets/img/frame-legendary.png');
+    }
+  }
+
+  jc-skill {
+    margin-right: round($grid-gutter-width / 2);
+  }
+
   .item-block {
-    padding-left: 0;
-    margin: -5px -5px -30px;
+    height: 100%;
+    width: 100%;
+    padding: 0;
     background: transparent;
+    border: 1px solid $color-common;
+    border-radius: 0 8px 6px 0;
+
+    &::before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border: 1px solid transparent;
+      border-image-slice: 60 53 50 53;
+      border-image-width: $border-width $border-width $border-bottom-width;
+      border-image-repeat: stretch;
+      border-image-source: url('/assets/img/frame-common.png');
+    }
+
+    h2 {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 1px;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+    }
+
+    img {
+      width: 100px;
+      height: 100px;
+    }
 
     ion-thumbnail {
-      &[item-left] {
-        margin-top: 0;
-        margin-bottom: 0;
-        position: relative;
+      &[item-left],
+      &[item-right] {
+        margin: 0;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: $thumbnail-width;
       }
 
       &.rarity-stars::after {
@@ -63,19 +122,29 @@ jc-member-brief {
         z-index: 1;
       }
     }
+
+    .item-inner {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: $thumbnail-width;
+      padding: 0;
+      align-items: flex-start;
+
+      .list-ios &,
+      .list-md & {
+        border-bottom: none;
+      }
+
+      .label {
+        white-space: normal;
+        margin: 8px 0 0;
+      }
+    }
   }
 
   .skills {
-    min-height: 46px;
-
-    jc-skill {
-      width: 50%;
-      min-width: 103px;
-      margin-bottom: round($grid-gutter-width / 5);
-
-      .skill-values {
-        margin-left: -2px;
-      }
-    }
+    text-align: right;
   }
 }

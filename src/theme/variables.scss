@@ -10,6 +10,21 @@ $font-path: "../assets/fonts";
 
 @import "ionic.globals";
 
+// Adopted from bootstrap
+//== Media queries breakpoints
+//
+//## Define the breakpoints at which your layout will change,
+// adapting to different screen sizes.
+
+// Small screen / tablet
+$screen-sm-min: 600px;
+
+// Medium screen / desktop
+$screen-md-min: 992px;
+
+// Large screen / wide desktop
+$screen-lg-min: 1200px;
+
 // Shared Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override
@@ -82,3 +97,9 @@ $colors: (
 @function a-color($color-name, $color-key:null) {
   @return color($colors, $color-name, $color-key);
 }
+
+$color-legendary: #fdd26a;
+$color-super-rare: #bb57ef;
+$color-rare: #5aaaff;
+$color-uncommon: #50aa3c;
+$color-common: #aaa;

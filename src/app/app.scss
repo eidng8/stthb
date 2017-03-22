@@ -20,71 +20,187 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
-.tabs-md .tab-button-icon {
-  width: 5rem;
-  height: 5rem;
-  background: #517296;
-  border-radius: 50%;
-  padding-top: 1.2rem;
+.ion-page > ion-content {
+  background: url('/assets/img/bg.png') center/cover no-repeat;
 }
 
-.rarity-stars {
-  &::after {
-    font-family: Ionicons;
-    font-size: 16px;
-    color: orange;
-    display: inline-block;
-    text-shadow: -1px -1px 1px #fff, 1px 1px 2px #000;
+.tab-button-icon {
+  .has-icon & {
+    width: 5rem;
+    height: 5rem;
+    background: url('/assets/img/btn.png');
+    background-size: contain;
+  }
+
+  .tabs-md & {
+    padding-top: 1.2rem;
+  }
+
+  .tabs-ios & {
+    padding-top: 1rem;
+  }
+
+  &.ion-ios-crew,
+  &.ion-ios-crew-outline,
+  &.ion-md-crew,
+  &.ion-ios-home,
+  &.ion-ios-home-outline,
+  &.ion-md-home,
+  &.ion-ios-missions,
+  &.ion-ios-missions-outline,
+  &.ion-md-missions {
+    &::before {
+      content: '';
+      background: center/contain no-repeat transparent;
+      height: 70%;
+      display: block;
+    }
+  }
+
+  &.ion-ios-crew,
+  &.ion-ios-crew-outline,
+  &.ion-md-crew {
+    &::before {
+      background-image: url('/assets/icon/btn-crew.png');
+    }
+  }
+
+  &.ion-ios-home,
+  &.ion-ios-home-outline,
+  &.ion-md-home {
+    &::before {
+      background-image: url('/assets/icon/btn-home.png');
+    }
+  }
+
+  &.ion-ios-missions,
+  &.ion-ios-missions-outline,
+  &.ion-md-missions {
+    &::before {
+      background-image: url('/assets/icon/btn-missions.png');
+    }
   }
 }
 
-.rarity-common .rarity-stars::after {
-  content: '\f4b3';
+$rarity-star-small: 16px;
+
+.rarity-stars {
+  left: 50%;
+  display: block;
+  margin-left: round($rarity-star-small / -2);
+
+  &,
+  &::after {
+    position: absolute;
+    bottom: 0;
+    width: $rarity-star-small;
+    height: $rarity-star-small;
+    background: url('/assets/icon/star-off.png') left center/auto 100% no-repeat transparent;
+
+    .rarity-uncommon & {
+      width: $rarity-star-small * 2;
+    }
+
+    .rarity-rare & {
+      width: $rarity-star-small * 3;
+    }
+
+    .rarity-super-rare & {
+      width: $rarity-star-small * 4;
+    }
+
+    .rarity-legendary & {
+      width: $rarity-star-small * 5;
+    }
+  }
+
+  &::after {
+    content: '';
+    display: block;
+    left: 0;
+    background-image: url('/assets/icon/star.png');
+
+    .rarity-1 & {
+      width: $rarity-star-small;
+    }
+
+    .rarity-2 & {
+      width: $rarity-star-small * 2;
+    }
+
+    .rarity-3 & {
+      width: $rarity-star-small * 3;
+    }
+
+    .rarity-4 & {
+      width: $rarity-star-small * 4;
+    }
+  }
+
+  .rarity-uncommon & {
+    margin-left: round($rarity-star-small * 2 / -2);
+  }
+
+  .rarity-rare & {
+    margin-left: round($rarity-star-small * 3 / -2);
+  }
+
+  .rarity-super-rare & {
+    margin-left: round($rarity-star-small * 4 / -2);
+  }
+
+  .rarity-legendary & {
+    margin-left: round($rarity-star-small * 5 / -2);
+  }
 }
 
-.rarity-uncommon .rarity-stars::after {
-  content: '\f4b3\f4b3';
-}
-
-.rarity-rare .rarity-stars::after {
-  content: '\f4b3\f4b3\f4b3';
-}
-
-.rarity-super-rare .rarity-stars::after {
-  content: '\f4b3\f4b3\f4b3\f4b3';
-}
-
-.rarity-legendary .rarity-stars::after {
-  content: '\f4b3\f4b3\f4b3\f4b3\f4b3';
-}
+//.rarity-common .rarity-stars::after {
+//  content: '\f4b3';
+//}
+//
+//.rarity-uncommon .rarity-stars::after {
+//  content: '\f4b3\f4b3';
+//}
+//
+//.rarity-rare .rarity-stars::after {
+//  content: '\f4b3\f4b3\f4b3';
+//}
+//
+//.rarity-super-rare .rarity-stars::after {
+//  content: '\f4b3\f4b3\f4b3\f4b3';
+//}
+//
+//.rarity-legendary .rarity-stars::after {
+//  content: '\f4b3\f4b3\f4b3\f4b3\f4b3';
+//}
 
 .skill-icon {
   width: 32px;
   height: 32px;
   display: inline-block;
-  background-size: contain;
+  background: center/contain no-repeat transparent;
 
   &.skill-cmd {
-    background-image: url('/assets/img/icon-cmd.png');
+    background-image: url('/assets/icon/cmd.png');
   }
 
   &.skill-dip {
-    background-image: url('/assets/img/icon-dip.png');
+    background-image: url('/assets/icon/dip.png');
   }
 
   &.skill-eng {
-    background-image: url('/assets/img/icon-eng.png');
+    background-image: url('/assets/icon/eng.png');
   }
 
   &.skill-med {
-    background-image: url('/assets/img/icon-med.png');
+    background-image: url('/assets/icon/med.png');
   }
 
   &.skill-sci {
-    background-image: url('/assets/img/icon-sci.png');
+    background-image: url('/assets/icon/sci.png');
   }
 
   &.skill-sec {
-    background-image: url('/assets/img/icon-sec.png');
+    background-image: url('/assets/icon/sec.png');
   }
 }

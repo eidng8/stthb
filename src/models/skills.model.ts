@@ -4,6 +4,7 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
+import findIndex from 'lodash-es/findIndex';
 import forOwn from 'lodash-es/forOwn';
 import { SkillModel } from './skill.model';
 import { IServerData } from '../interfaces/server-data.interface';
@@ -24,17 +25,14 @@ export class SkillsModel implements IDataModel<TSkills> {
   protected _sci: SkillModel = undefined;
   protected _sec: SkillModel = undefined;
 
-  protected _all: SkillModel[] = [];
+  protected sorted: SkillModel[] = [];
+
+  protected _primary: SkillModel;
 
   // region Properties
 
   get all(): SkillModel[] {
-    if(this._all.length < 1) {
-      this.each(skill => {
-        this._all.push(skill);
-      });
-    }
-    return this._all;
+    return this.sorted;
   }
 
   get cmd(): SkillModel {
@@ -61,6 +59,10 @@ export class SkillsModel implements IDataModel<TSkills> {
     return this.get('sec');
   }
 
+  get primary(): SkillModel {
+    return this._primary;
+  }
+
   // endregion
 
   get(skill: string): SkillModel {
@@ -68,32 +70,34 @@ export class SkillsModel implements IDataModel<TSkills> {
   }
 
   set(skill: string|SkillModel, values: number[] = undefined): void {
+    let abbr: string;
+
     if(skill instanceof SkillModel) {
-      this[`_${skill.abbr}`] = skill;
+      abbr = `_${skill.abbr}`;
+      this[abbr] = skill;
       return;
     }
 
     const model: SkillModel = this.createModel(skill, values);
-    this[`_${model.abbr}`] = model;
-  }
+    abbr = `_${model.abbr}`;
+    this[abbr] = model;
 
-  each(func: (skill: SkillModel, abbr: string) => boolean|void): boolean {
-    let found: boolean = false;
-    for(const abbr of SkillsModel.list) {
-      const skill: SkillModel = this[`_${abbr}`];
-      if(!skill) {
-        continue;
-      }
-      found = true;
-      if(false === func(skill, abbr)) {
-        break;
-      }
+    if(!this._primary || this[abbr].base > this._primary.base) {
+      this._primary = this[abbr];
     }
-    return found;
-  }
 
-  protected createModel(skill: string, value: number[]): SkillModel {
-    return new SkillModel(skill, value);
+    if(!this.sorted) {
+      this.sorted.push(this[abbr]);
+    } else {
+      const idx: number = findIndex(this.sorted, sk => sk.abbr === this[abbr]);
+      if(idx < 0) {
+        this.sorted.push(this[abbr]);
+      } else {
+        this.sorted[idx] = this[abbr];
+      }
+      this.sorted.sort((s1, s2) => s2.base - s1.base);
+    }
+
   }
 
   load(skills: TSkills, server: IServerData): void {
@@ -105,5 +109,9 @@ export class SkillsModel implements IDataModel<TSkills> {
         console.warn(e.message);
       }
     });
+  }
+
+  protected createModel(skill: string, value: number[]): SkillModel {
+    return new SkillModel(skill, value);
   }
 }

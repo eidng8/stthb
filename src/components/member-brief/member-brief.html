@@ -5,13 +5,13 @@
   -->
 
 <ion-item>
-  <ion-thumbnail item-left class="rarity-stars">
+  <ion-thumbnail item-left>
     <img src="{{ member?.picture }}">
+    <div class="rarity-stars"></div>
   </ion-thumbnail>
 
   <div class="skills">
     <jc-skill *ngFor="let skill of member?.skills.all" [skill]="skill">
-
     </jc-skill>
   </div>
 

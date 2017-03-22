@@ -57,7 +57,22 @@ describe('Models:', () => {
       expect(model.sec.base).toBe(2);
     }); // end can be created
 
-    it('can be iterated', () => {
+    it('should have primary skill', () => {
+      const values: any = {
+        'dip': [2, 3, 4],
+        'eng': [9, 4, 5],
+        'sci': [5, 6, 7],
+      };
+
+      model.set('dip', values.dip);
+      model.set('eng', values.eng);
+      model.set('sci', values.sci);
+
+      expect(model.primary.base).toBe(9);
+      expect(model.primary.abbr).toBe('eng');
+    }); // end should be in descending order
+
+    it('should be in descending order', () => {
       const values: any = {
         'dip': [2, 3, 4],
         'eng': [3, 4, 5],
@@ -68,41 +83,10 @@ describe('Models:', () => {
       model.set('eng', values.eng);
       model.set('sci', values.sci);
 
-      let looped: number = 0;
-      model.each((skill, abbr) => {
-        looped++;
-        expect(skill.abbr).toBe(abbr);
-        expect(skill.base).toBe(values[abbr][0]);
-        expect(skill.lower).toBe(values[abbr][1]);
-        expect(skill.upper).toBe(values[abbr][2]);
-      });
-
-      expect(looped).toBe(3);
-    }); // end can be iterated
-
-    it('iteration can be stopped explicitly', () => {
-      const values: any = {
-        'dip': [2, 3, 4],
-        'eng': [3, 4, 5],
-        'sci': [5, 6, 7],
-      };
-
-      model.set('dip', values.dip);
-      model.set('eng', values.eng);
-      model.set('sci', values.sci);
-
-      let looped: number = 0;
-      model.each((skill, abbr) => {
-        looped++;
-        expect(skill.abbr).toBe(abbr);
-        expect(skill.base).toBe(values[abbr][0]);
-        expect(skill.lower).toBe(values[abbr][1]);
-        expect(skill.upper).toBe(values[abbr][2]);
-        return false;
-      });
-
-      expect(looped).toBe(1);
-    }); // end can be iterated
+      expect(model.all.length).toBe(3);
+      expect(model.all[0].base).toBeGreaterThanOrEqual(model.all[1].base);
+      expect(model.all[1].base).toBeGreaterThanOrEqual(model.all[2].base);
+    }); // end should be in descending order
 
   }); // end SkillsModel
 

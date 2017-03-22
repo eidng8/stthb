@@ -65,7 +65,8 @@ describe('Components:', () => {
     });
 
     it('should have rarity', () => {
-      expect(sut.query(By.css('.rarity-rare'))).not.toBeNull();
+      expect(sut.nativeElement.classList).toContain('rarity-rare');
+      // expect(sut.query(By.css('.rarity-rare'))).not.toBeNull();
     }); // end should have thumbnail
 
     it('should have thumbnail', () => {
@@ -83,13 +84,15 @@ describe('Components:', () => {
     }); // end should have name
 
     it('should have skills', () => {
-      const skills: DebugElement[] = sut.queryAll(By.css('jc-skill'));
-      expect(skills.length).toBe(4);
-      expect(sut.query(By.css('jc-skill .skill-icon.skill-cmd')))
+      const skills: DebugElement[] = sut.queryAll(By.css('.skill-icon'));
+      expect(skills.length).toBe(5);
+      expect(sut.query(By.css('jc-skill')))
         .not.toBeNull();
-      expect(sut.query(By.css('jc-skill .skill-icon.skill-dip')))
+      expect(sut.query(By.css('.skill-icon.skill-cmd')))
         .not.toBeNull();
-      expect(sut.query(By.css('jc-skill .skill-icon.skill-sec')))
+      expect(sut.query(By.css('.skill-icon.skill-dip')))
+        .not.toBeNull();
+      expect(sut.query(By.css('.skill-icon.skill-sec')))
         .not.toBeNull();
 
       const med: DebugElement = sut.query(

@@ -6,14 +6,11 @@
 
 jc-skill {
   display: inline-block;
-
-  span {
-    font-size: 1.2rem;
-  }
+  font-size: 1.35rem;
 
   .skill-icon {
-    width: 20px;
-    height: 20px;
-    margin-bottom: -5px;
+    width: 1.35rem;
+    height: 1.35rem;
+    margin-bottom: -0.3rem;
   }
 }

@@ -31,7 +31,11 @@
     {
       "character": 93,
       "name": "\"Dark Ages\" McCoy",
-      "picture": "https://stt.wiki/w/images/thumb/c/c2/%27%27Dark_Ages%27%27_McCoy_Head.png/100px-%27%27Dark_Ages%27%27_McCoy_Head.png",
+      "picture": [
+        "w/images/thumb/c/c2/%27%27Dark_Ages%27%27_McCoy_Head.png/100px-%27%27Dark_Ages%27%27_McCoy_Head.png",
+        "w/images/thumb/c/c2/%27%27Dark_Ages%27%27_McCoy_Head.png/150px-%27%27Dark_Ages%27%27_McCoy_Head.png",
+        "w/images/thumb/c/c2/%27%27Dark_Ages%27%27_McCoy_Head.png/200px-%27%27Dark_Ages%27%27_McCoy_Head.png"
+      ],
       "race": 17,
       "skills": {
         "1": [157, 16, 37],
@@ -39,11 +43,22 @@
         "5": [745, 187, 332]
       },
       "stars": 5,
-      "traits": [22, 36, 46, 55, 97]
+      "traits": [22, 36, 46, 55, 97],
+      "portrait": [
+        [
+          "w/images/thumb/0/06/Dark-Ages-McCoy.png/200px-Dark-Ages-McCoy.png",
+          "w/images/thumb/0/06/Dark-Ages-McCoy.png/300px-Dark-Ages-McCoy.png",
+          "w/images/thumb/0/06/Dark-Ages-McCoy.png/400px-Dark-Ages-McCoy.png"
+        ]
+      ]
     }, {
       "character": 57,
       "name": "1701 Jadzia Dax",
-      "picture": "https://stt.wiki/w/images/thumb/b/bc/1701_Jadzia_Dax_Head.png/100px-1701_Jadzia_Dax_Head.png",
+      "picture": [
+        "w/images/thumb/b/bc/1701_Jadzia_Dax_Head.png/100px-1701_Jadzia_Dax_Head.png",
+        "w/images/thumb/b/bc/1701_Jadzia_Dax_Head.png/150px-1701_Jadzia_Dax_Head.png",
+        "w/images/thumb/b/bc/1701_Jadzia_Dax_Head.png/200px-1701_Jadzia_Dax_Head.png"
+      ],
       "race": 32,
       "skills": {
         "2": [60, 12, 24],
@@ -51,12 +66,22 @@
         "5": [301, 60, 122]
       },
       "stars": 4,
-      "traits": [4, 44, 46, 55, 97, 109]
-    },
-    {
+      "traits": [4, 44, 46, 55, 97, 109],
+      "portrait": [
+        [
+          "w/images/thumb/c/c4/Card-23rd-Century-Dax.jpg/300px-Card-23rd-Century-Dax.jpg",
+          "w/images/thumb/c/c4/Card-23rd-Century-Dax.jpg/450px-Card-23rd-Century-Dax.jpg",
+          "w/images/c/c4/Card-23rd-Century-Dax.jpg"
+        ]
+      ]
+    }, {
       "character": 32,
       "name": "Dr. Richard Daystrom",
-      "picture": "https://stt.wiki/w/images/thumb/0/0a/Dr._Richard_Daystrom_Head.png/100px-Dr._Richard_Daystrom_Head.png",
+      "picture": [
+        "w/images/thumb/0/0a/Dr._Richard_Daystrom_Head.png/100px-Dr._Richard_Daystrom_Head.png",
+        "w/images/thumb/0/0a/Dr._Richard_Daystrom_Head.png/150px-Dr._Richard_Daystrom_Head.png",
+        "w/images/0/0a/Dr._Richard_Daystrom_Head.png"
+      ],
       "race": 17,
       "skills": {
         "2": [882, 134, 447],
@@ -67,7 +92,11 @@
     }, {
       "character": 142,
       "name": "1701 Sisko",
-      "picture": "https://stt.wiki/w/images/thumb/9/9c/1701_Sisko_Head.png/100px-1701_Sisko_Head.png",
+      "picture": [
+        "w/images/thumb/9/9c/1701_Sisko_Head.png/100px-1701_Sisko_Head.png",
+        "w/images/thumb/9/9c/1701_Sisko_Head.png/150px-1701_Sisko_Head.png",
+        "w/images/thumb/9/9c/1701_Sisko_Head.png/200px-1701_Sisko_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [103, 17, 34],
@@ -75,12 +104,22 @@
         "5": [1031, 76, 127]
       },
       "stars": 5,
-      "traits": [8, 31, 46, 58, 97]
-    },
-    {
+      "traits": [8, 31, 46, 58, 97],
+      "portrait": [
+        [
+          "w/images/thumb/c/c7/Card-Time-Displaced-Sisko.jpg/300px-Card-Time-Displaced-Sisko.jpg",
+          "w/images/thumb/c/c7/Card-Time-Displaced-Sisko.jpg/450px-Card-Time-Displaced-Sisko.jpg",
+          "w/images/c/c7/Card-Time-Displaced-Sisko.jpg"
+        ]
+      ]
+    }, {
       "character": 91,
       "name": "23rd Century Martok",
-      "picture": "https://stt.wiki/w/images/thumb/7/76/23rd_Century_Martok_Head.png/100px-23rd_Century_Martok_Head.png",
+      "picture": [
+        "w/images/thumb/7/76/23rd_Century_Martok_Head.png/100px-23rd_Century_Martok_Head.png",
+        "w/images/thumb/7/76/23rd_Century_Martok_Head.png/150px-23rd_Century_Martok_Head.png",
+        "w/images/7/76/23rd_Century_Martok_Head.png"
+      ],
       "race": 20,
       "skills": {
         "0": [468, 138, 283],
@@ -92,7 +131,11 @@
     }, {
       "character": 82,
       "name": "Abraham Lincoln",
-      "picture": "https://stt.wiki/w/images/thumb/1/1e/Abraham_Lincoln_Head.png/100px-Abraham_Lincoln_Head.png",
+      "picture": [
+        "w/images/thumb/1/1e/Abraham_Lincoln_Head.png/100px-Abraham_Lincoln_Head.png",
+        "w/images/thumb/1/1e/Abraham_Lincoln_Head.png/150px-Abraham_Lincoln_Head.png",
+        "w/images/thumb/1/1e/Abraham_Lincoln_Head.png/200px-Abraham_Lincoln_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [83, 20, 40],
@@ -100,12 +143,22 @@
         "5": [416, 103, 203]
       },
       "stars": 5,
-      "traits": [22, 31, 35, 55, 58, 83, 87]
-    },
-    {
+      "traits": [22, 31, 35, 55, 58, 83, 87],
+      "portrait": [
+        [
+          "w/images/thumb/7/79/Abraham-Lincoln.png/330px-Abraham-Lincoln.png",
+          "w/images/thumb/7/79/Abraham-Lincoln.png/495px-Abraham-Lincoln.png",
+          "w/images/thumb/7/79/Abraham-Lincoln.png/660px-Abraham-Lincoln.png"
+        ]
+      ]
+    }, {
       "character": 171,
       "name": "Acting Ensign Crusher",
-      "picture": "https://stt.wiki/w/images/thumb/1/1a/Acting_Ensign_Crusher_Head.png/100px-Acting_Ensign_Crusher_Head.png",
+      "picture": [
+        "w/images/thumb/1/1a/Acting_Ensign_Crusher_Head.png/100px-Acting_Ensign_Crusher_Head.png",
+        "w/images/thumb/1/1a/Acting_Ensign_Crusher_Head.png/150px-Acting_Ensign_Crusher_Head.png",
+        "w/images/thumb/1/1a/Acting_Ensign_Crusher_Head.png/200px-Acting_Ensign_Crusher_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [23, 5, 11],
@@ -113,11 +166,22 @@
         "4": [258, 56, 160]
       },
       "stars": 2,
-      "traits": [46, 55, 84, 97]
+      "traits": [46, 55, 84, 97],
+      "portrait": [
+        [
+          "w/images/thumb/b/b2/Acting_Ensign_Crusher.PNG/134px-Acting_Ensign_Crusher.PNG",
+          "w/images/thumb/b/b2/Acting_Ensign_Crusher.PNG/201px-Acting_Ensign_Crusher.PNG",
+          "w/images/thumb/b/b2/Acting_Ensign_Crusher.PNG/268px-Acting_Ensign_Crusher.PNG"
+        ]
+      ]
     }, {
       "character": 13,
       "name": "Acting Nagus Brunt",
-      "picture": "https://stt.wiki/w/images/thumb/4/45/Acting_Nagus_Brunt_Head.png/100px-Acting_Nagus_Brunt_Head.png",
+      "picture": [
+        "w/images/thumb/4/45/Acting_Nagus_Brunt_Head.png/100px-Acting_Nagus_Brunt_Head.png",
+        "w/images/thumb/4/45/Acting_Nagus_Brunt_Head.png/150px-Acting_Nagus_Brunt_Head.png",
+        "w/images/thumb/4/45/Acting_Nagus_Brunt_Head.png/200px-Acting_Nagus_Brunt_Head.png"
+      ],
       "race": 13,
       "skills": {
         "0": [42, 2, 8],
@@ -126,11 +190,14 @@
       },
       "stars": 3,
       "traits": [29, 31, 35, 47]
-    },
-    {
+    }, {
       "character": 14,
       "name": "Admiral Cartwright",
-      "picture": "https://stt.wiki/w/images/thumb/5/54/Admiral_Cartwright_Head.png/100px-Admiral_Cartwright_Head.png",
+      "picture": [
+        "w/images/thumb/5/54/Admiral_Cartwright_Head.png/100px-Admiral_Cartwright_Head.png",
+        "w/images/thumb/5/54/Admiral_Cartwright_Head.png/150px-Admiral_Cartwright_Head.png",
+        "w/images/thumb/5/54/Admiral_Cartwright_Head.png/200px-Admiral_Cartwright_Head.png"
+      ],
       "race": 17,
       "skills": [[1159, 167, 360], [854, 165, 371]],
       "stars": 5,
@@ -138,7 +205,11 @@
     }, {
       "character": 59,
       "name": "Admiral Janeway",
-      "picture": "https://stt.wiki/w/images/thumb/5/54/Admiral_Janeway_Head.png/100px-Admiral_Janeway_Head.png",
+      "picture": [
+        "w/images/thumb/5/54/Admiral_Janeway_Head.png/100px-Admiral_Janeway_Head.png",
+        "w/images/thumb/5/54/Admiral_Janeway_Head.png/150px-Admiral_Janeway_Head.png",
+        "w/images/thumb/5/54/Admiral_Janeway_Head.png/200px-Admiral_Janeway_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [116, 16, 36],
@@ -146,13 +217,22 @@
         "5": [959, 269, 553]
       },
       "stars": 5,
-      "traits": [46, 55, 87, 97]
-    },
-
-    {
+      "traits": [46, 55, 87, 97],
+      "portrait": [
+        [
+          "w/images/thumb/d/dc/Admiral-Janeway.png/230px-Admiral-Janeway.png",
+          "w/images/thumb/d/dc/Admiral-Janeway.png/345px-Admiral-Janeway.png",
+          "w/images/thumb/d/dc/Admiral-Janeway.png/460px-Admiral-Janeway.png"
+        ]
+      ]
+    }, {
       "character": 101,
       "name": "Admiral Nechayev",
-      "picture": "https://stt.wiki/w/images/thumb/c/cb/Admiral_Nechayev_Head.png/100px-Admiral_Nechayev_Head.png",
+      "picture": [
+        "w/images/thumb/c/cb/Admiral_Nechayev_Head.png/100px-Admiral_Nechayev_Head.png",
+        "w/images/c/cb/Admiral_Nechayev_Head.png",
+        "w/images/c/cb/Admiral_Nechayev_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [888, 266, 706],
@@ -164,7 +244,11 @@
     }, {
       "character": 127,
       "name": "Admiral Riker",
-      "picture": "https://stt.wiki/w/images/thumb/c/c8/Admiral_Riker_Head.png/100px-Admiral_Riker_Head.png",
+      "picture": [
+        "w/images/thumb/c/c8/Admiral_Riker_Head.png/100px-Admiral_Riker_Head.png",
+        "w/images/thumb/c/c8/Admiral_Riker_Head.png/150px-Admiral_Riker_Head.png",
+        "w/images/thumb/c/c8/Admiral_Riker_Head.png/200px-Admiral_Riker_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [947, 256, 540],
@@ -172,12 +256,21 @@
         "5": [827, 207, 408]
       },
       "stars": 5,
-      "traits": [46, 48, 55, 73, 82, 97]
-    },
-    {
+      "traits": [46, 48, 55, 73, 82, 97],
+      "portrait": [
+        [
+          "w/images/thumb/6/65/Admiral_Riker.png/185px-Admiral_Riker.png",
+          "w/images/6/65/Admiral_Riker.png", "w/images/6/65/Admiral_Riker.png"
+        ]
+      ]
+    }, {
       "character": 24,
       "name": "Age of Sail Crusher",
-      "picture": "https://stt.wiki/w/images/thumb/7/70/Age_of_Sail_Crusher_Head.png/99px-Age_of_Sail_Crusher_Head.png",
+      "picture": [
+        "w/images/thumb/7/70/Age_of_Sail_Crusher_Head.png/100px-Age_of_Sail_Crusher_Head.png",
+        "w/images/thumb/7/70/Age_of_Sail_Crusher_Head.png/150px-Age_of_Sail_Crusher_Head.png",
+        "w/images/thumb/7/70/Age_of_Sail_Crusher_Head.png/200px-Age_of_Sail_Crusher_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [409, 87, 309],
@@ -185,11 +278,22 @@
         "3": [1005, 199, 526]
       },
       "stars": 5,
-      "traits": [26, 36, 46, 55, 97]
+      "traits": [26, 36, 46, 55, 97],
+      "portrait": [
+        [
+          "w/images/thumb/9/96/Age_of_Sail_Crusher.png/200px-Age_of_Sail_Crusher.png",
+          "w/images/thumb/9/96/Age_of_Sail_Crusher.png/300px-Age_of_Sail_Crusher.png",
+          "w/images/thumb/9/96/Age_of_Sail_Crusher.png/400px-Age_of_Sail_Crusher.png"
+        ]
+      ]
     }, {
       "character": 54,
       "name": "Agent Harris",
-      "picture": "https://stt.wiki/w/images/thumb/c/cc/Agent_Harris_Head.png/100px-Agent_Harris_Head.png",
+      "picture": [
+        "w/images/thumb/c/cc/Agent_Harris_Head.png/100px-Agent_Harris_Head.png",
+        "w/images/thumb/c/cc/Agent_Harris_Head.png/150px-Agent_Harris_Head.png",
+        "w/images/thumb/c/cc/Agent_Harris_Head.png/200px-Agent_Harris_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [645, 161, 347],
@@ -197,12 +301,21 @@
         "5": [305, 111, 261]
       },
       "stars": 4,
-      "traits": [46, 55, 87, 92, 97, 110]
-    },
-    {
+      "traits": [46, 55, 87, 92, 97, 110],
+      "portrait": [
+        [
+          "w/images/thumb/5/59/Agent_Harris.PNG/200px-Agent_Harris.PNG",
+          "w/images/5/59/Agent_Harris.PNG", "w/images/5/59/Agent_Harris.PNG"
+        ]
+      ]
+    }, {
       "character": 9,
       "name": "Alternate Future Bashir",
-      "picture": "https://stt.wiki/w/images/thumb/9/95/Alternate_Future_Bashir_Head.png/100px-Alternate_Future_Bashir_Head.png",
+      "picture": [
+        "w/images/thumb/9/95/Alternate_Future_Bashir_Head.png/100px-Alternate_Future_Bashir_Head.png",
+        "w/images/thumb/9/95/Alternate_Future_Bashir_Head.png/150px-Alternate_Future_Bashir_Head.png",
+        "w/images/thumb/9/95/Alternate_Future_Bashir_Head.png/200px-Alternate_Future_Bashir_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [83, 12, 25],
@@ -210,31 +323,63 @@
         "4": [794, 115, 326]
       },
       "stars": 5,
-      "traits": [6, 32, 36, 46, 48, 55, 97]
+      "traits": [6, 32, 36, 46, 48, 55, 97],
+      "portrait": [
+        [
+          "w/images/thumb/7/7b/Alternate-Future-Bashir.png/230px-Alternate-Future-Bashir.png",
+          "w/images/thumb/7/7b/Alternate-Future-Bashir.png/345px-Alternate-Future-Bashir.png",
+          "w/images/thumb/7/7b/Alternate-Future-Bashir.png/460px-Alternate-Future-Bashir.png"
+        ]
+      ]
     }, {
       "character": 44,
       "name": "Ambassador Fox",
-      "picture": "https://stt.wiki/w/images/thumb/1/1f/Ambassador_Fox_Head.png/100px-Ambassador_Fox_Head.png",
+      "picture": [
+        "w/images/thumb/1/1f/Ambassador_Fox_Head.png/100px-Ambassador_Fox_Head.png",
+        "w/images/thumb/1/1f/Ambassador_Fox_Head.png/150px-Ambassador_Fox_Head.png",
+        "w/images/thumb/1/1f/Ambassador_Fox_Head.png/200px-Ambassador_Fox_Head.png"
+      ],
       "race": 17,
       "skills": [[352, 91, 206], [435, 90, 217]],
       "stars": 3,
-      "traits": [0, 22, 24, 35, 46, 55]
-    },
-    {
+      "traits": [0, 22, 24, 35, 46, 55],
+      "portrait": [
+        [
+          "w/images/thumb/9/99/Ambassador_Fox.png/165px-Ambassador_Fox.png",
+          "w/images/thumb/9/99/Ambassador_Fox.png/248px-Ambassador_Fox.png",
+          "w/images/9/99/Ambassador_Fox.png"
+        ]
+      ]
+    }, {
       "character": 102,
       "name": "Ambassador Neelix",
-      "picture": "https://stt.wiki/w/images/thumb/4/47/Ambassador_Neelix_Head.png/100px-Ambassador_Neelix_Head.png",
+      "picture": [
+        "w/images/thumb/4/47/Ambassador_Neelix_Head.png/100px-Ambassador_Neelix_Head.png",
+        "w/images/thumb/4/47/Ambassador_Neelix_Head.png/150px-Ambassador_Neelix_Head.png",
+        "w/images/thumb/4/47/Ambassador_Neelix_Head.png/200px-Ambassador_Neelix_Head.png"
+      ],
       "race": 30,
       "skills": {
         "1": [74, 7, 14],
         "2": [371, 39, 105]
       },
       "stars": 3,
-      "traits": [0, 21, 22, 24, 76, 87, 99, 102]
+      "traits": [0, 21, 22, 24, 76, 87, 99, 102],
+      "portrait": [
+        [
+          "w/images/thumb/b/bc/Ambassador-Neelix.png/160px-Ambassador-Neelix.png",
+          "w/images/thumb/b/bc/Ambassador-Neelix.png/240px-Ambassador-Neelix.png",
+          "w/images/thumb/b/bc/Ambassador-Neelix.png/320px-Ambassador-Neelix.png"
+        ]
+      ]
     }, {
       "character": 131,
       "name": "Ambassador Sarek",
-      "picture": "https://stt.wiki/w/images/thumb/e/e3/Ambassador_Sarek_Head.png/100px-Ambassador_Sarek_Head.png",
+      "picture": [
+        "w/images/thumb/e/e3/Ambassador_Sarek_Head.png/100px-Ambassador_Sarek_Head.png",
+        "w/images/thumb/e/e3/Ambassador_Sarek_Head.png/150px-Ambassador_Sarek_Head.png",
+        "w/images/thumb/e/e3/Ambassador_Sarek_Head.png/200px-Ambassador_Sarek_Head.png"
+      ],
       "race": 37,
       "skills": {
         "0": [0, 0, 0],
@@ -242,12 +387,22 @@
         "4": [529, 137, 514]
       },
       "stars": 4,
-      "traits": [24, 31, 35, 46, 117]
-    },
-    {
+      "traits": [24, 31, 35, 46, 117],
+      "portrait": [
+        [
+          "w/images/thumb/5/57/Ambassador_Sarek.PNG/200px-Ambassador_Sarek.PNG",
+          "w/images/5/57/Ambassador_Sarek.PNG",
+          "w/images/5/57/Ambassador_Sarek.PNG"
+        ]
+      ]
+    }, {
       "character": 147,
       "name": "Ambassador Spock",
-      "picture": "https://stt.wiki/w/images/thumb/8/80/Ambassador_Spock_Head.png/100px-Ambassador_Spock_Head.png",
+      "picture": [
+        "w/images/thumb/8/80/Ambassador_Spock_Head.png/100px-Ambassador_Spock_Head.png",
+        "w/images/thumb/8/80/Ambassador_Spock_Head.png/150px-Ambassador_Spock_Head.png",
+        "w/images/thumb/8/80/Ambassador_Spock_Head.png/200px-Ambassador_Spock_Head.png"
+      ],
       "race": 37,
       "skills": {
         "1": [46, 22, 59],
@@ -255,32 +410,74 @@
         "5": [232, 122, 296]
       },
       "stars": 4,
-      "traits": [4, 22, 35, 44, 46, 55, 97, 117]
+      "traits": [4, 22, 35, 44, 46, 55, 97, 117],
+      "portrait": [
+        [
+          "w/images/thumb/f/f1/Ambassador-Spock.png/300px-Ambassador-Spock.png",
+          "w/images/thumb/f/f1/Ambassador-Spock.png/450px-Ambassador-Spock.png",
+          "w/images/thumb/f/f1/Ambassador-Spock.png/600px-Ambassador-Spock.png"
+        ]
+      ]
+    }, {
+      "character": 86,
+      "name": "Ambassador Troi",
+      "picture": [
+        "w/images/thumb/4/4e/Ambassador_Troi_Head.png/100px-Ambassador_Troi_Head.png",
+        "w/images/thumb/4/4e/Ambassador_Troi_Head.png/150px-Ambassador_Troi_Head.png",
+        "w/images/4/4e/Ambassador_Troi_Head.png"
+      ],
+      "race": 6,
+      "skills": [[830, 135, 285], [932, 345, 711]],
+      "stars": 5,
+      "traits": [0, 11, 22, 35, 46, 88, 105]
     }, {
       "character": 127,
       "name": "Angel I Riker",
-      "picture": "https://stt.wiki/w/images/thumb/6/6e/Angel_I_Riker_Head.png/99px-Angel_I_Riker_Head.png",
+      "picture": [
+        "w/images/thumb/6/6e/Angel_I_Riker_Head.png/100px-Angel_I_Riker_Head.png",
+        "w/images/thumb/6/6e/Angel_I_Riker_Head.png/150px-Angel_I_Riker_Head.png",
+        "w/images/thumb/6/6e/Angel_I_Riker_Head.png/200px-Angel_I_Riker_Head.png"
+      ],
       "race": 17,
       "skills": [[110, 35, 84], [552, 175, 420]],
       "stars": 4,
-      "traits": [46, 48, 55, 73, 82, 97]
-    },
-
-    {
+      "traits": [46, 48, 55, 73, 82, 97],
+      "portrait": [
+        [
+          "w/images/thumb/b/b9/Angel_I_Riker.png/240px-Angel_I_Riker.png",
+          "w/images/thumb/b/b9/Angel_I_Riker.png/360px-Angel_I_Riker.png",
+          "w/images/b/b9/Angel_I_Riker.png"
+        ]
+      ]
+    }, {
       "character": 2,
       "name": "Antaak",
-      "picture": "https://stt.wiki/w/images/thumb/6/6f/Antaak_Head.png/100px-Antaak_Head.png",
+      "picture": [
+        "w/images/thumb/6/6f/Antaak_Head.png/100px-Antaak_Head.png",
+        "w/images/thumb/6/6f/Antaak_Head.png/150px-Antaak_Head.png",
+        "w/images/thumb/6/6f/Antaak_Head.png/200px-Antaak_Head.png"
+      ],
       "race": 20,
       "skills": {
         "3": [532, 214, 753],
         "4": [630, 60, 159]
       },
       "stars": 4,
-      "traits": [34, 36, 49, 65]
+      "traits": [34, 36, 49, 65],
+      "portrait": [
+        [
+          "w/images/thumb/e/e1/Antaak.PNG/240px-Antaak.PNG",
+          "w/images/e/e1/Antaak.PNG", "w/images/e/e1/Antaak.PNG"
+        ]
+      ]
     }, {
       "character": 3,
       "name": "Apollo",
-      "picture": null,
+      "picture": [
+        "w/images/thumb/9/91/Apollo_Head.png/100px-Apollo_Head.png",
+        "w/images/thumb/9/91/Apollo_Head.png/150px-Apollo_Head.png",
+        "w/images/thumb/9/91/Apollo_Head.png/200px-Apollo_Head.png"
+      ],
       "race": 33,
       "skills": {
         "0": [303, 96, 196],
@@ -288,12 +485,22 @@
         "3": [582, 236, 586]
       },
       "stars": 4,
-      "traits": [15, 17, 31, 58, 75, 95]
-    },
-    {
+      "traits": [15, 17, 31, 58, 75, 95],
+      "portrait": [
+        [
+          "w/images/thumb/1/14/Apollo.png/300px-Apollo.png",
+          "w/images/thumb/1/14/Apollo.png/450px-Apollo.png",
+          "w/images/thumb/1/14/Apollo.png/600px-Apollo.png"
+        ]
+      ]
+    }, {
       "character": 0,
       "name": "Automated Unit 3947",
-      "picture": "https://stt.wiki/w/images/thumb/b/bc/Automated_Unit_3947_Head.png/100px-Automated_Unit_3947_Head.png",
+      "picture": [
+        "w/images/thumb/b/bc/Automated_Unit_3947_Head.png/100px-Automated_Unit_3947_Head.png",
+        "w/images/b/bc/Automated_Unit_3947_Head.png",
+        "w/images/b/bc/Automated_Unit_3947_Head.png"
+      ],
       "race": 3,
       "skills": {
         "2": [717, 128, 305],
@@ -302,11 +509,14 @@
       },
       "stars": 4,
       "traits": [7, 34, 85]
-    },
-    {
+    }, {
       "character": 59,
       "name": "Arachnia Janeway",
-      "picture": "https://stt.wiki/w/images/thumb/e/ee/Arachnia_Janeway_Head.png/100px-Arachnia_Janeway_Head.png",
+      "picture": [
+        "w/images/thumb/e/ee/Arachnia_Janeway_Head.png/100px-Arachnia_Janeway_Head.png",
+        "w/images/thumb/e/ee/Arachnia_Janeway_Head.png/150px-Arachnia_Janeway_Head.png",
+        "w/images/thumb/e/ee/Arachnia_Janeway_Head.png/200px-Arachnia_Janeway_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [83, 15, 34],
@@ -314,11 +524,22 @@
         "5": [413, 76, 170]
       },
       "stars": 5,
-      "traits": [26, 46, 55, 87, 97]
+      "traits": [26, 46, 55, 87, 97],
+      "portrait": [
+        [
+          "w/images/thumb/e/e6/Arachnia-Janeway.png/240px-Arachnia-Janeway.png",
+          "w/images/thumb/e/e6/Arachnia-Janeway.png/360px-Arachnia-Janeway.png",
+          "w/images/thumb/e/e6/Arachnia-Janeway.png/480px-Arachnia-Janeway.png"
+        ]
+      ]
     }, {
       "character": 5,
       "name": "Ardra",
-      "picture": "https://stt.wiki/w/images/thumb/c/c6/Ardra_Head.png/100px-Ardra_Head.png",
+      "picture": [
+        "w/images/thumb/c/c6/Ardra_Head.png/100px-Ardra_Head.png",
+        "w/images/thumb/c/c6/Ardra_Head.png/150px-Ardra_Head.png",
+        "w/images/thumb/c/c6/Ardra_Head.png/200px-Ardra_Head.png"
+      ],
       "race": 33,
       "skills": {
         "1": [537, 104, 183],
@@ -326,12 +547,21 @@
         "5": [703, 120, 243]
       },
       "stars": 4,
-      "traits": [26, 29, 31, 108, 114]
-    },
-    {
+      "traits": [26, 29, 31, 108, 114],
+      "portrait": [
+        [
+          "w/images/thumb/7/76/Ardra.PNG/160px-Ardra.PNG",
+          "w/images/7/76/Ardra.PNG", "w/images/7/76/Ardra.PNG"
+        ]
+      ]
+    }, {
       "character": 6,
       "name": "Arik Soong",
-      "picture": "https://stt.wiki/w/images/thumb/2/25/Arik_Soong_Head.png/100px-Arik_Soong_Head.png",
+      "picture": [
+        "w/images/thumb/2/25/Arik_Soong_Head.png/100px-Arik_Soong_Head.png",
+        "w/images/thumb/2/25/Arik_Soong_Head.png/150px-Arik_Soong_Head.png",
+        "w/images/thumb/2/25/Arik_Soong_Head.png/200px-Arik_Soong_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [43, 34, 73],
@@ -339,11 +569,22 @@
         "4": [726, 119, 276]
       },
       "stars": 4,
-      "traits": [49, 55, 73, 108]
+      "traits": [49, 55, 73, 108],
+      "portrait": [
+        [
+          "w/images/thumb/0/03/Arik-Soong.png/180px-Arik-Soong.png",
+          "w/images/thumb/0/03/Arik-Soong.png/270px-Arik-Soong.png",
+          "w/images/thumb/0/03/Arik-Soong.png/360px-Arik-Soong.png"
+        ]
+      ]
     }, {
       "character": 175,
       "name": "Aviator Yar",
-      "picture": "https://stt.wiki/w/images/thumb/d/de/Aviator_Yar_Head.png/100px-Aviator_Yar_Head.png",
+      "picture": [
+        "w/images/thumb/d/de/Aviator_Yar_Head.png/100px-Aviator_Yar_Head.png",
+        "w/images/thumb/d/de/Aviator_Yar_Head.png/150px-Aviator_Yar_Head.png",
+        "w/images/thumb/d/de/Aviator_Yar_Head.png/200px-Aviator_Yar_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [515, 95, 229],
@@ -351,13 +592,22 @@
         "5": [1021, 217, 543]
       },
       "stars": 5,
-      "traits": [26, 51, 55, 73, 82]
-    },
-
-    {
+      "traits": [26, 51, 55, 73, 82],
+      "portrait": [
+        [
+          "w/images/thumb/2/23/Aviator_Yar.png/175px-Aviator_Yar.png",
+          "w/images/thumb/2/23/Aviator_Yar.png/263px-Aviator_Yar.png",
+          "w/images/thumb/2/23/Aviator_Yar.png/350px-Aviator_Yar.png"
+        ]
+      ]
+    }, {
       "character": 4,
       "name": "Away Team Archer",
-      "picture": "https://stt.wiki/w/images/thumb/a/a3/Away_Team_Archer_Head.png/100px-Away_Team_Archer_Head.png",
+      "picture": [
+        "w/images/thumb/a/a3/Away_Team_Archer_Head.png/100px-Away_Team_Archer_Head.png",
+        "w/images/thumb/a/a3/Away_Team_Archer_Head.png/150px-Away_Team_Archer_Head.png",
+        "w/images/thumb/a/a3/Away_Team_Archer_Head.png/200px-Away_Team_Archer_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [29, 4, 19],
@@ -365,23 +615,43 @@
         "5": [271, 20, 53]
       },
       "stars": 2,
-      "traits": [45, 55, 82, 97]
+      "traits": [45, 55, 82, 97],
+      "portrait": [
+        [
+          "w/images/thumb/9/94/Card-Away-Team-Archer.jpg/300px-Card-Away-Team-Archer.jpg",
+          "w/images/thumb/9/94/Card-Away-Team-Archer.jpg/450px-Card-Away-Team-Archer.jpg",
+          "w/images/thumb/9/94/Card-Away-Team-Archer.jpg/600px-Card-Away-Team-Archer.jpg"
+        ]
+      ]
     }, {
       "character": 174,
       "name": "Ba'ku Worf",
-      "picture": "https://stt.wiki/w/images/thumb/e/e5/Ba%27ku_Worf_Head.png/100px-Ba%27ku_Worf_Head.png",
+      "picture": [
+        "w/images/thumb/e/e5/Ba%27ku_Worf_Head.png/100px-Ba%27ku_Worf_Head.png",
+        "w/images/thumb/e/e5/Ba%27ku_Worf_Head.png/150px-Ba%27ku_Worf_Head.png",
+        "w/images/thumb/e/e5/Ba%27ku_Worf_Head.png/200px-Ba%27ku_Worf_Head.png"
+      ],
       "race": 20,
       "skills": {
         "0": [547, 117, 268],
         "5": [902, 119, 304]
       },
       "stars": 4,
-      "traits": [34, 46, 65, 97, 100]
-    },
-    {
+      "traits": [34, 46, 65, 97, 100],
+      "portrait": [
+        [
+          "w/images/thumb/3/30/Ba%27ku_Worf.png/300px-Ba%27ku_Worf.png",
+          "w/images/3/30/Ba%27ku_Worf.png", "w/images/3/30/Ba%27ku_Worf.png"
+        ]
+      ]
+    }, {
       "character": 118,
       "name": "Bartender Quark",
-      "picture": "https://stt.wiki/w/images/thumb/d/dc/Bartender_Quark_Head.png/100px-Bartender_Quark_Head.png",
+      "picture": [
+        "w/images/thumb/d/dc/Bartender_Quark_Head.png/100px-Bartender_Quark_Head.png",
+        "w/images/thumb/d/dc/Bartender_Quark_Head.png/150px-Bartender_Quark_Head.png",
+        "w/images/thumb/d/dc/Bartender_Quark_Head.png/200px-Bartender_Quark_Head.png"
+      ],
       "race": 13,
       "skills": {
         "0": [16, 3, 11],
@@ -389,11 +659,22 @@
         "5": [81, 15, 57]
       },
       "stars": 1,
-      "traits": [9, 22, 47, 48, 74, 91]
+      "traits": [9, 22, 47, 48, 74, 91],
+      "portrait": [
+        [
+          "w/images/thumb/3/32/Card-Quark.jpg/300px-Card-Quark.jpg",
+          "w/images/thumb/3/32/Card-Quark.jpg/450px-Card-Quark.jpg",
+          "w/images/thumb/3/32/Card-Quark.jpg/600px-Card-Quark.jpg"
+        ]
+      ]
     }, {
       "character": 9,
       "name": "Bashir, Julian Bashir",
-      "picture": "https://stt.wiki/w/images/thumb/4/49/Bashir%2C_Julian_Bashir_Head.png/100px-Bashir%2C_Julian_Bashir_Head.png",
+      "picture": [
+        "w/images/thumb/4/49/Bashir%2C_Julian_Bashir_Head.png/100px-Bashir%2C_Julian_Bashir_Head.png",
+        "w/images/thumb/4/49/Bashir%2C_Julian_Bashir_Head.png/150px-Bashir%2C_Julian_Bashir_Head.png",
+        "w/images/thumb/4/49/Bashir%2C_Julian_Bashir_Head.png/200px-Bashir%2C_Julian_Bashir_Head.png"
+      ],
       "race": 17,
       "skills": {
         "1": [119, 38, 77],
@@ -401,23 +682,44 @@
         "5": [595, 194, 388]
       },
       "stars": 5,
-      "traits": [6, 26, 32, 36, 46, 48, 55, 97]
-    },
-    {
+      "traits": [6, 26, 32, 36, 46, 48, 55, 97],
+      "portrait": [
+        [
+          "w/images/thumb/6/63/Bashir_Card.jpg/300px-Bashir_Card.jpg",
+          "w/images/thumb/6/63/Bashir_Card.jpg/450px-Bashir_Card.jpg",
+          "w/images/6/63/Bashir_Card.jpg"
+        ]
+      ]
+    }, {
       "character": 7,
       "name": "B'Etor Duras",
-      "picture": "https://stt.wiki/w/images/thumb/5/53/B%27Etor_Duras_Head.png/100px-B%27Etor_Duras_Head.png",
+      "picture": [
+        "w/images/thumb/5/53/B%27Etor_Duras_Head.png/100px-B%27Etor_Duras_Head.png",
+        "w/images/thumb/5/53/B%27Etor_Duras_Head.png/150px-B%27Etor_Duras_Head.png",
+        "w/images/thumb/5/53/B%27Etor_Duras_Head.png/200px-B%27Etor_Duras_Head.png"
+      ],
       "race": 20,
       "skills": {
         "1": [45, 30, 67],
         "5": [227, 151, 337]
       },
       "stars": 3,
-      "traits": [65, 91]
+      "traits": [65, 91],
+      "portrait": [
+        [
+          "w/images/thumb/f/f3/B%27Etor_Duras.png/170px-B%27Etor_Duras.png",
+          "w/images/thumb/f/f3/B%27Etor_Duras.png/255px-B%27Etor_Duras.png",
+          "w/images/thumb/f/f3/B%27Etor_Duras.png/340px-B%27Etor_Duras.png"
+        ]
+      ]
     }, {
       "character": 70,
       "name": "Beowulf Kim",
-      "picture": "https://stt.wiki/w/images/thumb/2/29/Beowulf_Kim_Head.png/100px-Beowulf_Kim_Head.png",
+      "picture": [
+        "w/images/thumb/2/29/Beowulf_Kim_Head.png/100px-Beowulf_Kim_Head.png",
+        "w/images/thumb/2/29/Beowulf_Kim_Head.png/150px-Beowulf_Kim_Head.png",
+        "w/images/thumb/2/29/Beowulf_Kim_Head.png/200px-Beowulf_Kim_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [388, 108, 153],
@@ -426,11 +728,14 @@
       },
       "stars": 5,
       "traits": [15, 26, 38, 55, 46]
-    },
-    {
+    }, {
       "character": 121,
       "name": "Berlinghoff Rasmussen",
-      "picture": "https://stt.wiki/w/images/thumb/9/99/Berlinghoff_Rasmussen_Head.png/100px-Berlinghoff_Rasmussen_Head.png",
+      "picture": [
+        "w/images/thumb/9/99/Berlinghoff_Rasmussen_Head.png/100px-Berlinghoff_Rasmussen_Head.png",
+        "w/images/thumb/9/99/Berlinghoff_Rasmussen_Head.png/150px-Berlinghoff_Rasmussen_Head.png",
+        "w/images/thumb/9/99/Berlinghoff_Rasmussen_Head.png/200px-Berlinghoff_Rasmussen_Head.png"
+      ],
       "race": 17,
       "skills": {
         "1": [237, 141, 291],
@@ -438,11 +743,22 @@
         "5": [811, 58, 145]
       },
       "stars": 4,
-      "traits": [22, 29, 34, 87, 91]
+      "traits": [22, 29, 34, 87, 91],
+      "portrait": [
+        [
+          "w/images/thumb/3/37/Berlinghoff_Rasmussen.png/200px-Berlinghoff_Rasmussen.png",
+          "w/images/thumb/3/37/Berlinghoff_Rasmussen.png/300px-Berlinghoff_Rasmussen.png",
+          "w/images/3/37/Berlinghoff_Rasmussen.png"
+        ]
+      ]
     }, {
       "character": 58,
       "name": "Bestselling Author Jake Sisko",
-      "picture": "https://stt.wiki/w/images/thumb/d/d5/Bestselling_Author_Jake_Sisko_Head.png/100px-Bestselling_Author_Jake_Sisko_Head.png",
+      "picture": [
+        "w/images/thumb/d/d5/Bestselling_Author_Jake_Sisko_Head.png/100px-Bestselling_Author_Jake_Sisko_Head.png",
+        "w/images/thumb/d/d5/Bestselling_Author_Jake_Sisko_Head.png/150px-Bestselling_Author_Jake_Sisko_Head.png",
+        "w/images/thumb/d/d5/Bestselling_Author_Jake_Sisko_Head.png/200px-Bestselling_Author_Jake_Sisko_Head.png"
+      ],
       "race": 17,
       "skills": {
         "1": [682, 73, 146],
@@ -450,11 +766,14 @@
       },
       "stars": 4,
       "traits": [22, 31, 48, 55, 58, 88, 120]
-    },
-    {
+    }, {
       "character": 57,
       "name": "Blood Oath Jadzia Dax",
-      "picture": "https://stt.wiki/w/images/thumb/2/2f/Blood_Oath_Jadzia_Dax_Head.png/100px-Blood_Oath_Jadzia_Dax_Head.png",
+      "picture": [
+        "w/images/thumb/2/2f/Blood_Oath_Jadzia_Dax_Head.png/100px-Blood_Oath_Jadzia_Dax_Head.png",
+        "w/images/thumb/2/2f/Blood_Oath_Jadzia_Dax_Head.png/150px-Blood_Oath_Jadzia_Dax_Head.png",
+        "w/images/thumb/2/2f/Blood_Oath_Jadzia_Dax_Head.png/200px-Blood_Oath_Jadzia_Dax_Head.png"
+      ],
       "race": 32,
       "skills": {
         "2": [224, 153, 356],
@@ -466,30 +785,54 @@
     }, {
       "character": 92,
       "name": "Boomer Mayweather",
-      "picture": "https://stt.wiki/w/images/thumb/1/15/Boomer_Mayweather_Head.png/100px-Boomer_Mayweather_Head.png",
+      "picture": [
+        "w/images/thumb/1/15/Boomer_Mayweather_Head.png/100px-Boomer_Mayweather_Head.png",
+        "w/images/thumb/1/15/Boomer_Mayweather_Head.png/150px-Boomer_Mayweather_Head.png",
+        "w/images/thumb/1/15/Boomer_Mayweather_Head.png/200px-Boomer_Mayweather_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [33, 11, 30],
         "2": [166, 58, 153]
       },
       "stars": 2,
-      "traits": [12, 22, 55, 82]
-    },
-
-    {
+      "traits": [12, 22, 55, 82],
+      "portrait": [
+        [
+          "w/images/thumb/f/f9/Boomer_Mayweather.png/200px-Boomer_Mayweather.png",
+          "w/images/thumb/f/f9/Boomer_Mayweather.png/300px-Boomer_Mayweather.png",
+          "w/images/thumb/f/f9/Boomer_Mayweather.png/400px-Boomer_Mayweather.png"
+        ]
+      ]
+    }, {
       "character": 66,
       "name": "Botanist Keiko",
-      "picture": "https://stt.wiki/w/images/thumb/6/6e/Botanist_Keiko_Head.png/100px-Botanist_Keiko_Head.png",
+      "picture": [
+        "w/images/thumb/6/6e/Botanist_Keiko_Head.png/100px-Botanist_Keiko_Head.png",
+        "w/images/thumb/6/6e/Botanist_Keiko_Head.png/150px-Botanist_Keiko_Head.png",
+        "w/images/thumb/6/6e/Botanist_Keiko_Head.png/200px-Botanist_Keiko_Head.png"
+      ],
       "race": 17,
       "skills": {
         "4": [219, 48, 186]
       },
       "stars": 1,
-      "traits": [14, 17, 22, 46, 55]
+      "traits": [14, 17, 22, 46, 55],
+      "portrait": [
+        [
+          "w/images/thumb/6/6e/Botanist_Keiko.png/200px-Botanist_Keiko.png",
+          "w/images/thumb/6/6e/Botanist_Keiko.png/300px-Botanist_Keiko.png",
+          "w/images/thumb/6/6e/Botanist_Keiko.png/400px-Botanist_Keiko.png"
+        ]
+      ]
     }, {
       "character": 16,
       "name": "Boxer Chakotay",
-      "picture": "https://stt.wiki/w/images/thumb/7/7d/Boxer_Chakotay_Head.png/100px-Boxer_Chakotay_Head.png",
+      "picture": [
+        "w/images/thumb/7/7d/Boxer_Chakotay_Head.png/100px-Boxer_Chakotay_Head.png",
+        "w/images/thumb/7/7d/Boxer_Chakotay_Head.png/150px-Boxer_Chakotay_Head.png",
+        "w/images/thumb/7/7d/Boxer_Chakotay_Head.png/200px-Boxer_Chakotay_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [272, 24, 58],
@@ -497,12 +840,22 @@
         "5": [558, 65, 105]
       },
       "stars": 3,
-      "traits": [5, 26, 55, 56, 97, 119]
-    },
-    {
+      "traits": [5, 26, 55, 56, 97, 119],
+      "portrait": [
+        [
+          "w/images/thumb/0/0a/Boxer_Chakotay.png/150px-Boxer_Chakotay.png",
+          "w/images/thumb/0/0a/Boxer_Chakotay.png/225px-Boxer_Chakotay.png",
+          "w/images/thumb/0/0a/Boxer_Chakotay.png/300px-Boxer_Chakotay.png"
+        ]
+      ]
+    }, {
       "character": 161,
       "name": "Bridge Officer Troi",
-      "picture": "https://stt.wiki/w/images/thumb/b/bd/Bridge_Officer_Troi_Head.png/100px-Bridge_Officer_Troi_Head.png",
+      "picture": [
+        "w/images/thumb/b/bd/Bridge_Officer_Troi_Head.png/100px-Bridge_Officer_Troi_Head.png",
+        "w/images/thumb/b/bd/Bridge_Officer_Troi_Head.png/150px-Bridge_Officer_Troi_Head.png",
+        "w/images/thumb/b/bd/Bridge_Officer_Troi_Head.png/200px-Bridge_Officer_Troi_Head.png"
+      ],
       "race": 6,
       "skills": {
         "0": [594, 76, 197],
@@ -514,16 +867,30 @@
     }, {
       "character": 113,
       "name": "C.O.P. Founder Picard",
-      "picture": "https://stt.wiki/w/images/thumb/1/1e/C.O.P._Founder_Picard_Head.png/100px-C.O.P._Founder_Picard_Head.png",
+      "picture": [
+        "w/images/thumb/1/1e/C.O.P._Founder_Picard_Head.png/100px-C.O.P._Founder_Picard_Head.png",
+        "w/images/thumb/1/1e/C.O.P._Founder_Picard_Head.png/150px-C.O.P._Founder_Picard_Head.png",
+        "w/images/thumb/1/1e/C.O.P._Founder_Picard_Head.png/200px-C.O.P._Founder_Picard_Head.png"
+      ],
       "race": 17,
       "skills": [[1144, 84, 164], [1026, 221, 460]],
       "stars": 5,
-      "traits": [24, 31, 55, 58, 97, 46]
-    },
-    {
+      "traits": [24, 31, 55, 58, 97, 46],
+      "portrait": [
+        [
+          "w/images/thumb/0/01/C.O.P._Founder_Picard.png/240px-C.O.P._Founder_Picard.png",
+          "w/images/thumb/0/01/C.O.P._Founder_Picard.png/360px-C.O.P._Founder_Picard.png",
+          "w/images/thumb/0/01/C.O.P._Founder_Picard.png/480px-C.O.P._Founder_Picard.png"
+        ]
+      ]
+    }, {
       "character": 103,
       "name": "Cadet Nog",
-      "picture": "https://stt.wiki/w/images/thumb/4/48/Cadet_Nog_Head.png/100px-Cadet_Nog_Head.png",
+      "picture": [
+        "w/images/thumb/4/48/Cadet_Nog_Head.png/100px-Cadet_Nog_Head.png",
+        "w/images/thumb/4/48/Cadet_Nog_Head.png/150px-Cadet_Nog_Head.png",
+        "w/images/thumb/4/48/Cadet_Nog_Head.png/200px-Cadet_Nog_Head.png"
+      ],
       "race": 13,
       "skills": {
         "1": [31, 1, 2],
@@ -531,11 +898,22 @@
         "5": [320, 29, 113]
       },
       "stars": 2,
-      "traits": [47, 48, 74, 97]
+      "traits": [47, 48, 74, 97],
+      "portrait": [
+        [
+          "w/images/thumb/3/32/Cadet_Nog.png/135px-Cadet_Nog.png",
+          "w/images/thumb/3/32/Cadet_Nog.png/203px-Cadet_Nog.png",
+          "w/images/thumb/3/32/Cadet_Nog.png/270px-Cadet_Nog.png"
+        ]
+      ]
     }, {
       "character": 143,
       "name": "Cadet Sito Jaxa",
-      "picture": "https://stt.wiki/w/images/thumb/b/be/Cadet_Sito_Jaxa_Head.png/100px-Cadet_Sito_Jaxa_Head.png",
+      "picture": [
+        "w/images/thumb/b/be/Cadet_Sito_Jaxa_Head.png/100px-Cadet_Sito_Jaxa_Head.png",
+        "w/images/thumb/b/be/Cadet_Sito_Jaxa_Head.png/150px-Cadet_Sito_Jaxa_Head.png",
+        "w/images/thumb/b/be/Cadet_Sito_Jaxa_Head.png/200px-Cadet_Sito_Jaxa_Head.png"
+      ],
       "race": 4,
       "skills": {
         "0": [25, 5, 15],
@@ -543,12 +921,22 @@
         "5": [125, 28, 79]
       },
       "stars": 2,
-      "traits": [8, 29, 46, 73, 82, 84, 97]
-    },
-    {
+      "traits": [8, 29, 46, 73, 82, 84, 97],
+      "portrait": [
+        [
+          "w/images/thumb/1/12/Cadet-Sito-Jaxa.png/150px-Cadet-Sito-Jaxa.png",
+          "w/images/thumb/1/12/Cadet-Sito-Jaxa.png/225px-Cadet-Sito-Jaxa.png",
+          "w/images/thumb/1/12/Cadet-Sito-Jaxa.png/300px-Cadet-Sito-Jaxa.png"
+        ]
+      ]
+    }, {
       "character": 30,
       "name": "Captain Dathon",
-      "picture": "https://stt.wiki/w/images/thumb/3/3b/Captain_Dathon_Head.png/100px-Captain_Dathon_Head.png",
+      "picture": [
+        "w/images/thumb/3/3b/Captain_Dathon_Head.png/100px-Captain_Dathon_Head.png",
+        "w/images/thumb/3/3b/Captain_Dathon_Head.png/150px-Captain_Dathon_Head.png",
+        "w/images/thumb/3/3b/Captain_Dathon_Head.png/200px-Captain_Dathon_Head.png"
+      ],
       "race": 31,
       "skills": {
         "0": [185, 48, 122],
@@ -556,11 +944,21 @@
         "5": [475, 20, 60]
       },
       "stars": 3,
-      "traits": [24, 73, 99, 103]
+      "traits": [24, 73, 99, 103],
+      "portrait": [
+        [
+          "w/images/thumb/0/0a/Captain_Dathon.PNG/200px-Captain_Dathon.PNG",
+          "w/images/0/0a/Captain_Dathon.PNG", "w/images/0/0a/Captain_Dathon.PNG"
+        ]
+      ]
     }, {
       "character": 59,
       "name": "Captain Janeway",
-      "picture": "https://stt.wiki/w/images/thumb/6/6a/Captain_Janeway_Head.png/100px-Captain_Janeway_Head.png",
+      "picture": [
+        "w/images/thumb/6/6a/Captain_Janeway_Head.png/100px-Captain_Janeway_Head.png",
+        "w/images/thumb/6/6a/Captain_Janeway_Head.png/150px-Captain_Janeway_Head.png",
+        "w/images/thumb/6/6a/Captain_Janeway_Head.png/200px-Captain_Janeway_Head.png"
+      ],
       "race": 17,
       "skills": {
         "0": [95, 6, 14],
@@ -568,28 +966,33 @@
         "4": [475, 34, 73]
       },
       "stars": 4,
-      "traits": [46, 48, 55, 87, 97]
-    },
-    {
+      "traits": [46, 48, 55, 87, 97],
+      "portrait": [
+        [
+          "w/images/thumb/d/d4/Captain_Janeway.png/180px-Captain_Janeway.png",
+          "w/images/thumb/d/d4/Captain_Janeway.png/270px-Captain_Janeway.png",
+          "w/images/thumb/d/d4/Captain_Janeway.png/360px-Captain_Janeway.png"
+        ]
+      ]
+    }, {
       "character": 53,
       "name": "Captain John Harriman",
-      "picture": "https://stt.wiki/w/images/thumb/e/e6/Captain_John_Harriman_Head.png/100px-Captain_John_Harriman_Head.png",
+      "picture": [
+        "w/images/thumb/e/e6/Captain_John_Harriman_Head.png/100px-Captain_John_Harriman_Head.png",
+        "w/images/thumb/e/e6/Captain_John_Harriman_Head.png/150px-Captain_John_Harriman_Head.png",
+        "w/images/thumb/e/e6/Captain_John_Harriman_Head.png/200px-Captain_John_Harriman_Head.png"
+      ],
       "race": 17,
       "skills": [[589, 83, 188], [778, 132, 255]],
       "stars": 4,
-      "traits": [24, 46, 55, 97]
-    }, {
-      "character": 176,
-      "name": "Captain Kasidy Yates",
-      "picture": "https://stt.wiki/w/images/thumb/f/fa/Captain_Kasidy_Yates_Head.png/100px-Captain_Kasidy_Yates_Head.png",
-      "race": 17,
-      "skills": {
-        "0": [446, 70, 205],
-        "1": [191, 53, 144],
-        "5": [336, 39, 93]
-      },
-      "stars": 3,
-      "traits": [8, 22, 46, 55, 94]
+      "traits": [24, 46, 55, 97],
+      "portrait": [
+        [
+          "w/images/thumb/7/7a/Captain_John_Harriman.png/200px-Captain_John_Harriman.png",
+          "w/images/thumb/7/7a/Captain_John_Harriman.png/300px-Captain_John_Harriman.png",
+          "w/images/7/7a/Captain_John_Harriman.png"
+        ]
+      ]
     }
   ],
   "episodes": [

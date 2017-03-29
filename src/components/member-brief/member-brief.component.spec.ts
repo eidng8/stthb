@@ -3,15 +3,16 @@
  *  @license https://creativecommons.org/licenses/by-sa/4.0/
  *  @link    https://github.com/eidng8/stthb
  */
-
+/// <reference path="../../testing/matchers.d.ts" />
 import { Component, DebugElement } from '@angular/core';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { IonicModule } from 'ionic-angular';
 import { MemberModel } from '../../models/member.model';
 import { SkillsModel } from '../../models/skills.model';
-import { MemberBriefComponent } from './member-brief.component';
+import { toBeWikiUrl } from '../../testing/matchers';
 import { SkillComponent } from '../skill/skill.component';
+import { MemberBriefComponent } from './member-brief.component';
 
 @Component({
   template: '<jc-member-brief [member]="member"></jc-member-brief>',
@@ -21,13 +22,14 @@ class TestComponent {
 
   constructor() {
     const member: MemberModel = new MemberModel();
-    member.character = 'a char';
-    member.name = 'a member name';
-    member.picture = 'thumbnail';
-    member.race = 'a race';
-    member.stars = 3;
-    member.traits = ['just', 'a', 'trait'];
-    member.skills = new SkillsModel();
+    member.character          = 'a char';
+    member.name               = 'a member name';
+    member.picture            = ['thumbnail'];
+    member.portrait           = ['thumbnail'];
+    member.race               = 'a race';
+    member.stars              = 3;
+    member.traits             = ['just', 'a', 'trait'];
+    member.skills             = new SkillsModel();
     member.skills.set('cmd', [1, 2, 3]);
     member.skills.set('dip', [4, 5, 6]);
     member.skills.set('sec', [444, 445, 446]);
@@ -37,11 +39,15 @@ class TestComponent {
 }
 
 describe('Components:', () => {
+
   describe('Member Brief Component', () => {
+
     let fixture: ComponentFixture<TestComponent>;
     let sut: DebugElement;
 
-    beforeEach(done => {
+    beforeEach(() => {
+      jasmine.addMatchers({toBeWikiUrl});
+
       fixture = TestBed.configureTestingModule(
         {
           declarations: [
@@ -56,8 +62,6 @@ describe('Components:', () => {
       fixture.detectChanges();
 
       sut = fixture.debugElement.query(By.css('jc-member-brief'));
-
-      fixture.whenStable().then(() => done());
     });
 
     it('should have been created', () => {
@@ -101,6 +105,16 @@ describe('Components:', () => {
       expect(med.nativeElement.textContent.trim())
         .toMatch(/\s*9999\s*999\s*9999\s*/);
     }); // end should have skills
+
+    it('should show thumbnail from wiki', async(() => {
+      fixture.whenStable().then(() => {
+        const images: DebugElement[] = sut.queryAll(
+          By.css('ion-thumbnail img'));
+        images.forEach(img => {
+          expect(img.nativeElement.src).toBeWikiUrl();
+        });
+      });
+    })); // end should show thumbnail from wiki
   });
 
 });

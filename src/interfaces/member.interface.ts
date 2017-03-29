@@ -21,7 +21,12 @@ export interface IMember {
   /**
    * The thumbnail URL
    */
-  picture: string;
+  picture: string[];
+
+  /**
+   * The portrait URL
+   */
+  portrait: string[];
 
   /**
    * Index value to the {@see IServerData.races} list.

@@ -6,7 +6,7 @@
 
 <ion-item>
   <ion-thumbnail item-left>
-    <img src="{{ member?.picture }}">
+    <img [src]="thumb" [srcset]="thumbSet">
     <div class="rarity-stars"></div>
   </ion-thumbnail>
 

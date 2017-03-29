@@ -4,12 +4,12 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { SkillsModel } from './skills.model';
-import { ERarity } from '../shared/data.type';
-import { IServerData } from '../interfaces/server-data.interface';
-import { IMember } from '../interfaces/member.interface';
 import { IDataModel } from '../interfaces/data-model.interface';
+import { IMember } from '../interfaces/member.interface';
+import { IServerData } from '../interfaces/server-data.interface';
+import { ERarity } from '../shared/data.type';
 import { MissionModel } from './mission.model';
+import { SkillsModel } from './skills.model';
 
 export class MemberModel implements IDataModel<IMember> {
   /**
@@ -25,7 +25,12 @@ export class MemberModel implements IDataModel<IMember> {
   /**
    * The thumbnail URL
    */
-  picture: string;
+  picture: string[];
+
+  /**
+   * The portrait URL
+   */
+  portrait: string[];
 
   /**
    * Index value to the {@see IServerData.races} list.

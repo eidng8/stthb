@@ -4,14 +4,19 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { Moment, unix } from 'moment';
-import { Observable } from 'rxjs/Observable';
-import './rxops';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import { IServerData } from '../interfaces/server-data.interface';
+/*
+ *  @author  eidng8
+ *  @license https://creativecommons.org/licenses/by-sa/4.0/
+ *  @link    https://github.com/eidng8/stthb
+ */
+import { Moment, unix } from 'moment';
+import { Observable } from 'rxjs/Observable';
 import { IMember } from '../interfaces/member.interface';
 import { IMission } from '../interfaces/mission.interface';
+import { IServerData } from '../interfaces/server-data.interface';
+import './rxops';
 
 @Injectable()
 /**
@@ -21,6 +26,11 @@ import { IMission } from '../interfaces/mission.interface';
  * unit tests.
  */
 export class DataService implements IServerData {
+
+  /**
+   * Wiki host. DON'T omit the last slash `/`
+   */
+  static readonly host: string = 'https://stt.wiki/';
 
   /**
    * URL to local (pre-packaged) data file

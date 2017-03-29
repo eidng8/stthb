@@ -5,9 +5,15 @@
   -->
 
 <ion-item>
+  <ion-thumbnail item-left>
+    <!--<img [src]="thumb" [srcset]="thumbSet">-->
+    <div class="mission-type-{{ mission.type }}"></div>
+  </ion-thumbnail>
+
+  <div class="mission-costs">
+    <span *ngFor="let cost of mission.cost">{{ cost }}</span>
+  </div>
+
   <h3>{{ mission.name }}</h3>
 
-  <span class="mission-{{ mission.type }}"></span>
-
-  <span class="mission-cost">{{ mission.cost }}</span>
 </ion-item>

@@ -101,10 +101,18 @@
     {
       "name": "The Wrong Crowd",
       "episode": 0,
+      "image": [
+        "w/images/thumb/2/29/AT-Romulan_Chasing_Federation.png/200px-AT-Romulan_Chasing_Federation.png",
+        "w/images/2/29/AT-Romulan_Chasing_Federation.png",
+        "w/images/2/29/AT-Romulan_Chasing_Federation.png"
+      ],
       "type": 1,
       "cost": [4, 4, 8],
       "steps": [
         {
+          "name": "Evacuate Civilians from House",
+          "alt": ["Lead Mass Transporter Evac"],
+          "images": ["w/images/2/29/AT-Romulan_Chasing_Federation.png"],
           "skills": [0],
           "traits": [[100]],
           "locks": [null],
@@ -114,6 +122,15 @@
           "req": [[21, 67, 119]],
           "bonus": [[5, 16, 28]]
         }, {
+          "name": "Repel Main Augments Raiding Party",
+          "alt": [
+            "Inspire Klingon Civilians to Fight",
+            "Beam into Hand to Hand Combat"
+          ],
+          "images": [
+            "w/images/3/39/AT-Klingon_Death_Ritual.png",
+            "w/images/9/94/AT-Transporter_Room.png"
+          ],
           "skills": [0, 5],
           "traits": [[58, 65], [29, 45]],
           "locks": [null, null],
@@ -123,6 +140,16 @@
           "req": [[21, 67, 119], [21, 67, 119]],
           "bonus": [[5, 16, 28], [5, 16, 28]]
         }, {
+          "name": "Locate Martok's Family",
+          "alt": [
+            "Interrogate Captured Augment Raider",
+            "Remote Scan for Klingon Signatures", "Reconfigure Security System"
+          ],
+          "images": [
+            "w/images/b/bd/AT-Courtroom_Procedings.png",
+            "w/images/9/94/AT-Gold_Metamorphosis.png",
+            "w/images/8/89/AT-Borg_Accessing_Console.png"
+          ],
           "skills": [1, 4, 2],
           "traits": [[6, 59], [44, 85], [62]],
           "locks": [null, null, null],
@@ -132,6 +159,12 @@
           "req": [[21, 67, 119], [21, 67, 119], [21, 67, 119]],
           "bonus": [[5, 16, 28], [5, 16, 28], [5, 16, 28]]
         }, {
+          "name": "Rescue Hostage from Alexander",
+          "alt": ["Distract Alexander", "Challenge Alexander for Hostages"],
+          "images": [
+            "w/images/5/50/AT-Kreetassans_Apology-Enterprise.png",
+            "w/images/8/8e/AT-With_Bat%27leth_Against_Klingons.png"
+          ],
           "skills": [0, 5],
           "traits": [[27], [65, 38]],
           "locks": [null, null],

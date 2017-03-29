@@ -10,13 +10,24 @@ import { IStepCrew } from './step-crew.interface';
  * Mission step data
  */
 export interface IStep {
+
+  /**
+   * Mission step alternative texts
+   */
+  alt: string[];
+
   /**
    * How much bonus can a mission step gain from traits.
    *
    * These are 2-dimension arrays. First level corresponds to step alternative,
    * and second level are bonus values.
    */
-  bonus: number[][];
+  bonus?: number[][];
+
+  /**
+   * Mission step alternative images
+   */
+  images: string[];
 
   /**
    * Mission step lock traits.
@@ -25,6 +36,11 @@ export interface IStep {
    * and second level are index values to the {@see IServerData.traits} list.
    */
   locks?: number[][];
+
+  /**
+   * Mission step title text
+   */
+  name: string;
 
   /**
    * Mission step skill requirement.
@@ -39,7 +55,7 @@ export interface IStep {
    *
    * This is an array, with each element corresponds to a step alternative.
    */
-  skills?: number[];
+  skills: number[];
 
   /**
    * Mission step bonus traits.

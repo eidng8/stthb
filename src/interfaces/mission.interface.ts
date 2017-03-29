@@ -26,6 +26,11 @@ export interface IMission {
   episode: number;
 
   /**
+   * Mission thumbnail
+   */
+  image: string[];
+
+  /**
    * Mission name
    */
   name: string;

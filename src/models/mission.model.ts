@@ -4,9 +4,9 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { EMissionType } from '../shared/data.type';
 import { IDataModel } from '../interfaces/data-model.interface';
 import { IMission } from '../interfaces/mission.interface';
+import { EMissionType } from '../shared/data.type';
 import { StepModel } from './step.model';
 
 export class MissionModel implements IDataModel<IMission> {
@@ -14,14 +14,19 @@ export class MissionModel implements IDataModel<IMission> {
   cost: number[];
   type: EMissionType;
   steps?: StepModel[];
+  // episode: string;
+  image: string[];
 
-  load(data: IMission): void {
-    this.name = data.name;
-    this.cost = data.cost;
-    this.type = data.type;
-    if(EMissionType.away == data.type) {
+  load(mission: IMission/*, server: IServerData*/): void {
+    this.name  = mission.name;
+    this.cost  = mission.cost;
+    this.type  = mission.type;
+    // this.episode  = server.episodes[mission.episode];
+    this.image = mission.image;
+
+    if (EMissionType.away == mission.type) {
       this.steps = [];
-      data.steps.forEach(step => {
+      mission.steps.forEach(step => {
         const model: StepModel = new StepModel();
         model.load(step);
         this.steps.push(model);

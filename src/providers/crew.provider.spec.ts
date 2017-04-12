@@ -5,14 +5,13 @@
  */
 
 import { inject, TestBed } from '@angular/core/testing';
-import { IServerData } from '../interfaces/server-data.interface';
 import { CrewProvider } from './crew.provider';
 
 describe('Providers:', () => {
 
   describe('Crew Provider:', () => {
-    const server: IServerData = require('../testing/crew-test.data.json');  // tslint:disable-line
-    server['ready'] = true;
+    const server: any = require('../testing/crew-test.data.json');  // tslint:disable-line
+    server.ready      = true;
 
     beforeEach(() => {
       TestBed.configureTestingModule({providers: [CrewProvider]});

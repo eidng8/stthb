@@ -5,19 +5,18 @@
  */
 
 import { inject, TestBed } from '@angular/core/testing';
-import { IServerData } from '../interfaces/server-data.interface';
 import { MemberModel } from '../models/member.model';
 import { MissionsProvider } from './missions.provider';
 
 describe('Providers:', () => {
 
   describe('Missions Provider:', () => {
-    let server: IServerData, crew: MemberModel[];
+    let server: any, crew: MemberModel[];
 
     beforeAll(() => {
-      server = require('../testing/mission-test.data.json');  // tslint:disable-line
-      server['ready'] = true;
-      crew   = server.crew.map(member => {
+      server       = require('../testing/mission-test.data.json');  // tslint:disable-line
+      server.ready = true;
+      crew         = server.crew.map(member => {
         const mem: MemberModel = new MemberModel();
         mem.load(member, server as any);
         return mem;

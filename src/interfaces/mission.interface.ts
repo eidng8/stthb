@@ -38,7 +38,7 @@ export interface IMission {
   /**
    * Mission type
    */
-    type: EMissionType;
+  type: EMissionType;
 
   /**
    * List of mission steps

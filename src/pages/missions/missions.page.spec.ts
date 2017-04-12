@@ -30,11 +30,10 @@ describe('Pages:', () => {
     beforeEach(() => {
       TestBed.configureTestingModule({
         declarations: [MissionsPage], providers: [
-          {provide:   NavController,
-            useValue: NavController,
-          },
-          {provide:   MissionsProvider,
-            useValue: missionsProvider,
+          {
+            provide: NavController, useValue: NavController,
+          }, {
+            provide: MissionsProvider, useValue: missionsProvider,
           },
         ], schemas:   [CUSTOM_ELEMENTS_SCHEMA],
       });

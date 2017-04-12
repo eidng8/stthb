@@ -4,12 +4,12 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import values from 'lodash-es/values';
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { PageBase } from '../base';
+import values from 'lodash-es/values';
 import { MemberModel } from '../../models/member.model';
 import { MissionModel } from '../../models/mission.model';
+import { PageBase } from '../base';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -30,7 +30,7 @@ export class CrewMissionsPage extends PageBase {
   /**
    * Capable missions
    */
-  missions: {[key: string]: MissionModel[]} = {};
+  missions: { [key: string]: MissionModel[] } = {};
 
   constructor(nav: NavController, public params: NavParams) {
     super(nav);
@@ -38,7 +38,7 @@ export class CrewMissionsPage extends PageBase {
     this.types = Object.keys(this.member.missions);
 
     this.types.forEach(type => {
-      this.missions[type] = values< MissionModel>(this.member.missions[type]);
+      this.missions[type] = values<MissionModel>(this.member.missions[type]);
     });
   }
 

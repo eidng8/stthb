@@ -7,25 +7,23 @@
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { IonicApp, IonicModule } from 'ionic-angular';
-import { HandbookAppComponent } from './app.component';
-import { CollapsibleDirective } from '../directives/collapsible.directive';
-import { CrewPage } from '../pages/crew/crew.page';
-import { MissionsPage } from '../pages/missions/missions.page';
-import { HomePage } from '../pages/home/home.page';
-import { TabsPage } from '../pages/tabs/tabs.page';
-import { SkillComponent } from '../components/skill/skill.component';
 import { MemberBriefComponent } from '../components/member-brief/member-brief.component';
 import { MissionBriefComponent } from '../components/mission-brief/mission-brief.component';
+import { SkillComponent } from '../components/skill/skill.component';
+import { CollapsibleDirective } from '../directives/collapsible.directive';
+import { CrewMissionsPage } from '../pages/crew-missions/crew-missions.page';
+import { CrewPage } from '../pages/crew/crew.page';
+import { HomePage } from '../pages/home/home.page';
+import { MissionsPage } from '../pages/missions/missions.page';
+import { SplashPage } from '../pages/splash/splash.page';
+import { TabsPage } from '../pages/tabs/tabs.page';
 import { CrewProvider } from '../providers/crew.provider';
 import { MissionsProvider } from '../providers/missions.provider';
-import { DataProvider } from '../providers/data.provider';
 import { DataService } from '../shared/data.service';
-import { SplashPage } from '../pages/splash/splash.page';
-import { CrewMissionsPage } from '../pages/crew-missions/crew-missions.page';
+import { HandbookAppComponent } from './app.component';
 
 @NgModule({
-  bootstrap:       [IonicApp],
-  declarations:    [
+  bootstrap:          [IonicApp], declarations: [
     HandbookAppComponent,
     SplashPage,
     CollapsibleDirective,
@@ -37,8 +35,7 @@ import { CrewMissionsPage } from '../pages/crew-missions/crew-missions.page';
     CrewPage,
     MissionsPage,
     CrewMissionsPage,
-  ],
-  entryComponents: [
+  ], entryComponents: [
     HandbookAppComponent,
     SplashPage,
     TabsPage,
@@ -46,18 +43,10 @@ import { CrewMissionsPage } from '../pages/crew-missions/crew-missions.page';
     CrewPage,
     MissionsPage,
     CrewMissionsPage,
-  ],
-  imports:         [
-    HttpModule,
-    /*StoreModule.provideStore(reducers),*/
+  ], imports:         [
+    HttpModule, /*StoreModule.provideStore(reducers),*/
     IonicModule.forRoot(HandbookAppComponent, {hoverCSS: false}),
-  ],
-  providers:       [
-    DataService,
-    CrewProvider,
-    MissionsProvider,
-    DataProvider,
-  ],
+  ], providers:       [DataService, CrewProvider, MissionsProvider],
 })
 export class AppModule {
 }

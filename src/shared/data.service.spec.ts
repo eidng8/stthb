@@ -14,6 +14,8 @@ import {
 import { TestBed, inject, fakeAsync } from '@angular/core/testing';
 import { MockBackend } from '@angular/http/testing';
 import { DataService } from './data.service';
+import { CrewProvider } from '../providers/crew.provider';
+import { MissionsProvider } from '../providers/missions.provider';
 
 describe('Data Service:', () => {
 
@@ -27,6 +29,8 @@ describe('Data Service:', () => {
         providers: [
           MockBackend,
           BaseRequestOptions,
+          CrewProvider,
+          MissionsProvider,
           DataService,
           {
             deps:       [MockBackend, BaseRequestOptions],

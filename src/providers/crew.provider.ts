@@ -8,15 +8,23 @@ import { Injectable } from '@angular/core';
 import { IMember } from '../interfaces/member.interface';
 import { IProvider } from '../interfaces/provider.interface';
 import { MemberModel } from '../models/member.model';
-import { IServerData } from '../interfaces/server-data.interface';
+import { DataService } from '../shared/data.service';
 
-@Injectable()
 /**
  * Fundamental crew data processing features
  */
-export class CrewProvider implements IProvider {
+@Injectable()
+export class CrewProvider implements IProvider<MemberModel> {
 
+  /**
+   * All parsed members
+   */
   protected crew: MemberModel[] = [];
+
+  /**
+   * Member name index;
+   */
+  protected names: { [key: string]: MemberModel } = {};
 
   /**
    * Returns all crew members
@@ -33,22 +41,30 @@ export class CrewProvider implements IProvider {
    * Get member by index
    */
   get(idx: number): MemberModel {
-    return this.all[idx];
+    return this.crew[idx];
+  }
+
+  named(name: string): MemberModel {
+    return this.names[name];
   }
 
   /**
    * Load crew member from the given server data
    */
-  load(data: IServerData): void {
-    if(!data || !data.crew) {
+  load(crew: IMember[], data: DataService): void {
+    if (!crew || !crew.length || !data.ready) {
       return;
     }
 
-    this.crew = [];
-    data.crew.forEach((member: IMember, idx: number) => {
+    this.crew  = [];
+    this.names = {};
+    crew.forEach((member: IMember, idx: number) => {
+      // load given data into model
       this.crew[idx] = new MemberModel();
       this.crew[idx].load(member, data);
-      /* TODO build various indices here */
+
+      // update name index
+      this.names[member.name] = this.crew[idx];
     });
   }
 }

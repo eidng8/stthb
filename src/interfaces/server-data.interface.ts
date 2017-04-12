@@ -14,37 +14,37 @@ export interface IServerData {
   /**
    * List of all characters
    */
-  characters: string[];
+  readonly characters: string[];
 
   /**
    * List of all crew member.
    */
-  crew: IMember[];
+  readonly crew: IMember[];
 
   /**
    * List of all episodes
    */
-  episodes: string[];
+  readonly episodes: string[];
 
   /**
    * The timestamp when this data is generated
    */
-  generatedAt: number;
+  readonly generatedAt: number;
 
   /**
    * List of all missions
    */
-  missions: IMission[];
+  readonly missions: IMission[];
 
   /**
    * List of all races
    */
-  races: string[];
+  readonly races: string[];
 
   /**
    * List of all skills
    */
-  skills: string[];
+  readonly skills: string[];
 
   /**
    * List of all traits
@@ -53,10 +53,10 @@ export interface IServerData {
    * possessed by crew members. e.g. no one possesses the 'Rich' traits, so you
    * won't find it in this list.
    */
-  traits: string[];
+  readonly traits: string[];
 
   /**
    * Server data version
    */
-  version: number;
+  readonly version: number;
 }

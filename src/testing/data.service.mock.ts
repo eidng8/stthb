@@ -4,11 +4,12 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { Observable } from 'rxjs/Observable';
 import { IServerData } from '../interfaces/server-data.interface';
+import { CrewProvider } from '../providers/crew.provider';
+import { MissionsProvider } from '../providers/missions.provider';
 import { DataService } from '../shared/data.service';
 
-export type TDataCustomizer = (data: IServerData) => void;
+export type TDataCustomizer = (data: IServerData) => IServerData;
 
 export class MockDataService extends DataService {
 
@@ -16,33 +17,31 @@ export class MockDataService extends DataService {
 
   protected loaded: boolean = true;
 
-  constructor(mockData: IServerData, ...customizer: TDataCustomizer[]) {
-    super(null);
+  constructor(mockData: IServerData, crew: CrewProvider,
+              missions: MissionsProvider, ...customizer: TDataCustomizer[]) {
+    super(null, crew, missions);
     this.data = mockData;
-    if(customizer) {
-      customizer.forEach(func => func(this.data));
+    if (customizer) {
+      customizer.forEach(func => {
+        this.data = func(this.data);
+      });
     }
-  }
-
-  /**
-   * Pretend to fetch server data from local source.
-   *
-   * This mocked version takes a single parameter,
-   * and return it as an Observable
-   */
-  protected getLocalData(): Observable<IServerData> {
-    return Observable.of(arguments[0]);
   }
 }
 
-export function provideMockDataService(mockData: IServerData,
-  ...customizer: TDataCustomizer[]): any {
+export function provideMockDataService(
+  mockData: IServerData, ...customizer: TDataCustomizer[]): any {
   return {
-    provide:  DataService,
-    useValue: new MockDataService(mockData, ...customizer),
+    deps:       [CrewProvider, MissionsProvider],
+    provide:    DataService,
+    useFactory: (crew: CrewProvider, missions: MissionsProvider) => {
+      return new MockDataService(mockData, crew, missions, ...customizer);
+    },
   };
 }
 
-export function trimCrew(data: IServerData): void {
-  data.crew = data.crew.slice(0, 50);
+export function trimCrew(data: IServerData): IServerData {
+  let touched: any = Object.assign({}, data);
+  touched.crew     = touched.crew.slice(0, 50);
+  return touched;
 }

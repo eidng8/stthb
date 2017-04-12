@@ -4,21 +4,22 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { TestBed, inject } from '@angular/core/testing';
-import { MissionsProvider } from './missions.provider';
+import { inject, TestBed } from '@angular/core/testing';
 import { IServerData } from '../interfaces/server-data.interface';
 import { MemberModel } from '../models/member.model';
+import { MissionsProvider } from './missions.provider';
 
 describe('Providers:', () => {
 
   describe('Missions Provider:', () => {
-    let data: IServerData, crew: MemberModel[];
+    let server: IServerData, crew: MemberModel[];
 
     beforeAll(() => {
-      data = require('../testing/mission-test.data.json');  // tslint:disable-line
-      crew = data.crew.map(member => {
+      server = require('../testing/mission-test.data.json');  // tslint:disable-line
+      server['ready'] = true;
+      crew   = server.crew.map(member => {
         const mem: MemberModel = new MemberModel();
-        mem.load(member, data);
+        mem.load(member, server as any);
         return mem;
       });
     }); // end beforeAll()
@@ -27,21 +28,21 @@ describe('Providers:', () => {
       TestBed.configureTestingModule({providers: [MissionsProvider]});
     });
 
-    it('can be injected', inject([MissionsProvider],
-      (missions: MissionsProvider) => {
+    it('can be injected',
+      inject([MissionsProvider], (missions: MissionsProvider) => {
         expect(missions).toBeDefined();
         expect(missions).not.toBeNull();
       }));
 
     it('should load from server data',
       inject([MissionsProvider], (missions: MissionsProvider) => {
-        missions.load(data);
-        expect(missions.all.length).toBe(data.missions.length);
+        missions.load(server.missions, server as any);
+        expect(missions.all.length).toBe(server.missions.length);
       }));
 
     it('should properly associate mission steps and crew',
       inject([MissionsProvider], (missions: MissionsProvider) => {
-        missions.load(data);
+        missions.load(server.missions, server as any);
         missions.loadCrew(crew);
 
         // check association from mission side
@@ -50,7 +51,7 @@ describe('Providers:', () => {
         // the above one is easier to see in karma output
         // below one is the real deal
         expect(missions.all[0].steps[0].crew.critical[0])
-          .toBe(crew[data.missions[0].steps[0].crew.critical[0]]);
+          .toBe(crew[server.missions[0].steps[0].crew.critical[0]]);
 
         // check association from crew side
         expect(crew[3].missions.critical[0].mission.name)

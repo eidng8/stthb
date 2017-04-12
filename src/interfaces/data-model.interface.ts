@@ -4,11 +4,11 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { IServerData } from './server-data.interface';
+import { DataService } from '../shared/data.service';
 
 /**
  * Server generated data definition
  */
 export interface IDataModel<T> {
-  load(data: T, server?: IServerData): void;
+  load(data: T, server: DataService): void;
 }

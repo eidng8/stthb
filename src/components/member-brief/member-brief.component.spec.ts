@@ -8,8 +8,8 @@ import { Component, DebugElement } from '@angular/core';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { IonicModule } from 'ionic-angular';
+import { IMember } from '../../interfaces/member.interface';
 import { MemberModel } from '../../models/member.model';
-import { SkillsModel } from '../../models/skills.model';
 import { toBeWikiUrl } from '../../testing/matchers';
 import { SkillComponent } from '../skill/skill.component';
 import { MemberBriefComponent } from './member-brief.component';
@@ -20,21 +20,13 @@ import { MemberBriefComponent } from './member-brief.component';
 class TestComponent {
   member: MemberModel;
 
+  mockService: any = require('../../testing/crew-test.data.json');  // tslint:disable-line
+
+  mockData: IMember = this.mockService.crew[1];
+
   constructor() {
-    const member: MemberModel = new MemberModel();
-    member.character          = 'a char';
-    member.name               = 'a member name';
-    member.picture            = ['thumbnail'];
-    member.portrait           = ['thumbnail'];
-    member.race               = 'a race';
-    member.stars              = 3;
-    member.traits             = ['just', 'a', 'trait'];
-    member.skills             = new SkillsModel();
-    member.skills.set('cmd', [1, 2, 3]);
-    member.skills.set('dip', [4, 5, 6]);
-    member.skills.set('sec', [444, 445, 446]);
-    member.skills.set('med', [9999, 999, 9999]);
-    this.member = member;
+    this.member = new MemberModel();
+    this.member.load(this.mockData, this.mockService);
   }
 }
 
@@ -45,23 +37,19 @@ describe('Components:', () => {
     let fixture: ComponentFixture<TestComponent>;
     let sut: DebugElement;
 
-    beforeEach(() => {
+    beforeAll((done) => {
       jasmine.addMatchers({toBeWikiUrl});
 
-      fixture = TestBed.configureTestingModule(
-        {
-          declarations: [
-            SkillComponent,
-            MemberBriefComponent,
-            TestComponent,
-          ],
-          imports:      [
-            IonicModule.forRoot(TestComponent),
-          ]
-        }).createComponent(TestComponent);
+      fixture = TestBed.configureTestingModule({
+        declarations: [SkillComponent, MemberBriefComponent, TestComponent],
+        imports:      [IonicModule.forRoot(TestComponent)],
+      }).createComponent(TestComponent);
       fixture.detectChanges();
 
-      sut = fixture.debugElement.query(By.css('jc-member-brief'));
+      fixture.whenStable().then(() => {
+        sut = fixture.debugElement.query(By.css('jc-member-brief'));
+        done();
+      }, () => fail());
     });
 
     it('should have been created', () => {
@@ -69,8 +57,7 @@ describe('Components:', () => {
     });
 
     it('should have rarity', () => {
-      expect(sut.nativeElement.classList).toContain('rarity-rare');
-      // expect(sut.query(By.css('.rarity-rare'))).not.toBeNull();
+      expect(sut.nativeElement.classList).toContain('rarity-super-rare');
     }); // end should have thumbnail
 
     it('should have thumbnail', () => {
@@ -82,28 +69,24 @@ describe('Components:', () => {
     }); // end should have thumbnail
 
     it('should have name', () => {
-      expect(
-        sut.query(By.css('h2')).nativeElement.textContent)
-        .toBe('a member name');
+      expect(sut.query(By.css('h2'))).not.toBeNull();
+      expect(sut.query(By.css('h2')).nativeElement.textContent)
+        .toBe('1701 Jadzia Dax');
     }); // end should have name
 
     it('should have skills', () => {
-      const skills: DebugElement[] = sut.queryAll(By.css('.skill-icon'));
-      expect(skills.length).toBe(4);
-      expect(sut.query(By.css('jc-skill')))
-        .not.toBeNull();
-      expect(sut.query(By.css('.skill-icon.skill-cmd')))
-        .not.toBeNull();
-      expect(sut.query(By.css('.skill-icon.skill-dip')))
-        .not.toBeNull();
-      expect(sut.query(By.css('.skill-icon.skill-sec')))
-        .not.toBeNull();
+      expect(sut.query(By.css('jc-skill'))).not.toBeNull();
+      const skills: DebugElement[] = sut.queryAll(By.css('jc-skill'));
+      expect(skills.length).toBe(3);
+      expect(sut.query(By.css('.skill-icon.skill-eng'))).not.toBeNull();
+      expect(sut.query(By.css('.skill-icon.skill-sci'))).not.toBeNull();
+      expect(sut.query(By.css('.skill-icon.skill-sec'))).not.toBeNull();
 
       const med: DebugElement = sut.query(
-        By.css('jc-skill .skill-icon.skill-med + .skill-values'));
+        By.css('jc-skill .skill-icon.skill-sec + .skill-values'));
       expect(med).not.toBeNull();
       expect(med.nativeElement.textContent.trim())
-        .toMatch(/\s*9999\s*999\s*9999\s*/);
+        .toMatch(/\s*301\s*60\s*122\s*/);
     }); // end should have skills
 
     it('should show thumbnail from wiki', async(() => {

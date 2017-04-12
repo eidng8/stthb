@@ -4,14 +4,14 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { By } from '@angular/platform-browser';
-import { TestBed, ComponentFixture } from '@angular/core/testing';
 import { CUSTOM_ELEMENTS_SCHEMA, DebugElement } from '@angular/core';
-import { CrewPage } from './crew.page';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 import { NavController } from 'ionic-angular';
-import { CrewProvider } from '../../providers/crew.provider';
 import { MemberBriefComponent } from '../../components/member-brief/member-brief.component';
 import { IServerData } from '../../interfaces/server-data.interface';
+import { CrewProvider } from '../../providers/crew.provider';
+import { CrewPage } from './crew.page';
 
 describe('Pages:', () => {
 
@@ -25,19 +25,20 @@ describe('Pages:', () => {
 
     beforeAll(() => {
       const server: IServerData = require('../../testing/crew-test.data.json');  // tslint:disable-line
-      crewProvider.load(server);
+      crewProvider.load(server.crew, server as any);
     }); // end beforeAll()
 
     beforeEach(done => {
-      TestBed.configureTestingModule(
-        {
-          declarations: [MemberBriefComponent, CrewPage],
-          providers:    [
-            {provide: NavController, useValue: NavController},
-            {provide: CrewProvider, useValue: crewProvider},
-          ],
-          schemas:      [CUSTOM_ELEMENTS_SCHEMA],
-        });
+      TestBed.configureTestingModule({
+        declarations: [MemberBriefComponent, CrewPage], providers: [
+          {provide:   NavController,
+            useValue: NavController,
+          },
+          {provide:   CrewProvider,
+            useValue: crewProvider,
+          },
+        ], schemas:   [CUSTOM_ELEMENTS_SCHEMA],
+      });
       fixture = TestBed.createComponent(CrewPage);
 
       // #trick
@@ -46,7 +47,7 @@ describe('Pages:', () => {
       // fixture.componentInstance.ionViewWillEnter();
       fixture.detectChanges();
       comp = fixture.componentInstance;
-      de = fixture.debugElement;
+      de   = fixture.debugElement;
       fixture.whenStable().then(() => done());
     });
 

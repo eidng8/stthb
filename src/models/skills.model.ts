@@ -6,13 +6,14 @@
 
 import findIndex from 'lodash-es/findIndex';
 import forOwn from 'lodash-es/forOwn';
-import { SkillModel } from './skill.model';
-import { IServerData } from '../interfaces/server-data.interface';
 import { IDataModel } from '../interfaces/data-model.interface';
+import { DataService } from '../shared/data.service';
+import { SkillModel } from './skill.model';
 
-export type TSkills = {[key: number]: number[]};
+export type TSkills = { [key: number]: number[] };
 
 export class SkillsModel implements IDataModel<TSkills> {
+
   /**
    * List of all skill abbreviations
    */
@@ -29,7 +30,7 @@ export class SkillsModel implements IDataModel<TSkills> {
 
   protected _primary: SkillModel;
 
-  // region Properties
+  // region Public readonly properties
 
   get all(): SkillModel[] {
     return this.sorted;
@@ -69,30 +70,32 @@ export class SkillsModel implements IDataModel<TSkills> {
     return this[`_${skill}`];
   }
 
-  set(skill: string|SkillModel, values: number[] = undefined): void {
+  set(skill: string | SkillModel, values: number[] = undefined): void {
     let abbr: string;
 
-    if(skill instanceof SkillModel) {
-      abbr = `_${skill.abbr}`;
+    if (skill instanceof SkillModel) {
+      abbr       = `_${skill.abbr}`;
       this[abbr] = skill;
       return;
     }
 
     const model: SkillModel = this.createModel(skill, values);
-    abbr = `_${model.abbr}`;
-    this[abbr] = model;
+    abbr                    = `_${model.abbr}`;
+    this[abbr]              = model;
 
-    if(!this._primary || this[abbr].base > this._primary.base) {
+    if (!this._primary || this[abbr].base > this._primary.base) {
       this._primary = this[abbr];
     }
 
-    if(!this.sorted) {
+    if (!this.sorted) {
       this.sorted.push(this[abbr]);
-    } else {
+    }
+    else {
       const idx: number = findIndex(this.sorted, sk => sk.abbr === this[abbr]);
-      if(idx < 0) {
+      if (idx < 0) {
         this.sorted.push(this[abbr]);
-      } else {
+      }
+      else {
         this.sorted[idx] = this[abbr];
       }
       this.sorted.sort((s1, s2) => s2.base - s1.base);
@@ -100,12 +103,11 @@ export class SkillsModel implements IDataModel<TSkills> {
 
   }
 
-  load(skills: TSkills, server: IServerData): void {
+  load(skills: TSkills, data: DataService): void {
     forOwn<TSkills>(skills, (values, key) => {
       try {
-        this.set(server.skills[key], values);
-      }
-      catch(e) {
+        this.set(data.skills[key], values);
+      } catch (e) {
         console.warn(e.message);
       }
     });

@@ -4,14 +4,15 @@
  *  @link    https://github.com/eidng8/stthb
  */
 
-import { TestBed, inject } from '@angular/core/testing';
-import { CrewProvider } from './crew.provider';
+import { inject, TestBed } from '@angular/core/testing';
 import { IServerData } from '../interfaces/server-data.interface';
+import { CrewProvider } from './crew.provider';
 
 describe('Providers:', () => {
 
   describe('Crew Provider:', () => {
-    const data: IServerData = require('../testing/crew-test.data.json');  // tslint:disable-line
+    const server: IServerData = require('../testing/crew-test.data.json');  // tslint:disable-line
+    server['ready'] = true;
 
     beforeEach(() => {
       TestBed.configureTestingModule({providers: [CrewProvider]});
@@ -22,10 +23,10 @@ describe('Providers:', () => {
       expect(crew).not.toBeNull();
     }));
 
-    it('should fetch & store local data', inject([CrewProvider],
-      (crew: CrewProvider) => {
-        crew.load(data);
-        expect(crew.all.length).toBe(data.crew.length);
+    it('should fetch & store local data',
+      inject([CrewProvider], (crew: CrewProvider) => {
+        crew.load(server.crew, server as any);
+        expect(crew.all.length).toBe(server.crew.length);
       }));
 
   }); // end Crew Provider
